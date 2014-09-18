@@ -24,7 +24,8 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">  
             <list>  
-                <value>br.com.dccom.modelo.Employee</value>  
+                <value>br.com.dccom.modelo.Pessoa</value>  
+                <value>br.com.dccom.modelo.Plano</value>  
             </list>  
         </property> 
 		<property name="hibernateProperties">
@@ -54,7 +55,11 @@
 	</bean>
 
 
-	<bean id="dataDaoImpl" class="br.com.dccom.dao.DataDaoImpl" />
-	<bean id="dataServiceImpl" class="br.com.dccom.services.DataServiceImpl" />
+	<bean id="pessoaDaoImpl" class="br.com.dccom.dao.PessoaDaoImpl" />
+	<bean id="pessoaServiceImpl" class="br.com.dccom.services.PessoaServiceImpl" />
+	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />
+	<bean id="planoServiceImpl" class="br.com.dccom.services.PlanoServiceImpl" />
+	
+	<mvc:resources mapping="/resources/**" location="/resources/mytheme/" />
 
 </beans>
