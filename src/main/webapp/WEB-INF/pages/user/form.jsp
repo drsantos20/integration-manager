@@ -8,6 +8,7 @@
 <link
 	href="${pageContext.request.contextPath}/resources/css/default.css"
 	rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/resources/css/iconic.css" rel="stylesheet" type="text/css">
 <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
 <script src="<c:url value="/resources/js/main.js" />"></script>
 
@@ -29,7 +30,7 @@
 	});
 </script>
 
-<title>Management | Registration Form</title>
+<title>Gerenciamento | Formulário de Registro</title>
 
 </head>
 <body>
@@ -39,45 +40,45 @@
 		method="post" action="register">
 		
 		
-		<h1>User Registration</h1>
+		<h1>Registro de Usuário</h1>
 		<fieldset class="row1">
-			<legend>Account Details</legend>
+			<legend>Detalhes da Conta</legend>
 			<p>
 				<label>Email *</label>
 				<form:input path="email" />
-				<label>Repeat Email *</label>
+				<label>Repetir Email *</label>
 				<form:input path="email" />
 			</p>
 			<p>
 				<label>Password *</label>
 				<form:input path="password" />
-				<label>Repeat Password *</label>
+				<label>Repetir Senha *</label>
 				<form:input path="password" />
 			</p>
 		</fieldset>
 
 		<fieldset class="row2">
-				<legend>Personal Details</legend>
+				<legend>Informações Pessoais</legend>
 				<p>
-				<label>Name *</label>
+				<label>Nome *</label>
 				<form:input path="firstName" />
 				</p>
 				
 				<p>
-				<label>Last Name *</label>
+				<label>Sobre Nome *</label>
 				<form:input path="lastName" />
 				</p>
 				
 				<p>
-				<label>Phone *</label>
+				<label>Telefone *</label>
 				<form:input path="phone" />
 				</p>
 				<p>
-				<label>City *</label>
+				<label>Cidade *</label>
 				<form:input path="city" />
 				</p>
 				<p>
-				<label>Country *</label> <select>
+				<label>Estado *</label> <select>
 					<option></option>
 					<form:select path="country" items="${countryList}" />
 				</select>
@@ -85,9 +86,9 @@
 		</fieldset>
 
 		<fieldset class="row3">
-			<legend>Further Information</legend>
+			<legend>Outras Informações</legend>
 			<p>
-				<label>Birthdate *</label>
+				<label>Data de Nascimento *</label>
 				<form:input path="nascimento" id="datepicker" />
 			</p>
 		</fieldset>
@@ -96,7 +97,7 @@
         </fieldset>
 		
 		<div>
-			<button class="button" type="submit">Register &raquo;</button>
+			<button class="button" type="submit">Registrar &raquo;</button>
 		</div>
 	</form:form>
 

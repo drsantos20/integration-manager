@@ -4,16 +4,12 @@
     margin: 0;
     border: 0;
 }
-body, html {
+body {
     color: #373C40;
     font-family: Verdana,Arial, Helvetica, sans-serif;
     height: 100%;
     margin:10px;
-    background: url('../img/denim.png');
-}
-body {
-	background: url('../img/denim.png');
-    font-size: 70%;
+    background: #DDEEFD;
 }
 p {
     padding: 7px 0 7px 0;
@@ -25,7 +21,7 @@ a {
     text-decoration:none;
 }
 a:hover{
-    color: #abda0f;
+    color: #6D91B3;
     text-decoration: none;
 }
 h1 {
@@ -111,7 +107,7 @@ form.register .infobox{
 }
 form.register legend
 {
-    color: #abda0f;
+    color: #6D91B3;
     padding:2px;
     margin-left: 14px;
     font-weight:bold;
@@ -177,7 +173,7 @@ form.register input[type=password]
 }
 .button
 {
-    background: #abda0f url(../img/overlay.png) repeat-x;
+    background: #6D91B3 url(../img/overlay.png) repeat-x;
     padding: 8px 10px 8px;
     color: #fff;
     text-decoration: none;

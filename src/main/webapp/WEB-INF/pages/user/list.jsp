@@ -6,18 +6,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Management | User Details</title>
+
+<link 	href="${pageContext.request.contextPath}/resources/css/datatable.css" rel="stylesheet">
+
 </head>
 <body>
+<jsp:include page = "../principal/initial.jsp"/>
 	<center>
 
-		<div style="color: teal; font-size: 30px">Management | User Details</div>
+		<div class="CSSTableGenerator">
 
 		<c:if test="${!empty pessoaList}">
-			<table border="1" bgcolor="black" width="600px">
-				<tr
-					style="background-color: teal; color: white; text-align: center;"
-					height="40px">
-					
+			<table>
+				<tr>
 					<td>First Name</td>
 					<td>Last Name</td>
 					<td>Email</td>
@@ -26,9 +27,7 @@
 					<td>Delete</td>
 				</tr>
 				<c:forEach items="${pessoaList}" var="user">
-					<tr
-						style="background-color: white; color: black; text-align: center;"
-						height="30px">
+					<tr>
 						
 						<td><c:out value="${user.firstName}" />
 						</td>

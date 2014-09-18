@@ -5,9 +5,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<link
-	href="${pageContext.request.contextPath}/resources/css/menu.css"
-	rel="stylesheet">
+<link href="${pageContext.request.contextPath}/resources/css/menu.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/resources/css/iconic.css" rel="stylesheet" type="text/css">
+	
+	
 <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,16 +33,16 @@
 	<nav>
 		<ul class="menu">
 			<li><a href="#"><span class="iconic home"></span> Home</a></li>
-			<li><a href="#"><span class="iconic plus-alt"></span> About</a>
+			<li><a href="#"><span class="iconic plus-alt"></span> Sobre Nós</a>
 				<ul>
 					<li><a href="#">Company History</a></li>
 					<li><a href="#">Meet the team</a></li>
 				</ul>
 			</li>
-			<li><a href="#"><span class="iconic magnifying-glass"></span> Management</a>
+			<li><a href="#"><span class="iconic magnifying-glass"></span> Gerenciamento</a>
 				<ul>
-					<li><a href="form">Management User</a></li>
-					<li><a href="#">Management Plan</a></li>
+					<li><a href="form">Gerenciar Usuários</a></li>
+					<li><a href="#">Gerenciar Planos</a></li>
 				</ul>
 			</li>
 			<li><a href="#"><span class="iconic map-pin"></span> Products</a>
@@ -56,7 +57,7 @@
 			</li>
 			<li><a href="#"><span class="iconic mail"></span> Contact</a>
 				<ul>
-					<li><a href="#">Contact Us</a></li>
+					<li><a href="#">Contate Nos</a></li>
 					<li><a href="#">Directions</a></li>
 				</ul>
 			</li>
