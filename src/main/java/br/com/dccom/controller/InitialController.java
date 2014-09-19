@@ -12,7 +12,7 @@ public class InitialController {
 	
 	@RequestMapping("index")
 	public ModelAndView getForm(@ModelAttribute Pessoa pessoa) {
-		return new ModelAndView("principal/initial");
+		return new ModelAndView("principal/principal");
 	}
 
 }
