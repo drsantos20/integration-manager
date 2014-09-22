@@ -11,7 +11,10 @@
 	<link href="${pageContext.request.contextPath}/resources/css/iconic.css" rel="stylesheet" type="text/css">
 <script src="<c:url value="/resources/js/jquery.1.10.2.min.js" />"></script>
 <script src="<c:url value="/resources/js/main.js" />"></script>
+    <!-- JS Core -->
 
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all-demo.css"> 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
@@ -34,71 +37,83 @@
 
 </head>
 <body>
-	<jsp:include page = "../principal/initial.jsp"/>
+<%-- 	<jsp:include page = "../principal/initial.jsp"/> --%>
 	<c:url var="userRegistration" value="saveUser.html" />
-	<form:form id="registerForm" class="register" modelAttribute="pessoa"
-		method="post" action="register">
+	<form:form id="demo-form" class="form-horizontal" modelAttribute="pessoa" method="post" action="register" >
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Email: <span
+				class="required">*</span>
+			</label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="email" name="email" 
+					required="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Senha: <span
+				class="required">*</span>
+			</label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="senha" name="senha"
+					data-parsley-trigger="change" required="">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Repetir Senha: <span
+				class="required">*</span>
+			</label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="senha" name="senha"
+					data-parsley-trigger="change" required="">
+			</div>
+		</div>
 		
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Nome: </label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="firstName" name="firstName">
+			</div>
+		</div>
 		
-		<h1>Registro de Usuário</h1>
-		<fieldset class="row1">
-			<legend>Detalhes da Conta</legend>
-			<p>
-				<label>Email *</label>
-				<form:input path="email" />
-				<label>Repetir Email *</label>
-				<form:input path="email" />
-			</p>
-			<p>
-				<label>Password *</label>
-				<form:input path="password" />
-				<label>Repetir Senha *</label>
-				<form:input path="password" />
-			</p>
-		</fieldset>
-
-		<fieldset class="row2">
-				<legend>Informações Pessoais</legend>
-				<p>
-				<label>Nome *</label>
-				<form:input path="firstName" />
-				</p>
-				
-				<p>
-				<label>Sobre Nome *</label>
-				<form:input path="lastName" />
-				</p>
-				
-				<p>
-				<label>Telefone *</label>
-				<form:input path="phone" />
-				</p>
-				<p>
-				<label>Cidade *</label>
-				<form:input path="city" />
-				</p>
-				<p>
-				<label>Estado *</label> <select>
-					<option></option>
-					<form:select path="country" items="${countryList}" />
-				</select>
-				</p>
-		</fieldset>
-
-		<fieldset class="row3">
-			<legend>Outras Informações</legend>
-			<p>
-				<label>Data de Nascimento *</label>
-				<form:input path="nascimento" id="datepicker" />
-			</p>
-		</fieldset>
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Sobre Nome: </label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="lastName" name="lastName">
+			</div>
+		</div>
 		
-	  	<fieldset class="row4">
-        </fieldset>
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Telefone: </label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="phone" name="phone">
+			</div>
+		</div>
 		
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Cidade: </label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="city" name="city">
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">Estado: </label>
+			<div class="col-sm-8">
+				<input class="form-control" type="text" id="country" name="country">
+			</div>
+		</div>
+		
+		<div class="divider"></div>
+		<div class="form-group">
+			<input type="hidden" name="superhidden" id="superhidden">
+			<div class="col-sm-offset-2 col-sm-8">
+				<button class="btn btn-md btn-primary">Validate</button>
+			</div>
+		</div>
 		<div>
 			<button class="button" type="submit">Registrar &raquo;</button>
 		</div>
+		
 	</form:form>
 
 	<a href="list">Click Here to see User List</a>

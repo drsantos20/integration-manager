@@ -11,7 +11,7 @@
 
 </head>
 <body>
-<jsp:include page = "../principal/initial.jsp"/>
+<%-- <jsp:include page = "../principal/initial.jsp"/> --%>
 	<center>
 
 		<div class="CSSTableGenerator">
