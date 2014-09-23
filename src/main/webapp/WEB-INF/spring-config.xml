@@ -44,22 +44,45 @@
 	<bean id="persistenceExceptionTranslationPostProcessor"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
 		
+<!-- 	<bean -->
+<!-- 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
+<!-- 		<property name="prefix"> -->
+<!-- 			<value>/WEB-INF/pages/</value> -->
+<!-- 		</property> -->
+<!-- 		<property name="suffix"> -->
+<!-- 			<value>.jsp</value> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix">
-			<value>/WEB-INF/pages/</value>
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
 	</bean>
-
-
+	
 	<bean id="pessoaDaoImpl" class="br.com.dccom.dao.PessoaDaoImpl" />
 	<bean id="pessoaServiceImpl" class="br.com.dccom.services.PessoaServiceImpl" />
 	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />
 	<bean id="planoServiceImpl" class="br.com.dccom.services.PlanoServiceImpl" />
 	
 	<mvc:resources mapping="/resources/**" location="/resources/mytheme/" />
+	
+	
+	<!-- Tiles configuration -->
+
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles/tiles-definitions.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+	</bean>
 
 </beans>

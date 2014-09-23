@@ -479,8 +479,8 @@
 </div>
 <!-- #page-header -->
 
-                <div id="page-sidebar" class="rm-transition">
-    <div id="page-sidebar-wrapper">
+    <div id="page-sidebar" class="rm-transition">
+    <div id="page-sidebar-wrapper" >
 
         <div id="sidebar-menu">
 
