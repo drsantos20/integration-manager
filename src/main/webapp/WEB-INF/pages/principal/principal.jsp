@@ -82,7 +82,7 @@
         <div id="sb-site">
             <div id="page-wrapper">
 
-                <div id="page-header" class="clearfix">
+    <div id="page-header" class="clearfix">
     <div id="header-logo" class="rm-transition">
         <a href="#" class="tooltip-button hidden-desktop" title="Navigation Menu" id="responsive-open-menu">
             <i class="glyph-icon icon-align-justify"></i>
@@ -484,7 +484,7 @@
 
         <div id="sidebar-menu">
 
-            <div id="sidebar-search">
+        <div id="sidebar-search">
     <input type="text" placeholder="Autocomplete search..." class="autocomplete-input tooltip-button" data-placement="right" title="Type &apos;j&apos; to see the available tags..." name="">
     <i class="glyph-icon icon-search"></i>
 </div>

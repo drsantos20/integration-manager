@@ -1,34 +1,12 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<div class="menu">
-<!-- Menu -->
-<!-- 	<ul> -->
-<!-- 	    <li> -->
-<%-- 	    	<spring:url value="/home" var="homeUrl" htmlEscape="true"/> --%>
-<%--  			<a href="${homeUrl}">Home</a> --%>
-<!--  		</li> -->
-<!-- 	    <li> -->
-<%-- 	    	<spring:url value="/about" var="aboutUrl" htmlEscape="true"/> --%>
-<%--  			<a href="${aboutUrl}">About</a> --%>
-<!--  		</li> -->
-<!-- 	</ul> -->
-		
-		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-144-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-114-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-72-precomposed.png">
-		<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-57-precomposed.png">
-		<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/icons/favicon.png">
-		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
-		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all-demo.css"> 
-
-<!-- 	<div id="page-sidebar" class="rm-transition"> -->
+<div id="page-sidebar" class="rm-transition">
     <div id="page-sidebar-wrapper" >
-<!--      <div id="page-sidebar-wrapper" class="bg-gray" tabindex="5003" style="overflow-y: hidden; outline: none; height: 402px;"> -->
 
-    <div id="sidebar-menu">
-    <div id="sidebar-search">
+        <div id="sidebar-menu">
+
+        <div id="sidebar-search">
     <input type="text" placeholder="Autocomplete search..." class="autocomplete-input tooltip-button" data-placement="right" title="Type &apos;j&apos; to see the available tags..." name="">
     <i class="glyph-icon icon-search"></i>
-	</div>
+</div>
 <ul>
 <li>
     <a href="index.html" title="Applications">
@@ -113,11 +91,4 @@
 
         <div class="divider"></div>
     </div><!-- #page-sidebar-wrapper -->
-
-
-
-
-
-
-
-</div>
+</div><!-- #page-sidebar -->

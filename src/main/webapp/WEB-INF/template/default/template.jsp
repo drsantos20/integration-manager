@@ -23,19 +23,19 @@
 	}
 	
 	.content {
-			padding:10px;
+			padding:0px;
 			padding-bottom:20px; /* Height of the footer element */
 			overflow:hidden;
+			
 	}
 	
-	.menu {
-		padding:50px 10px 0px 10px;
-		width:300px;
-		float:left;
+	.page-sidebar {
+		
 	}
 
 	.body {
 		margin:50px 10px 0px 250px;
+		padding:50px;
 	}
 	
 	.footer {

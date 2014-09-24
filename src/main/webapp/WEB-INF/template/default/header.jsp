@@ -1,6 +1,16 @@
 <!-- <div class="header">I am the header</div> -->
 
 <div id="header" class="clearfix">
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/icons/favicon.png">
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all-demo.css"> 
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/all-demo.js"></script>
+
     <div id="header-logo" class="rm-transition">
         <a href="#" class="tooltip-button hidden-desktop" title="Navigation Menu" id="responsive-open-menu">
             <i class="glyph-icon icon-align-justify"></i>
