@@ -1,3 +1,15 @@
+<script type="text/javascript">
+    $(window).load(function(){
+        setTimeout(function() {
+            $('#loading').fadeOut( 400, "linear" );
+        }, 300);
+    });
+</script>
+<style>
+    #loading {position: fixed;width: 100%;height: 100%;left: 0;top: 0;right: 0;bottom: 0;display: block;background: #fff;z-index: 10000;}
+    #loading img {position: absolute;top: 50%;left: 50%;margin: -23px 0 0 -23px;}
+</style>
+
 <div id="page-sidebar" class="rm-transition">
     <div id="page-sidebar-wrapper" >
 
@@ -21,19 +33,19 @@
         <span class="bs-label label-success">NEW</span>
     </a>
     <ul>
-        <li class="header"><span>Usu&aacute;rios</span></li>
-        <li><a href="carousels.html" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
-        <li><a href="slideshows.html" title="Slideshows"><span>Listar Usu&aacute;rios</span></a></li>
+        <li class="header text-left"><span>Usu&aacute;rios</span></li>
+        <li><a href="home" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
+        <li><a href="about" title="Slideshows"><span>Listar Usu&aacute;rios</span></a></li>
 
-        <li class="header"><span>Benefici&aacute;rios</span></li>
+        <li class="header text-left"><span>Benefici&aacute;rios</span></li>
         <li><a href="portfolio-2col.html" title="Portfolio 2 columns"><span>Cadastrar Novo Benefici&aacute;rio</span></a></li>
         <li><a href="portfolio-3col.html" title="Portfolio 2 columns"><span>Listar Benefici&aacute;rios</span></a></li>
 
-        <li class="header"><span>Planos</span></li>
+        <li class="header text-left"><span>Planos</span></li>
         <li><a href="icon-boxes.html" title="Icon boxes"><span>Cadastrar Novo Plano</span></a></li>
         <li><a href="page-titles.html" title="Page titles"><span>Listar Planos</span></a></li>
 
-        <li class="header"><span>Produtos</span></li>
+        <li class="header text-left"><span>Produtos</span></li>
         <li><a href="footer-1.html" title="Simple black footer"><span>Cadastrar Novo Produto</span></a></li>
         <li><a href="footer-2.html" title="Simple blue footer"><span>Listar Produtos</span></a></li>
     </ul>
@@ -44,7 +56,7 @@
             <span>Agenda</span>
         </a>
         <ul>
-            <li class="header"><span>Consultas</span></li>
+            <li class="header text-left"><span>Consultas</span></li>
             <li><a href="mailbox-inbox.html" title="Inbox"><span>Consultar Agenda</span></a></li>
         </ul>
     </li>
@@ -55,7 +67,7 @@
             <span class="bs-label label-success">New</span>
         </a>
         <ul>
-            <li class="header"><span>Autoriza&ccedil;&atilde;o</span></li>
+            <li class="header text-left"><span>Autoriza&ccedil;&atilde;o</span></li>
             <li><a href="index.html" title="Dashboard example 1"><span>Solicitar Autoriza&ccedil;&atilde;o</span></a></li>
         </ul>
     </li>
@@ -66,7 +78,7 @@
             <span>Relat&oacute;rios Gerenciais</span>
         </a>
         <ul>
-            <li><a href="justgage.html" title="JustGage"><span>Ret&oacute;rios</span></a></li>
+        <li><a href="index.html" title="Dashboard example 1"><span>Ret&oacute;rios</span></a></li>
         </ul>
     </li>
 </ul>

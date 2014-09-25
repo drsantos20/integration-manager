@@ -502,7 +502,7 @@
         <span class="bs-label label-success">NEW</span>
     </a>
     <ul>
-        <li class="header"><span>Usu&aacute;rios</span></li>
+        <li class=class="font-bold text-left"" ><span>Usu&aacute;rios</span></li>
         <li><a href="carousels.html" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
         <li><a href="slideshows.html" title="Slideshows"><span>Listar Usu&aacute;rios</span></a></li>
 
