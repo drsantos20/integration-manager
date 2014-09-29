@@ -19,13 +19,12 @@
 								Listagem de Beneficiário <small> Edição/Exclusão de
 									clientes/beneficiários </small>
 							</h3>
+							
 							<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="dynamic-table-example-1">
 								<thead>
-									<tr>
+									<tr width="100%">
 										<th>Nome</th>
-										<th>Sobre Nome</th>
 										<th>Email</th>
-										<th>Telefone</th>
 										<th>Editar</th>
 										<th>Excluir</th>
 									</tr>
@@ -33,22 +32,18 @@
 								<tbody>
 									<c:forEach items="${pessoaList}" var="user">
 										<tr class="odd gradeX">
-											<td><c:out value="${user.firstName}" /></td>
-											<td><c:out value="${user.lastName}" /></td>
+											<td><c:out value="${user.nome}" /></td>
 											<td><c:out value="${user.email}" /></td>
-											<td><c:out value="${user.phone}" /></td>
-											<td><a href="edit?id=${user.id}"
-												class="glyph-icon demo-icon tooltip-button icon-edit"
-												title="Editar""></td>
-											<td><a href="delete?id=${user.id}"
-												class="glyph-icon demo-icon tooltip-button icon-remove"
-												title="Deletar""   ></td>
-										</tr>
+											<td align="right"><a href="edit?id=${user.id}"
+												class="glyph-icon demo-icon tooltip-button icon-edit" title="Editar"/></td>
+											<td align="right"><a href="delete?id=${user.id}"
+												class="glyph-icon demo-icon tooltip-button icon-remove" title="Deletar" /></td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
-							<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-core.js"></script>
+							
+							
 							<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datatable.js"></script>
 							<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datatable-bootstrap.js"></script>
 							<script type="text/javascript">

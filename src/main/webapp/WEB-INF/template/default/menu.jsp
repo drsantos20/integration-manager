@@ -34,8 +34,8 @@
     </a>
     <ul>
         <li class="header text-left"><span>Usu&aacute;rios</span></li>
-        <li><a href="home" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
-        <li><a href="about" title="Slideshows"><span>Listar Usu&aacute;rios</span></a></li>
+        <li><a href="formUser" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
+        <li><a href="list" title="Slideshows"><span>Listar Usu&aacute;rios</span></a></li>
 
         <li class="header text-left"><span>Benefici&aacute;rios</span></li>
         <li><a href="portfolio-2col.html" title="Portfolio 2 columns"><span>Cadastrar Novo Benefici&aacute;rio</span></a></li>

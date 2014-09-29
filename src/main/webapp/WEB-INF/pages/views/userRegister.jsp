@@ -27,20 +27,11 @@
 				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="pessoa" method="post" action="register">
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
-                                Name:
+                                Nome:
                                 <span class="required">*</span>
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="email" name="email" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Sobre Nome:
-                                <span class="required">*</span>
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="email" name="email" data-parsley-trigger="change" required="">
+                                <input class="form-control" type="text" id="nome" name="nome" required="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -48,16 +39,15 @@
                                 Email:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="website" name="website">
+                                <input class="form-control" type="text" id="email" name="email">
                             </div>
                         </div>
-                        
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Telefone:
                             </label>
                             <div class="col-sm-8">
-                                <input class="input-mask form-control" data-inputmask="'mask':'(999) 999-9999'" type="text" id="phone" name="phone">
+                                <input class="input-mask form-control" data-inputmask="'mask':'(11) 99999-9999'" type="text" id="telefone" name="telefone">
                                 <div class="help-block">(11) 99999-9999</div>
                             </div>
                         </div>
@@ -88,7 +78,7 @@
                                 Endereço:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="address" name="address">
+                                <input class="form-control" type="text" id="endereco" name="endereco">
                             </div>
                         </div>
                         
@@ -97,16 +87,16 @@
                                 Cidade:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="city" name="city">
+                                <input class="form-control" type="text" id="cidade" name="cidade">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
-                                Pais:
+                                Estado:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="country" name="country">
+                                <input class="form-control" type="text" id="estado" name="estado">
                             </div>
                         </div>
                         
@@ -124,7 +114,7 @@
                                 Nacionalidade:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nationality" name="nationality">
+                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade">
                             </div>
                         </div>
                         
@@ -137,9 +127,6 @@
                                 </button>
                             </div>
                         </div>
-<!-- 							<div> -->
-<!-- 								<button class="btn btn-md btn-primary" type="submit">Registrar &raquo;</button> -->
-<!-- 							</div> -->
 						</form:form>
 						
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/inputmask.js"></script>

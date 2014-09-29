@@ -18,9 +18,9 @@ public class PessoaController {
 	@Autowired
 	PessoaService dataService;
 
-	@RequestMapping("form")
+	@RequestMapping("formUser")
 	public ModelAndView getForm(@ModelAttribute Pessoa pessoa) {
-		return new ModelAndView("user/form");
+		return new ModelAndView("views/userRegister");
 	}
 	
 	@RequestMapping("register")
@@ -45,7 +45,7 @@ public class PessoaController {
 	@RequestMapping("edit")
 	public ModelAndView editUser(@RequestParam int id,@ModelAttribute Pessoa pessoa) {
 		Pessoa pessoaObject = dataService.getRowById(id);
-		return new ModelAndView("user/edit","pessoaObject",pessoaObject);
+		return new ModelAndView("views/userEdit","pessoaObject",pessoaObject);
 	}
 	
 	@RequestMapping("update")
