@@ -26,13 +26,14 @@ public class PessoaController {
 	@RequestMapping("register")
 	public ModelAndView registerUser(@ModelAttribute Pessoa pessoa) {
 		dataService.insertRow(pessoa);
+//		return new ModelAndView("redirect:list");
 		return new ModelAndView("redirect:list");
 	}
 	
 	@RequestMapping("list")
 	public ModelAndView getListUser() {
 		List pessoaList = dataService.getList();
-		return new ModelAndView("user/list","pessoaList",pessoaList);
+		return new ModelAndView("views/userList","pessoaList",pessoaList);
 	}
 	
 	@RequestMapping("delete")

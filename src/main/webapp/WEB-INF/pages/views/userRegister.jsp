@@ -133,13 +133,13 @@
                             <input type="hidden" name="superhidden" id="superhidden">
                             <div class="col-sm-offset-2 col-sm-8">
                                 <button class="btn btn-md btn-primary">
-                                    Registrarrr
+                                    Registrar
                                 </button>
                             </div>
                         </div>
-							<div>
-								<button class="btn btn-md btn-primary" type="submit">Registrar &raquo;</button>
-							</div>
+<!-- 							<div> -->
+<!-- 								<button class="btn btn-md btn-primary" type="submit">Registrar &raquo;</button> -->
+<!-- 							</div> -->
 						</form:form>
 						
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/inputmask.js"></script>
@@ -151,6 +151,7 @@
 						</script>
 					</div>
 			</div>
+		</div>
 		</div>
 
 
