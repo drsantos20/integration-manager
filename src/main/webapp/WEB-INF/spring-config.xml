@@ -26,6 +26,7 @@
             <list>  
                 <value>br.com.dccom.modelo.Pessoa</value>  
                 <value>br.com.dccom.modelo.Plano</value>  
+                <value>br.com.dccom.modelo.Usuario</value> 
             </list>  
         </property> 
 		<property name="hibernateProperties">
@@ -62,10 +63,17 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- pessoa -->
 	<bean id="pessoaDaoImpl" class="br.com.dccom.dao.PessoaDaoImpl" />
 	<bean id="pessoaServiceImpl" class="br.com.dccom.services.PessoaServiceImpl" />
+	
+	<!-- plano -->
 	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />
 	<bean id="planoServiceImpl" class="br.com.dccom.services.PlanoServiceImpl" />
+	
+	<!-- login -->
+	<bean id="loginDaoImpl" class="br.com.dccom.dao.LoginDaoImpl" />
+	<bean id="loginServiceImpl" class="br.com.dccom.services.LoginServiceImpl" />
 	
 	<mvc:resources mapping="/resources/**" location="/resources/mytheme/" />
 	

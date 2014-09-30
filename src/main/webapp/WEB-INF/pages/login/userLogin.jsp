@@ -7,6 +7,9 @@
 <title> Login page 1 </title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!-- Favicons -->
 
@@ -61,8 +64,7 @@
 
 	<div class="center-vertical">
     <div class="center-content">
-
-        <form action="loginValidation" id="login-validation" class="col-md-4 center-margin" method="">
+		<form:form id="login-validation" class="col-md-4 center-margin" modelAttribute="usuario" method="post" action="loginValidation">
             <h3 class="text-center pad25B font-gray text-transform-upr font-size-23">eMED-WEB <span class="opacity-80">v1.0</span></h3>
             <div id="login-form" class="content-box modal-content">
                 <div class="content-box-wrapper pad20A">
@@ -73,7 +75,7 @@
                             <span class="input-group-addon addon-inside bg-white font-primary">
                                 <i class="glyph-icon icon-envelope-o"></i>
                             </span>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
                         </div>
                     </div>
                     <div class="form-group">
@@ -82,7 +84,7 @@
                             <span class="input-group-addon addon-inside bg-white font-primary">
                                 <i class="glyph-icon icon-unlock-alt"></i>
                             </span>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="senha" name="senha" placeholder="Password">
                         </div>
                     </div>
                     <div class="row">
@@ -120,9 +122,7 @@
                     <a href="#" class="btn btn-md btn-link switch-button" switch-target="#login-form" switch-parent="#login-forgot" title="Cancel">Cancel</a>
                 </div>
             </div>
-
-        </form>
-
+	</form:form>
     </div>
 </div>
 
