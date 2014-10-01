@@ -2,8 +2,7 @@
 <html lang="en">
 <head> 
 
-    <meta charset="UTF-8">
-<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta charset="UTF-8">
 <title> Login page 1 </title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -11,7 +10,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!-- Favicons -->
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-144-precomposed.png">
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-114-precomposed.png">
@@ -24,7 +22,6 @@
     <!-- JS Core -->
 
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
-
 
 
 <script type="text/javascript">
@@ -42,6 +39,12 @@
         });
     });
 </script>
+
+			<script>
+				function callDiv() {
+					return alert('callDiv');
+				}
+			</script>
 
 <style>
     #loading {position: fixed;width: 100%;height: 100%;left: 0;top: 0;right: 0;bottom: 0;display: block;background: #fff;z-index: 10000;}
@@ -76,6 +79,7 @@
                                 <i class="glyph-icon icon-envelope-o"></i>
                             </span>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                            <form:errors path="email" cssStyle="color: #ff0000;"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -85,6 +89,7 @@
                                 <i class="glyph-icon icon-unlock-alt"></i>
                             </span>
                             <input type="password" class="form-control" id="senha" name="senha" placeholder="Password">
+                            <form:errors path="senha" cssStyle="color: #ff0000;" id="btn btn-default" />
                         </div>
                     </div>
                     <div class="row">
@@ -123,6 +128,29 @@
                 </div>
             </div>
 	</form:form>
+
+			<%-- 	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/modal.js"></script> --%>
+<!-- 	<button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> -->
+	
+<!-- 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"> -->
+<!-- 	    <div class="modal-dialog modal-sm"> -->
+<!-- 	        <div class="modal-content"> -->
+<!-- 	            <div class="modal-header"> -->
+<!-- 	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
+<!-- 	                <h4 class="modal-title">Modal title</h4> -->
+<!-- 	            </div> -->
+<!-- 	            <div class="modal-body"> -->
+<!-- 	                <p>Small modal content here ...</p> -->
+<!-- 	            </div> -->
+<!-- 	            <div class="modal-footer"> -->
+<!-- 	                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+<!-- 	                <button type="button" class="btn btn-primary">Save changes</button> -->
+<!-- 	            </div> -->
+<!-- 	        </div> -->
+<!-- 	    </div> -->
+<!-- 	</div> -->
+	
+	
     </div>
 </div>
 

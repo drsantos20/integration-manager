@@ -7,7 +7,7 @@
   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
 
-	<context:component-scan base-package="br.com.dccom.controller" />
+	<context:component-scan base-package="br.com.dccom" />
 	<context:property-placeholder location="classpath:database.properties" />
 	<mvc:annotation-driven />
 
@@ -55,6 +55,20 @@
 <!-- 			<value>.jsp</value> -->
 <!-- 		</property> -->
 <!-- 	</bean> -->
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="validation" />
+	</bean>
+
+	
+<!-- 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"> -->
+<!-- 	     <property name="defaultLocale" value="pt_BR" /> -->
+<!-- 	 </bean> -->
+	
+<!-- 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" /> -->
+	
+	<bean id="userValidator" class="br.com.dccom.validator.UsuarioValidator" />
 
 	
 	<bean
