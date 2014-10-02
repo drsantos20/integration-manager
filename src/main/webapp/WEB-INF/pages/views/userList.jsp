@@ -16,8 +16,7 @@
 					<div class="container">
 						<div class="page-box">
 							<h3 class="page-title">
-								Listagem de Beneficiário <small> Edição/Exclusão de
-									clientes/beneficiários </small>
+								Pesquisa de Beneficiário <small> Aqui você poderá editar e/ou excluir clientes/beneficiários </small>
 							</h3>
 							
 							<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="dynamic-table-example-1">
@@ -85,7 +84,6 @@
                     <div class="modal-footer">
                     <a href="$" class="btn btn-info" title="Deletar" id="testaaaa">Deletar</a>
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
-<!--                         <button type="button" id="Name" class="btn btn-primary">Save changes</button> -->
                     </div>
                 </div>
             </div>

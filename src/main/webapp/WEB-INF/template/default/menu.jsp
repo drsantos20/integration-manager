@@ -35,11 +35,11 @@
     <ul>
         <li class="header text-left"><span>Usu&aacute;rios</span></li>
         <li><a href="formUser" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
-        <li><a href="list" title="Slideshows"><span>Listar Usu&aacute;rios</span></a></li>
+        <li><a href="list" title="Slideshows"><span>Pesquisar Usu&aacute;rios</span></a></li>
 
         <li class="header text-left"><span>Benefici&aacute;rios</span></li>
         <li><a href="portfolio-2col.html" title="Portfolio 2 columns"><span>Cadastrar Novo Benefici&aacute;rio</span></a></li>
-        <li><a href="portfolio-3col.html" title="Portfolio 2 columns"><span>Listar Benefici&aacute;rios</span></a></li>
+        <li><a href="portfolio-3col.html" title="Portfolio 2 columns"><span>Pesquisar Benefici&aacute;rios</span></a></li>
 
         <li class="header text-left"><span>Planos</span></li>
         <li><a href="icon-boxes.html" title="Icon boxes"><span>Cadastrar Novo Plano</span></a></li>
@@ -47,7 +47,7 @@
 
         <li class="header text-left"><span>Produtos</span></li>
         <li><a href="footer-1.html" title="Simple black footer"><span>Cadastrar Novo Produto</span></a></li>
-        <li><a href="footer-2.html" title="Simple blue footer"><span>Listar Produtos</span></a></li>
+        <li><a href="footer-2.html" title="Simple blue footer"><span>Pesquisar Produtos</span></a></li>
     </ul>
 </li>
     <li>
@@ -78,6 +78,7 @@
             <span>Relat&oacute;rios Gerenciais</span>
         </a>
         <ul>
+        <li class="header text-left"><span>Ret&oacute;rios</span></li>
         <li><a href="index.html" title="Dashboard example 1"><span>Ret&oacute;rios</span></a></li>
         </ul>
     </li>

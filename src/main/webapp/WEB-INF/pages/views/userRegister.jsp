@@ -20,7 +20,7 @@
                                 <h3 class="page-title">
                                     Cadastro de Beneficiário
                                     <small>
-                                        Inclusão de novos clientes/beneficiários
+                                        Inclusão de novos beneficiários
                                     </small>
                                 </h3>
                	<c:url var="userRegistration" value="saveUser.html" />

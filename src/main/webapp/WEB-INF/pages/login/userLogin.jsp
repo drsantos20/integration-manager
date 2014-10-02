@@ -3,7 +3,7 @@
 <head> 
 
 <meta charset="UTF-8">
-<title> Login page 1 </title>
+<title>E-MED SYSTEMS</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
@@ -68,7 +68,7 @@
 	<div class="center-vertical">
     <div class="center-content">
 		<form:form id="login-validation" class="col-md-4 center-margin" modelAttribute="usuario" method="post" action="loginValidation">
-            <h3 class="text-center pad25B font-gray text-transform-upr font-size-23">eMED-WEB <span class="opacity-80">v1.0</span></h3>
+            <h3 class="text-center pad25B font-gray text-transform-upr font-size-23">E-MED SYSTEMS <span class="opacity-80"> v1.0</span></h3>
             <div id="login-form" class="content-box modal-content">
                 <div class="content-box-wrapper pad20A">
 
