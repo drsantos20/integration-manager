@@ -34,19 +34,22 @@
 										<tr class="odd gradeX">
 											<td><c:out value="${user.nome}" /></td>
 											<td><c:out value="${user.email}" /></td>
-											<td align="right"><a href="edit?id=${user.id}"
-												class="glyph-icon demo-icon tooltip-button icon-edit" title="Editar"/></td>
+											<td align="center"><a href="edit?id=${user.id}"
+												class="btn btn-info" title="Editar"/>Editar</td>
 											<td align="center">
-<%-- 											<a href="delete?id=${user.id}" data-toggle="modal" data-target="#myModal" --%>
-<!-- 												class="glyph-icon demo-icon tooltip-button icon-remove" title="Deletar" /> -->
-												<button class="btn btn-default btn-md" data-toggle="modal"
-													data-target="#myModal" onclick="setarID(${user.id});">deletar</button>
-
+												<button class="btn btn-warning" data-toggle="modal"
+													data-target="#myModal" onclick="setarID(${user.id});">Excluir</button>
 											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
 							</table>
+							
+								  									<div class="divider"></div>
+			<div class="form-group">
+				<input type="hidden" name="superhidden" id="superhidden">
+				<a href="formUser" class="btn btn-info" title="Carousels"><span>Cadastrar Novo Usuário</span></a>
+			</div>
 							
 							
 							<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datatable.js"></script>
@@ -69,23 +72,19 @@
 			</div>
 		
 		<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/modal.js"></script>
-		<button class="btn btn-default btn-md" data-toggle="modal" data-target="#myModal">
-            Launch demo modal
-        </button>
-
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Modal title</h4>
+                        <h4 class="modal-title">Deletar Beneficiário</h4>
                     </div>
                     <div class="modal-body">
-                        <p>Modal content here ...</p>
+                        <p>Deseja realmente excluir o beneficiário selecionado ? </p>
                     </div>
                     <div class="modal-footer">
-                    <a href="$" title="Deletar" id="testaaaa">Deletar</a>
-<!--                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                    <a href="$" class="btn btn-info" title="Deletar" id="testaaaa">Deletar</a>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
 <!--                         <button type="button" id="Name" class="btn btn-primary">Save changes</button> -->
                     </div>
                 </div>

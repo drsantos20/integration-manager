@@ -1,5 +1,8 @@
 package br.com.dccom.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -43,11 +46,15 @@ public class LoginController {
 	public String successLogin(
 		Model  model, @Validated Usuario usuario, BindingResult result) {
 		String returnVal = "views/userRegister";
+		Usuario buscarUsuario = loginService.autenticarUsuario(usuario.getEmail(), usuario.getSenha());
 		if(result.hasErrors()) {
 			returnVal = "login/userLogin";
+		} else if(buscarUsuario == null) {
+			model.addAttribute("usrNotFound", "Usuário ou Senha Inválidos!");
+			returnVal = "login/userLogin";
 		} else {
-			model.addAttribute("login", usuario);
-		}		
+			returnVal = "views/userRegister";
+		}
 		return returnVal;
 	}
 }

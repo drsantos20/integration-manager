@@ -92,7 +92,17 @@
                             <form:errors path="senha" cssStyle="color: #ff0000;" id="btn btn-default" />
                         </div>
                     </div>
-                    <div class="row">
+
+					<div class="form-group">
+						<table width="100%">
+							<tr></tr>
+							<tr>
+								<td align="center"><h4><span class="bs-label label-danger">${usrNotFound}</span></h4></td>
+							</tr>
+						</table>
+					</div>
+
+						<div class="row">
                         <div class="checkbox-primary col-md-6" style="height: 20px;">
                             <label>
                                 <input type="checkbox" id="loginCheckbox1" class="custom-checkbox">
