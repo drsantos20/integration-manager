@@ -2,16 +2,16 @@ package br.com.dccom.services;
 
 import java.util.List;
 
-import br.com.dccom.modelo.Pessoa;
+import br.com.dccom.modelo.Beneficiario;
 
 public interface PessoaService {
-	public int insertRow(Pessoa pessoa);
+	public int insertRow(Beneficiario pessoa);
 
-	public List<Pessoa> getList();
+	public List<Beneficiario> getList();
 
-	public Pessoa getRowById(int id);
+	public Beneficiario getRowById(int id);
 
-	public int updateRow(Pessoa pessoa);
+	public int updateRow(Beneficiario pessoa);
 
 	public int deleteRow(int id);
 

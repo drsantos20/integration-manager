@@ -47,7 +47,7 @@
 								  									<div class="divider"></div>
 			<div class="form-group">
 				<input type="hidden" name="superhidden" id="superhidden">
-				<a href="formUser" class="btn btn-info" title="Carousels"><span>Cadastrar Novo Usuário</span></a>
+				<a href="inserirCliente" class="btn btn-info" title="Carousels"><span>Cadastrar Novo Usuário</span></a>
 			</div>
 							
 							

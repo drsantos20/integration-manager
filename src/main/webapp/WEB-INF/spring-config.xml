@@ -24,7 +24,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">  
             <list>  
-                <value>br.com.dccom.modelo.Pessoa</value>  
+                <value>br.com.dccom.modelo.Beneficiario</value>  
                 <value>br.com.dccom.modelo.Plano</value>  
                 <value>br.com.dccom.modelo.Usuario</value> 
             </list>  

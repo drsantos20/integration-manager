@@ -34,7 +34,7 @@
     </a>
     <ul>
         <li class="header text-left"><span>Usu&aacute;rios</span></li>
-        <li><a href="formUser" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
+        <li><a href="inserirCliente" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
         <li><a href="list" title="Slideshows"><span>Pesquisar Usu&aacute;rios</span></a></li>
 
         <li class="header text-left"><span>Benefici&aacute;rios</span></li>

@@ -10,7 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.dccom.modelo.Pessoa;
+import br.com.dccom.modelo.Beneficiario;
 
 public class PessoaDaoImpl implements PessoaDao {
 
@@ -19,7 +19,7 @@ public class PessoaDaoImpl implements PessoaDao {
 
 	@Override
 	@Transactional
-	public int insertRow(Pessoa pessoa) {
+	public int insertRow(Beneficiario pessoa) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(pessoa);
@@ -30,23 +30,23 @@ public class PessoaDaoImpl implements PessoaDao {
 	}
 
 	@Override
-	public List<Pessoa> getList() {
+	public List<Beneficiario> getList() {
 		Session session = sessionFactory.openSession();
 		@SuppressWarnings("unchecked")
-		List<Pessoa> pessoaList = session.createQuery("from Pessoa").list();
+		List<Beneficiario> pessoaList = session.createQuery("from Beneficiario").list();
 		session.close();
 		return pessoaList;
 	}
 
 	@Override
-	public Pessoa getRowById(int id) {
+	public Beneficiario getRowById(int id) {
 		Session session = sessionFactory.openSession();
-		Pessoa pessoa = (Pessoa) session.load(Pessoa.class, id);
+		Beneficiario pessoa = (Beneficiario) session.load(Beneficiario.class, id);
 		return pessoa;
 	}
 
 	@Override
-	public int updateRow(Pessoa pessoa) {
+	public int updateRow(Beneficiario pessoa) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		session.update(pessoa);
@@ -60,7 +60,7 @@ public class PessoaDaoImpl implements PessoaDao {
 	public int deleteRow(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		Pessoa pessoa = (Pessoa) session.load(Pessoa.class, id);
+		Beneficiario pessoa = (Beneficiario) session.load(Beneficiario.class, id);
 		session.delete(pessoa);
 		tx.commit();
 		Serializable ids = session.getIdentifier(pessoa);

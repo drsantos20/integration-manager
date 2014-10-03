@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.dccom.dao.PessoaDao;
-import br.com.dccom.modelo.Pessoa;
+import br.com.dccom.modelo.Beneficiario;
 
 public class PessoaServiceImpl implements PessoaService {
 	
@@ -13,22 +13,22 @@ public class PessoaServiceImpl implements PessoaService {
 	PessoaDao dataDao;
 
 	@Override
-	public int insertRow(Pessoa pessoa) {
+	public int insertRow(Beneficiario pessoa) {
 		return dataDao.insertRow(pessoa);
 	}
 
 	@Override
-	public List<Pessoa> getList() {
+	public List<Beneficiario> getList() {
 		return dataDao.getList();
 	}
 
 	@Override
-	public Pessoa getRowById(int id) {
+	public Beneficiario getRowById(int id) {
 		return dataDao.getRowById(id);
 	}
 
 	@Override
-	public int updateRow(Pessoa pessoa) {
+	public int updateRow(Beneficiario pessoa) {
 		return dataDao.updateRow(pessoa);
 	}
 

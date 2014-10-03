@@ -53,7 +53,7 @@ public class LoginController {
 			model.addAttribute("usrNotFound", "Usuário ou Senha Inválidos!");
 			returnVal = "login/userLogin";
 		} else {
-			returnVal = "views/userRegister";
+			returnVal = "redirect:inserirCliente";
 		}
 		return returnVal;
 	}
