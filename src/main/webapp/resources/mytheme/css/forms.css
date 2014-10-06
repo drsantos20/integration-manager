@@ -167,6 +167,17 @@ textarea.form-control
     margin-bottom: 5px;
 }
 
+
+.form-group_telefone
+{
+    margin-bottom: 15px;
+}
+
+.form-group_telefone label
+{
+    margin-bottom: 5px;
+}
+
 .radio,
 .checkbox
 {
@@ -323,6 +334,16 @@ textarea.input-lg
 
         vertical-align: middle;
     }
+    
+    .form-inline .form-group_telefone
+    {
+        display: inline-block;
+
+        margin-bottom: 0;
+
+        vertical-align: middle;
+    }
+    
     .form-inline .form-control
     {
         display: inline-block;
@@ -362,6 +383,12 @@ textarea.input-lg
     margin-left: -15px;
 }
 
+.form-horizontal .form-group_telefone
+{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
 .form-horizontal .form-group:before,
 .form-horizontal .form-group:after
 {
@@ -370,7 +397,20 @@ textarea.input-lg
     content: ' ';
 }
 
+.form-horizontal .form-group_telefone:before,
+.form-horizontal .form-group_telefone:after
+{
+    display: table;
+
+    content: ' ';
+}
+
 .form-horizontal .form-group:after
+{
+    clear: both;
+}
+
+.form-horizontal .form-group_telefone:after
 {
     clear: both;
 }
@@ -383,7 +423,20 @@ textarea.input-lg
     content: ' ';
 }
 
+.form-horizontal .form-group_telefone:before,
+.form-horizontal .form-group_telefone:after
+{
+    display: table;
+
+    content: ' ';
+}
+
 .form-horizontal .form-group:after
+{
+    clear: both;
+}
+
+.form-horizontal .form-group_telefone:after
 {
     clear: both;
 }

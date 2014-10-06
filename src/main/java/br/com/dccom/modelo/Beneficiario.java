@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Beneficiario {
@@ -19,6 +20,7 @@ public class Beneficiario {
 	private String cpf;
 	private String email;
 	private String password;
+	@Transient
 	private ArrayList<String> telefone;
 	private String tipoTelefone;
 	private String nascimento;

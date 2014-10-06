@@ -10,22 +10,14 @@
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/all-demo.css">
+	href="${pageContext.request.contextPath}/resources/css/forms.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/datepicker.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/all-demo.css">
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-						<script type="text/javascript">
-						function myFunction() {
-						    var table = document.getElementById("myTable");
-						    var row = table.insertRow(0);
-						    var cell1 = row.insertCell(0);
-						    cell1.innerHTML = "<input type=text id=telefone  name=telefone>";
-						}
-	                    </script>
-	
-	
 		<div class="body">
 			<div id="page-content">
 				<div class="container">
@@ -68,8 +60,7 @@
 									<input class="form-control" type="text" id="email" name="email" required="">
 								</div>
 							</div>
-							<table id="myTable">
-							<div class="form-group" id="myDiv">
+							<div class="form-group_telefone" id="myDiv">
 								<label for="" class="col-sm-2 control-label"> Telefone:
 								</label>
 								<div class="col-sm-3">
@@ -77,14 +68,16 @@
 										id="telefone"  name="telefone">
 								</div>
 								<label for="" class="col-sm-2 control-label"> Tipo: </label>
-								<div class="col-sm-3">
+								<div class="col-sm-2">
 									<form:select path="tipoTelefone" items="${model.tipo}"
 										class="form-control"></form:select>
-									<br>
+								</div>
+								<div class="col-sm-2">
+									<div class="btn btn-azure" title=".icon-plus-square" onclick="add()">Add
+								</div>
 								</div>
 							</div>
-							</table>
-							<button type="button" onclick="myFunction()">add row</button>
+							
 							
 							<div class="form-group">
 								<label for="" class="col-sm-2 control-label"> Data de
@@ -99,7 +92,6 @@
 								<div class="col-sm-3">
 									<form:select path="nacionalidade" items="${model.nacionalidade}"
 										class="form-control"></form:select>
-									<br>
 								</div>
 							</div>
 
@@ -154,6 +146,11 @@
 	                                format: 'dd-mm-yyyy'
 	                            });
 	                        });
+	                        
+	                        function add() {
+								  $('.form-group_telefone:first').clone().insertAfter('#myDiv');
+							 };
+						
 	                    </script>
 					</div>
 				</div>
