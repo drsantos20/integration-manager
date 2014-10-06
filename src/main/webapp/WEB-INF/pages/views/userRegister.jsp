@@ -64,8 +64,9 @@
 								<label for="" class="col-sm-2 control-label"> Telefone:
 								</label>
 								<div class="col-sm-3">
-									<input class="input-mask form-control" data-inputmask="'mask':'(99) 99999-9999'" type="text"
-										id="telefone"  name="telefone">
+<!-- 									<input class="input-mask form-control" data-inputmask="'mask':'(99) 99999-9999'" type="text" -->
+<!-- 										id="telefone"  name="telefone"> -->
+										<input type="text" id="phone" />
 								</div>
 								<label for="" class="col-sm-2 control-label"> Tipo: </label>
 								<div class="col-sm-2">
@@ -150,6 +151,21 @@
 	                        function add() {
 								  $('.form-group_telefone:first').clone().insertAfter('#myDiv');
 							 };
+							 
+							 
+							 $("#phone").mask("(99) 9999?9-9999");
+							 $("#phone").on("blur", function() {
+							     var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+							     
+							     if( last.length == 3 ) {
+							         var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+							         var lastfour = move + last;
+							         
+							         var first = $(this).val().substr( 0, 9 );
+							         
+							         $(this).val( first + '-' + lastfour );
+							     }
+							 });
 						
 	                    </script>
 					</div>
