@@ -16,6 +16,16 @@
 
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
+						<script type="text/javascript">
+						function myFunction() {
+						    var table = document.getElementById("myTable");
+						    var row = table.insertRow(0);
+						    var cell1 = row.insertCell(0);
+						    cell1.innerHTML = "<input type=text id=telefone  name=telefone>";
+						}
+	                    </script>
+	
+	
 		<div class="body">
 			<div id="page-content">
 				<div class="container">
@@ -58,13 +68,13 @@
 									<input class="form-control" type="text" id="email" name="email" required="">
 								</div>
 							</div>
-							<div class="form-group">
+							<table id="myTable">
+							<div class="form-group" id="myDiv">
 								<label for="" class="col-sm-2 control-label"> Telefone:
 								</label>
 								<div class="col-sm-3">
-									<input class="input-mask form-control"
-										data-inputmask="'mask':'(99) 99999-9999'" type="text"
-										id="telefone" name="telefone">
+									<input class="input-mask form-control" data-inputmask="'mask':'(99) 99999-9999'" type="text"
+										id="telefone"  name="telefone">
 								</div>
 								<label for="" class="col-sm-2 control-label"> Tipo: </label>
 								<div class="col-sm-3">
@@ -73,7 +83,9 @@
 									<br>
 								</div>
 							</div>
-
+							</table>
+							<button type="button" onclick="myFunction()">add row</button>
+							
 							<div class="form-group">
 								<label for="" class="col-sm-2 control-label"> Data de
 									Nascimento: </label>
@@ -143,7 +155,6 @@
 	                            });
 	                        });
 	                    </script>
-						
 					</div>
 				</div>
 			</div>

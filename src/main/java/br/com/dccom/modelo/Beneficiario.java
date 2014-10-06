@@ -1,4 +1,6 @@
 package br.com.dccom.modelo;
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,7 @@ public class Beneficiario {
 	private String cpf;
 	private String email;
 	private String password;
-	private String telefone;
+	private ArrayList<String> telefone;
 	private String tipoTelefone;
 	private String nascimento;
 	private String endereco;
@@ -50,10 +52,11 @@ public class Beneficiario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getTelefone() {
+	
+	public ArrayList<String> getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(String telefone) {
+	public void setTelefone(ArrayList<String> telefone) {
 		this.telefone = telefone;
 	}
 	public String getNascimento() {
