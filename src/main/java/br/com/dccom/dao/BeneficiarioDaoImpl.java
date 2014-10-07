@@ -1,6 +1,7 @@
 package br.com.dccom.dao;
 
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -8,9 +9,11 @@ import javax.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.dccom.modelo.Beneficiario;
+import br.com.dccom.modelo.Telefone;
 
 public class BeneficiarioDaoImpl implements BeneficiarioDao {
 
@@ -20,9 +23,21 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 	@Override
 	@Transactional
 	public int insertRow(Beneficiario beneficiario) {
+		Telefone telefone = new Telefone();
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
+		
+		telefone.setBeneficiario(beneficiario);
+		if(beneficiario!= null && !beneficiario.getTelefone().isEmpty()) {
+			for (Telefone telefones : beneficiario.getTelefone()) {
+				telefone.setDescricao(telefones.getDescricao());
+				session.saveOrUpdate(telefone);
+			}
+		}
+		
 		session.saveOrUpdate(beneficiario);
+		
+		
 		tx.commit();
 		Serializable id = session.getIdentifier(beneficiario);
 		session.close();

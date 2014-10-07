@@ -27,6 +27,7 @@
                 <value>br.com.dccom.modelo.Beneficiario</value>  
                 <value>br.com.dccom.modelo.Plano</value>  
                 <value>br.com.dccom.modelo.Usuario</value> 
+                <value>br.com.dccom.modelo.Telefone</value> 
             </list>  
         </property> 
 		<property name="hibernateProperties">
@@ -45,28 +46,11 @@
 
 	<bean id="persistenceExceptionTranslationPostProcessor"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
-		
-<!-- 	<bean -->
-<!-- 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
-<!-- 		<property name="prefix"> -->
-<!-- 			<value>/WEB-INF/pages/</value> -->
-<!-- 		</property> -->
-<!-- 		<property name="suffix"> -->
-<!-- 			<value>.jsp</value> -->
-<!-- 		</property> -->
-<!-- 	</bean> -->
 
 	<bean id="messageSource"
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="validation" />
 	</bean>
-
-	
-<!-- 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"> -->
-<!-- 	     <property name="defaultLocale" value="pt_BR" /> -->
-<!-- 	 </bean> -->
-	
-<!-- 	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver" /> -->
 	
 	<bean id="userValidator" class="br.com.dccom.validator.UsuarioValidator" />
 

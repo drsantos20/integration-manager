@@ -1,18 +1,21 @@
 package br.com.dccom.modelo;
-import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Beneficiario {
 
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name="beneficiario_id")
 	private int id;
 	
 	@Column(name="nome")
@@ -20,8 +23,10 @@ public class Beneficiario {
 	private String cpf;
 	private String email;
 	private String password;
-	@Transient
-	private ArrayList<String> telefone;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "beneficiario")
+	private List<Telefone> telefone;
+	
 	private String tipoTelefone;
 	private String nascimento;
 	private String endereco;
@@ -55,10 +60,10 @@ public class Beneficiario {
 		this.password = password;
 	}
 	
-	public ArrayList<String> getTelefone() {
+	public List<Telefone> getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(ArrayList<String> telefone) {
+	public void setTelefone(List<Telefone> telefone) {
 		this.telefone = telefone;
 	}
 	public String getNascimento() {

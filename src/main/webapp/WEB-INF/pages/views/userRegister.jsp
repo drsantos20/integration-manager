@@ -64,9 +64,7 @@
 								<label for="" class="col-sm-2 control-label"> Telefone:
 								</label>
 								<div class="col-sm-3">
-<!-- 									<input class="input-mask form-control" data-inputmask="'mask':'(99) 99999-9999'" type="text" -->
-<!-- 										id="telefone"  name="telefone"> -->
-										<input class="form-control" type="text" id="phone" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" />
+									<input class="form-control" type="text" id="telefone" name="" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
 								</div>
 								<label for="" class="col-sm-2 control-label"> Tipo: </label>
 								<div class="col-sm-2">
@@ -137,9 +135,11 @@
 								$(".input-mask").inputmask();
 							});
 						</script>
-						
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datepicker.js"></script>
 						<script type="text/javascript">
+						
+						 	var numItems = $('.form-group_telefone').length;
+						 	numItems = numItems-1;
 	                        /* Datepicker bootstrap */
 	
 	                        $(function(){
@@ -147,8 +147,8 @@
 	                                format: 'dd-mm-yyyy'
 	                            });
 	                            
-	                            $("#phone").mask("(99) 9999?9-9999");
-								 $("#phone").on("blur", function() {
+	                            $("#telefone").mask("(99) 9999?9-9999");
+								 $("#telefone").on("blur", function() {
 								     var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
 								     
 								     if( last.length == 3 ) {
@@ -164,18 +164,20 @@
 	                        
 	                        function add() {
 								  $('.form-group_telefone:first').clone().insertAfter('#myDiv');
+								  numItems = numItems + 1;
+								  alert(numItems);
 							 };
 							 
 							 function mask(o, f) {
 								    setTimeout(function () {
-								        var v = mphone(o.value);
+								        var v = mtelefone(o.value);
 								        if (v != o.value) {
 								            o.value = v;
 								        }
 								    }, 1);
 								}
 
-								function mphone(v) {
+								function mtelefone(v) {
 								    var r = v.replace(/\D/g,"");
 								    r = r.replace(/^0/,"");
 								    if (r.length > 10) {
@@ -196,6 +198,10 @@
 								    }
 								    return r;
 								}
+								
+								$('#telefone').attr('name', 'telefone['+numItems+'].descricao');
+								
+								
 	                    </script>
 					</div>
 				</div>

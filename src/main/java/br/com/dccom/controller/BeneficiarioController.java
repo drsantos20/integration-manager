@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,9 +21,12 @@ public class BeneficiarioController {
 	
 	@Autowired
 	BeneficiarioService dataService;
+	
+	private static final Logger logger = Logger.getLogger(BeneficiarioController.class);
 
 	@RequestMapping("inserirCliente")
 	public ModelAndView getForm(@ModelAttribute("beneficiario") Beneficiario beneficiario) {
+		
 		
 		ArrayList<String> tipo = new ArrayList<String>();  
 		tipo.add("Residencial");  
@@ -39,6 +43,15 @@ public class BeneficiarioController {
 		model.put("tipo", tipo);
 		model.put("nacionalidade", nacionalidade);
 		model.put("sexo", sexo);
+		
+		
+		//logs debug message
+		if(logger.isDebugEnabled()){
+			logger.debug("getWelcome is executed!");
+		}
+ 
+//		//logs exception
+//		logger.error("This is Error message", new Exception("Testing"));
 		
 		return new ModelAndView("views/userRegister", "model", model);
 	}
@@ -65,10 +78,10 @@ public class BeneficiarioController {
 	public ModelAndView editUser(@RequestParam int id,@ModelAttribute("beneficiario") Beneficiario beneficiario) {
 		Beneficiario beneficiarioObject = dataService.getRowById(id);
 		
-		beneficiarioObject.setTelefone(new ArrayList<String>());
-		beneficiarioObject.getTelefone().add("777777777");
-		beneficiarioObject.getTelefone().add("999999999");
-		beneficiarioObject.getTelefone().add("555555555");
+//		beneficiarioObject.setTelefone(new ArrayList<Telefone>());
+//		beneficiarioObject.getTelefone().add("777777777");
+//		beneficiarioObject.getTelefone().add("999999999");
+//		beneficiarioObject.getTelefone().add("555555555");
 		
 		ArrayList<String> tipo = new ArrayList<String>();  
 		tipo.add("Residencial");  
