@@ -28,7 +28,7 @@
 						</h3>
 						<c:url var="userRegistration" value="saveUser.html" />
 						<form:form id="demo-form" class="form-horizontal"
-							data-parsley-validate="" modelAttribute="pessoa" method="post"
+							data-parsley-validate="" modelAttribute="beneficiario" method="post"
 							action="register">
 							<div class="form-group">
 								<label for="" class="col-sm-2 control-label"> Nome: <span
@@ -196,12 +196,6 @@
 								    }
 								    return r;
 								}
-
-							 
-							 
-							 
-							 
-						
 	                    </script>
 					</div>
 				</div>

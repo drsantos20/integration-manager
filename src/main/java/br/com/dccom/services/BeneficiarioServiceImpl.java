@@ -4,17 +4,17 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.dccom.dao.PessoaDao;
+import br.com.dccom.dao.BeneficiarioDao;
 import br.com.dccom.modelo.Beneficiario;
 
-public class PessoaServiceImpl implements PessoaService {
+public class BeneficiarioServiceImpl implements BeneficiarioService {
 	
 	@Autowired
-	PessoaDao dataDao;
+	BeneficiarioDao dataDao;
 
 	@Override
-	public int insertRow(Beneficiario pessoa) {
-		return dataDao.insertRow(pessoa);
+	public int insertRow(Beneficiario beneficiario) {
+		return dataDao.insertRow(beneficiario);
 	}
 
 	@Override
@@ -28,8 +28,8 @@ public class PessoaServiceImpl implements PessoaService {
 	}
 
 	@Override
-	public int updateRow(Beneficiario pessoa) {
-		return dataDao.updateRow(pessoa);
+	public int updateRow(Beneficiario beneficiario) {
+		return dataDao.updateRow(beneficiario);
 	}
 
 	@Override

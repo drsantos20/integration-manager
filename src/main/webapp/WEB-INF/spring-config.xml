@@ -77,9 +77,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<!-- pessoa -->
-	<bean id="pessoaDaoImpl" class="br.com.dccom.dao.PessoaDaoImpl" />
-	<bean id="pessoaServiceImpl" class="br.com.dccom.services.PessoaServiceImpl" />
+	<!-- beneficiario -->
+	<bean id="beneficiarioDaoImpl" class="br.com.dccom.dao.BeneficiarioDaoImpl" />
+	<bean id="beneficiarioServiceImpl" class="br.com.dccom.services.BeneficiarioServiceImpl" />
 	
 	<!-- plano -->
 	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />

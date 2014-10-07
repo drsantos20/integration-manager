@@ -12,19 +12,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.dccom.modelo.Beneficiario;
 
-public class PessoaDaoImpl implements PessoaDao {
+public class BeneficiarioDaoImpl implements BeneficiarioDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
 
 	@Override
 	@Transactional
-	public int insertRow(Beneficiario pessoa) {
+	public int insertRow(Beneficiario beneficiario) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.saveOrUpdate(pessoa);
+		session.saveOrUpdate(beneficiario);
 		tx.commit();
-		Serializable id = session.getIdentifier(pessoa);
+		Serializable id = session.getIdentifier(beneficiario);
 		session.close();
 		return (Integer) id;
 	}
@@ -33,25 +33,25 @@ public class PessoaDaoImpl implements PessoaDao {
 	public List<Beneficiario> getList() {
 		Session session = sessionFactory.openSession();
 		@SuppressWarnings("unchecked")
-		List<Beneficiario> pessoaList = session.createQuery("from Beneficiario").list();
+		List<Beneficiario> beneficiarioList = session.createQuery("from Beneficiario").list();
 		session.close();
-		return pessoaList;
+		return beneficiarioList;
 	}
 
 	@Override
 	public Beneficiario getRowById(int id) {
 		Session session = sessionFactory.openSession();
-		Beneficiario pessoa = (Beneficiario) session.load(Beneficiario.class, id);
-		return pessoa;
+		Beneficiario beneficiario = (Beneficiario) session.load(Beneficiario.class, id);
+		return beneficiario;
 	}
 
 	@Override
-	public int updateRow(Beneficiario pessoa) {
+	public int updateRow(Beneficiario beneficiario) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.update(pessoa);
+		session.update(beneficiario);
 		tx.commit();
-		Serializable id = session.getIdentifier(pessoa);
+		Serializable id = session.getIdentifier(beneficiario);
 		session.close();
 		return (Integer) id;
 	}
@@ -60,10 +60,10 @@ public class PessoaDaoImpl implements PessoaDao {
 	public int deleteRow(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		Beneficiario pessoa = (Beneficiario) session.load(Beneficiario.class, id);
-		session.delete(pessoa);
+		Beneficiario beneficiario = (Beneficiario) session.load(Beneficiario.class, id);
+		session.delete(beneficiario);
 		tx.commit();
-		Serializable ids = session.getIdentifier(pessoa);
+		Serializable ids = session.getIdentifier(beneficiario);
 		session.close();
 		return (Integer) ids;
 	}

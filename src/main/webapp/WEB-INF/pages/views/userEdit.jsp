@@ -25,9 +25,9 @@
                                 </h3>
                	<c:url var="userRegistration" value="saveUser.html" />
                	
-				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="pessoa" method="post" action="update">
+				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="beneficiario" method="post" action="update">
 							<input class="form-control" type="hidden" id="id" name="id"
-								required="" value="${model.pessoaObject.id}">
+								required="" value="${model.beneficiarioObject.id}">
 
 
 							<div class="form-group">
@@ -36,7 +36,7 @@
                                 <span class="required">*</span>
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nome" name="nome" required="" value="${model.pessoaObject.nome}" >
+                                <input class="form-control" type="text" id="nome" name="nome" required="" value="${model.beneficiarioObject.nome}" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -44,10 +44,10 @@
                                 Email:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="email" name="email" value="${model.pessoaObject.email}">
+                                <input class="form-control" type="text" id="email" name="email" value="${model.beneficiarioObject.email}">
                             </div>
                         </div>
-                        <c:forEach items="${model.pessoaObject.telefone}" var="user">
+                        <c:forEach items="${model.beneficiarioObject.telefone}" var="user">
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Telefone:
@@ -69,7 +69,7 @@
                                 Data de Nascimento:
                             </label>
                             <div class="col-sm-3">
-                                <input class="form-control" type="text" id="nascimento" name="nascimento" value="${model.pessoaObject.nascimento}">
+                                <input class="form-control" type="text" id="nascimento" name="nascimento" value="${model.beneficiarioObject.nascimento}">
                             </div>
                              <label for="" class="col-sm-2 control-label">
                                 Nacionalidade:
@@ -90,7 +90,7 @@
                                 Endereço:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="endereco" name="endereco" value="${model.pessoaObject.endereco}">
+                                <input class="form-control" type="text" id="endereco" name="endereco" value="${model.beneficiarioObject.endereco}">
                             </div>
                         </div>
                         
@@ -99,7 +99,7 @@
                                 Cidade:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="cidade" name="cidade" value="${model.pessoaObject.cidade}">
+                                <input class="form-control" type="text" id="cidade" name="cidade" value="${model.beneficiarioObject.cidade}">
                             </div>
                         </div>
                         
@@ -108,7 +108,7 @@
                                 Estado:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="estado" name="estado" value="${model.pessoaObject.estado}">
+                                <input class="form-control" type="text" id="estado" name="estado" value="${model.beneficiarioObject.estado}">
                             </div>
                         </div>
                         
@@ -117,7 +117,7 @@
                                 Sexo:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="sexo" name="sexo" value="${model.pessoaObject.sexo}">
+                                <input class="form-control" type="text" id="sexo" name="sexo" value="${model.beneficiarioObject.sexo}">
                             </div>
                         </div>
                         
@@ -126,7 +126,7 @@
                                 Nacionalidade:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade" value="${model.pessoaObject.nacionalidade}">
+                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade" value="${model.beneficiarioObject.nacionalidade}">
                             </div>
                         </div>
                         

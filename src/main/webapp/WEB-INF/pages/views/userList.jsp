@@ -29,7 +29,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach items="${pessoaList}" var="user">
+									<c:forEach items="${beneficiarioList}" var="user">
 										<tr class="odd gradeX">
 											<td><c:out value="${user.nome}" /></td>
 											<td><c:out value="${user.email}" /></td>

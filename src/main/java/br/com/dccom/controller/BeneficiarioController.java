@@ -13,16 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dccom.modelo.Beneficiario;
-import br.com.dccom.services.PessoaService;
+import br.com.dccom.services.BeneficiarioService;
 
 @Controller
 public class BeneficiarioController {
 	
 	@Autowired
-	PessoaService dataService;
+	BeneficiarioService dataService;
 
 	@RequestMapping("inserirCliente")
-	public ModelAndView getForm(@ModelAttribute("pessoa") Beneficiario pessoa) {
+	public ModelAndView getForm(@ModelAttribute("beneficiario") Beneficiario beneficiario) {
 		
 		ArrayList<String> tipo = new ArrayList<String>();  
 		tipo.add("Residencial");  
@@ -44,15 +44,15 @@ public class BeneficiarioController {
 	}
 	
 	@RequestMapping("register")
-	public ModelAndView registerUser(@ModelAttribute Beneficiario pessoa) {
-		dataService.insertRow(pessoa);
+	public ModelAndView registerUser(@ModelAttribute Beneficiario beneficiario) {
+		dataService.insertRow(beneficiario);
 		return new ModelAndView("redirect:list");
 	}
 	
 	@RequestMapping("list")
 	public ModelAndView getListUser() {
-		List pessoaList = dataService.getList();
-		return new ModelAndView("views/userList","pessoaList",pessoaList);
+		List beneficiarioList = dataService.getList();
+		return new ModelAndView("views/userList","beneficiarioList",beneficiarioList);
 	}
 	
 	@RequestMapping("delete")
@@ -62,13 +62,13 @@ public class BeneficiarioController {
 	}
 	
 	@RequestMapping("edit")
-	public ModelAndView editUser(@RequestParam int id,@ModelAttribute("pessoa") Beneficiario pessoa) {
-		Beneficiario pessoaObject = dataService.getRowById(id);
+	public ModelAndView editUser(@RequestParam int id,@ModelAttribute("beneficiario") Beneficiario beneficiario) {
+		Beneficiario beneficiarioObject = dataService.getRowById(id);
 		
-		pessoaObject.setTelefone(new ArrayList<String>());
-		pessoaObject.getTelefone().add("777777777");
-		pessoaObject.getTelefone().add("999999999");
-		pessoaObject.getTelefone().add("555555555");
+		beneficiarioObject.setTelefone(new ArrayList<String>());
+		beneficiarioObject.getTelefone().add("777777777");
+		beneficiarioObject.getTelefone().add("999999999");
+		beneficiarioObject.getTelefone().add("555555555");
 		
 		ArrayList<String> tipo = new ArrayList<String>();  
 		tipo.add("Residencial");  
@@ -76,14 +76,14 @@ public class BeneficiarioController {
 		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		model.put("tipo", tipo);
-		model.put("pessoaObject", pessoaObject);
+		model.put("beneficiarioObject", beneficiarioObject);
 			
 		return new ModelAndView("views/userEdit","model", model);
 	}
 	
 	@RequestMapping("update")
-	public ModelAndView updateUser(@ModelAttribute Beneficiario pessoa) {
-		dataService.updateRow(pessoa);
+	public ModelAndView updateUser(@ModelAttribute Beneficiario beneficiario) {
+		dataService.updateRow(beneficiario);
 		return new ModelAndView("redirect:list");
 	}
 
