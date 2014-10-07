@@ -66,7 +66,7 @@
 								<div class="col-sm-3">
 <!-- 									<input class="input-mask form-control" data-inputmask="'mask':'(99) 99999-9999'" type="text" -->
 <!-- 										id="telefone"  name="telefone"> -->
-										<input type="text" id="phone" />
+										<input class="form-control" type="text" id="phone" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" />
 								</div>
 								<label for="" class="col-sm-2 control-label"> Tipo: </label>
 								<div class="col-sm-2">
@@ -146,26 +146,61 @@
 	                            $('.bootstrap-datepicker').bsdatepicker({
 	                                format: 'dd-mm-yyyy'
 	                            });
+	                            
+	                            $("#phone").mask("(99) 9999?9-9999");
+								 $("#phone").on("blur", function() {
+								     var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
+								     
+								     if( last.length == 3 ) {
+								         var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
+								         var lastfour = move + last;
+								         
+								         var first = $(this).val().substr( 0, 9 );
+								         
+								         $(this).val( first + '-' + lastfour );
+								     }
+								 });
 	                        });
 	                        
 	                        function add() {
 								  $('.form-group_telefone:first').clone().insertAfter('#myDiv');
 							 };
 							 
+							 function mask(o, f) {
+								    setTimeout(function () {
+								        var v = mphone(o.value);
+								        if (v != o.value) {
+								            o.value = v;
+								        }
+								    }, 1);
+								}
+
+								function mphone(v) {
+								    var r = v.replace(/\D/g,"");
+								    r = r.replace(/^0/,"");
+								    if (r.length > 10) {
+								        // 11+ digits. Format as 5+4.
+								        r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/,"(0XX$1) $2-$3");
+								    }
+								    else if (r.length > 5) {
+								        // 6..10 digits. Format as 4+4
+								        r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/,"(0XX$1) $2-$3");
+								    }
+								    else if (r.length > 2) {
+								        // 3..5 digits. Add (0XX..)
+								        r = r.replace(/^(\d\d)(\d{0,5})/,"(0XX$1) $2");
+								    }
+								    else {
+								        // 0..2 digits. Just add (0XX
+								        r = r.replace(/^(\d*)/, "(0XX$1");
+								    }
+								    return r;
+								}
+
 							 
-							 $("#phone").mask("(99) 9999?9-9999");
-							 $("#phone").on("blur", function() {
-							     var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
-							     
-							     if( last.length == 3 ) {
-							         var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
-							         var lastfour = move + last;
-							         
-							         var first = $(this).val().substr( 0, 9 );
-							         
-							         $(this).val( first + '-' + lastfour );
-							     }
-							 });
+							 
+							 
+							 
 						
 	                    </script>
 					</div>

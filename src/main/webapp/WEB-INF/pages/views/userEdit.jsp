@@ -27,7 +27,7 @@
                	
 				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="pessoa" method="post" action="update">
 							<input class="form-control" type="hidden" id="id" name="id"
-								required="" value="${pessoaObject.id}">
+								required="" value="${model.pessoaObject.id}">
 
 
 							<div class="form-group">
@@ -36,7 +36,7 @@
                                 <span class="required">*</span>
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nome" name="nome" required="" value="${pessoaObject.nome}" >
+                                <input class="form-control" type="text" id="nome" name="nome" required="" value="${model.pessoaObject.nome}" >
                             </div>
                         </div>
                         <div class="form-group">
@@ -44,25 +44,32 @@
                                 Email:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="email" name="email" value="${pessoaObject.email}">
+                                <input class="form-control" type="text" id="email" name="email" value="${model.pessoaObject.email}">
                             </div>
                         </div>
+                        <c:forEach items="${model.pessoaObject.telefone}" var="user">
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Telefone:
                             </label>
-                            <div class="col-sm-8">
-                                <input class="input-mask form-control" data-inputmask="'mask':'(11) 99999-9999'" type="text" id="telefone" name="telefone" value="${pessoaObject.telefone}">
+                            <div class="col-sm-3">
+                                <input class="input-mask form-control" data-inputmask="'mask':'(11) 99999-9999'" type="text" id="telefone" name="telefone" value="${user}">
                                 <div class="help-block">(11) 99999-9999</div>
                             </div>
+                            <label for="" class="col-sm-2 control-label"> Tipo: </label>
+                            <div class="col-sm-2">
+									<form:select path="tipoTelefone" items="${model.tipo}"
+										class="form-control"></form:select>
+								</div>
                         </div>
+                        </c:forEach>
                         
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Data de Nascimento:
                             </label>
                             <div class="col-sm-3">
-                                <input class="form-control" type="text" id="nascimento" name="nascimento" value="${pessoaObject.nascimento}">
+                                <input class="form-control" type="text" id="nascimento" name="nascimento" value="${model.pessoaObject.nascimento}">
                             </div>
                              <label for="" class="col-sm-2 control-label">
                                 Nacionalidade:
@@ -83,7 +90,7 @@
                                 Endereço:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="endereco" name="endereco" value="${pessoaObject.endereco}">
+                                <input class="form-control" type="text" id="endereco" name="endereco" value="${model.pessoaObject.endereco}">
                             </div>
                         </div>
                         
@@ -92,7 +99,7 @@
                                 Cidade:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="cidade" name="cidade" value="${pessoaObject.cidade}">
+                                <input class="form-control" type="text" id="cidade" name="cidade" value="${model.pessoaObject.cidade}">
                             </div>
                         </div>
                         
@@ -101,7 +108,7 @@
                                 Estado:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="estado" name="estado" value="${pessoaObject.estado}">
+                                <input class="form-control" type="text" id="estado" name="estado" value="${model.pessoaObject.estado}">
                             </div>
                         </div>
                         
@@ -110,7 +117,7 @@
                                 Sexo:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="sexo" name="sexo" value="${pessoaObject.sexo}">
+                                <input class="form-control" type="text" id="sexo" name="sexo" value="${model.pessoaObject.sexo}">
                             </div>
                         </div>
                         
@@ -119,7 +126,7 @@
                                 Nacionalidade:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade" value="${pessoaObject.nacionalidade}">
+                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade" value="${model.pessoaObject.nacionalidade}">
                             </div>
                         </div>
                         
@@ -140,6 +147,13 @@
 								"use strict";
 								$(".input-mask").inputmask();
 							});
+							
+							
+							function myFunction() {
+							    if (new Date().getHours() < 20) {
+							        document.getElementById("demo").innerHTML = "Good day";
+							    }
+							}
 						</script>
 					</div>
 			</div>

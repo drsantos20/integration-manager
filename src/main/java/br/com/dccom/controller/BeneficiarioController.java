@@ -62,9 +62,23 @@ public class BeneficiarioController {
 	}
 	
 	@RequestMapping("edit")
-	public ModelAndView editUser(@RequestParam int id,@ModelAttribute Beneficiario pessoa) {
+	public ModelAndView editUser(@RequestParam int id,@ModelAttribute("pessoa") Beneficiario pessoa) {
 		Beneficiario pessoaObject = dataService.getRowById(id);
-		return new ModelAndView("views/userEdit","pessoaObject",pessoaObject);
+		
+		pessoaObject.setTelefone(new ArrayList<String>());
+		pessoaObject.getTelefone().add("777777777");
+		pessoaObject.getTelefone().add("999999999");
+		pessoaObject.getTelefone().add("555555555");
+		
+		ArrayList<String> tipo = new ArrayList<String>();  
+		tipo.add("Residencial");  
+		tipo.add("Comercial");  
+		
+		Map<String, Object> model = new HashMap<String, Object>();  
+		model.put("tipo", tipo);
+		model.put("pessoaObject", pessoaObject);
+			
+		return new ModelAndView("views/userEdit","model", model);
 	}
 	
 	@RequestMapping("update")
