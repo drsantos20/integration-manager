@@ -64,7 +64,7 @@
 								<label for="" class="col-sm-2 control-label"> Telefone:
 								</label>
 								<div class="col-sm-3">
-									<input class="form-control" type="text" id="telefone" name="" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
+									<input class="form-control" type="text" id="telefone" name="telefone[0].descricao" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
 								</div>
 								<label for="" class="col-sm-2 control-label"> Tipo: </label>
 								<div class="col-sm-2">
@@ -137,9 +137,6 @@
 						</script>
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datepicker.js"></script>
 						<script type="text/javascript">
-						
-						 	var numItems = $('.form-group_telefone').length;
-						 	numItems = numItems-1;
 	                        /* Datepicker bootstrap */
 	
 	                        $(function(){
@@ -163,9 +160,9 @@
 	                        });
 	                        
 	                        function add() {
-								  $('.form-group_telefone:first').clone().insertAfter('#myDiv');
-								  numItems = numItems + 1;
-								  alert(numItems);
+	                        	var numItems = $('.form-group_telefone').length;
+	                        	alert(numItems);
+								$('.form-group_telefone:first').clone().insertAfter('#myDiv').find('input[type="text"]').prop('name', 'telefone['+numItems+'].descricao');
 							 };
 							 
 							 function mask(o, f) {
@@ -199,7 +196,7 @@
 								    return r;
 								}
 								
-								$('#telefone').attr('name', 'telefone['+numItems+'].descricao');
+// 								$('#telefone').attr('name', 'telefone['+numItems+'].descricao');
 								
 								
 	                    </script>
