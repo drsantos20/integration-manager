@@ -18,9 +18,9 @@
 			 <div class="container">
                             <div class="page-box">
                                 <h3 class="page-title">
-                                    Editar de Beneficiário(a)
+                                    Editar Clientes
                                     <small>
-                                        Alteração clientes/beneficiários
+                                        Alteração clientes.
                                     </small>
                                 </h3>
                	<c:url var="userRegistration" value="saveUser.html" />

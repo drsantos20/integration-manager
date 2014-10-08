@@ -23,8 +23,7 @@
 				<div class="container">
 					<div class="page-box">
 						<h3 class="page-title">
-							Cadastro de Beneficiário <small> Inclusão de novos
-								beneficiários </small>
+							Cadastro de Clientes <small> Inclusão de novos clientes </small>
 						</h3>
 						<c:url var="userRegistration" value="saveUser.html" />
 						<form:form id="demo-form" class="form-horizontal"
@@ -144,7 +143,6 @@
 	                                format: 'dd-mm-yyyy'
 	                            });
 	                            
-	                            $("#telefone").mask("(99) 9999?9-9999");
 								 $("#telefone").on("blur", function() {
 								     var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
 								     

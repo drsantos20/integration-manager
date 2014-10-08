@@ -16,7 +16,7 @@
 					<div class="container">
 						<div class="page-box">
 							<h3 class="page-title">
-								Pesquisa de Beneficiário <small> Aqui você poderá editar e/ou excluir clientes/beneficiários </small>
+								Pesquisa de Clientes <small> Aqui você poderá editar e/ou excluir clientes </small>
 							</h3>
 							
 							<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="dynamic-table-example-1">
