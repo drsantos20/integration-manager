@@ -23,13 +23,14 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 	@Override
 	@Transactional
 	public int insertRow(Beneficiario beneficiario) {
-		Telefone telefone = new Telefone();
+		
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		
-		telefone.setBeneficiario(beneficiario);
 		if(beneficiario!= null && !beneficiario.getTelefone().isEmpty()) {
 			for (Telefone telefones : beneficiario.getTelefone()) {
+				Telefone telefone = new Telefone();
+				telefone.setBeneficiario(beneficiario);
 				telefone.setDescricao(telefones.getDescricao());
 				session.saveOrUpdate(telefone);
 			}
