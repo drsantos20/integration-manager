@@ -24,7 +24,7 @@ public class Beneficiario {
 	private String email;
 	private String password;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "beneficiario")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario")
 	private List<Telefone> telefone;
 	
 	private String tipoTelefone;

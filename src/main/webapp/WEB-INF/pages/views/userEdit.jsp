@@ -1,11 +1,12 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-core.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all-demo.css"> 
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/forms.css">
 
 
 
@@ -26,8 +27,7 @@
                	<c:url var="userRegistration" value="saveUser.html" />
                	
 				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="beneficiario" method="post" action="update">
-							<input class="form-control" type="hidden" id="id" name="id"
-								required="" value="${model.beneficiarioObject.id}">
+							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.beneficiarioObject.id}">
 
 
 							<div class="form-group">
@@ -47,14 +47,14 @@
                                 <input class="form-control" type="text" id="email" name="email" value="${model.beneficiarioObject.email}">
                             </div>
                         </div>
-                        <c:forEach items="${model.beneficiarioObject.telefone}" var="user">
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
+                       <c:forEach items="${model.beneficiarioObject.telefone}" var="user" begin="0" end="3" varStatus="status">
+                       <div class="form-group_telefone" id="myDiv">
+                       <input class="form-control" type="hidden" id="telefone" name="telefone[${status.count-1}].id" required="" value="${user.id}">
+                            <label for="form-control" class="col-sm-2 control-label">
                                 Telefone:
                             </label>
-                            <div class="col-sm-3">
-                                <input class="input-mask form-control" data-inputmask="'mask':'(11) 99999-9999'" type="text" id="telefone" name="telefone" value="${user}">
-                                <div class="help-block">(11) 99999-9999</div>
+                            <div class="col-sm-3" id="testeDiv">
+                                <input class="form-control" type="text" id="telefone" name="telefone[${status.count-1}].descricao" value="${user.descricao}" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
                             </div>
                             <label for="" class="col-sm-2 control-label"> Tipo: </label>
                             <div class="col-sm-2">
@@ -143,6 +143,16 @@
 						
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/inputmask.js"></script>
 						<script type="text/javascript">
+// 							$(document).ready(function() {
+// 								var numItems = $('.form-group_telefone').length;
+// 	                        	for (i = 0; i < numItems; i++) {
+// 	                        		alert(i);
+// 	                        		$(".form-group_telefone:last").find('input[type="text"]').attr("name", 'telefone['+i+'].descricao');
+// 	                        		$(".form-group_telefone:first").find('input[type="hidden"]').attr("name", 'telefone['+i+'].id');
+// 	                        	}
+// 							});
+						
+						
 							$(function() {
 								"use strict";
 								$(".input-mask").inputmask();

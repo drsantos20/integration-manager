@@ -137,7 +137,6 @@
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datepicker.js"></script>
 						<script type="text/javascript">
 	                        /* Datepicker bootstrap */
-	
 	                        $(function(){
 	                            $('.bootstrap-datepicker').bsdatepicker({
 	                                format: 'dd-mm-yyyy'
@@ -193,10 +192,6 @@
 								    }
 								    return r;
 								}
-								
-// 								$('#telefone').attr('name', 'telefone['+numItems+'].descricao');
-								
-								
 	                    </script>
 					</div>
 				</div>

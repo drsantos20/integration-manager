@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dccom.modelo.Beneficiario;
+import br.com.dccom.modelo.Telefone;
 import br.com.dccom.services.BeneficiarioService;
 
 @Controller

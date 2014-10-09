@@ -65,6 +65,17 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 	public int updateRow(Beneficiario beneficiario) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
+		
+		if(beneficiario!= null && !beneficiario.getTelefone().isEmpty()) {
+			for (Telefone telefones : beneficiario.getTelefone()) {
+				Telefone telefone = new Telefone();
+				telefone.setBeneficiario(beneficiario);
+				telefone.setDescricao(telefones.getDescricao());
+				telefone.setId(telefones.getId());
+				session.update(telefone);
+			}
+		}
+		
 		session.update(beneficiario);
 		tx.commit();
 		Serializable id = session.getIdentifier(beneficiario);

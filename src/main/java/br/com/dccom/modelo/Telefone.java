@@ -18,7 +18,7 @@ public class Telefone {
 	
 	private String descricao;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "beneficiario_id", nullable = true)
 	private Beneficiario beneficiario = new Beneficiario();
 
@@ -45,4 +45,9 @@ public class Telefone {
 	public void setBeneficiario(Beneficiario beneficiario) {
 		this.beneficiario = beneficiario;
 	}
+//	
+//	@Override
+//	public String toString() {
+//		return this.descricao;
+//	}
 }
