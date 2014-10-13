@@ -3,6 +3,7 @@ package br.com.dccom.services;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.dccom.dao.LoginDao;
+import br.com.dccom.modelo.User;
 import br.com.dccom.modelo.Usuario;
 
 public class LoginServiceImpl implements LoginService  {
@@ -16,8 +17,8 @@ public class LoginServiceImpl implements LoginService  {
 	}
 
 	@Override
-	public Usuario autenticarUsuario(String usuario, String senha) {
-		return loginDAO.autenticarUsuario(usuario, senha);
+	public User autenticarUsuario(String usuario) {
+		return loginDAO.autenticarUsuario(usuario);
 	}
 
 }

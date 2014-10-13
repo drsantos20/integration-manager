@@ -28,6 +28,8 @@
                 <value>br.com.dccom.modelo.Plano</value>  
                 <value>br.com.dccom.modelo.Usuario</value> 
                 <value>br.com.dccom.modelo.Telefone</value> 
+                <value>br.com.dccom.modelo.User</value> 
+                <value>br.com.dccom.modelo.UserRole</value> 
             </list>  
         </property> 
 		<property name="hibernateProperties">
@@ -78,7 +80,7 @@
 	</bean>
 	
 	<bean id="myUserDetailsService" class="br.com.dccom.services.MyUserDetailsService">
-		<property name="userDao" ref="userDao" />
+		<property name="loginDao" ref="loginDaoImpl" />
 	</bean>
 	
 	<mvc:resources mapping="/resources/**" location="/resources/mytheme/" />

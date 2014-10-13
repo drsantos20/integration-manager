@@ -12,13 +12,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import br.com.dccom.dao.LoginDao;
 import br.com.dccom.dao.UserDao;
 import br.com.dccom.modelo.UserRole;
 
 
 public class MyUserDetailsService implements UserDetailsService {
 
-	private UserDao userDao;
+	private LoginDao loginDao;
 
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
@@ -36,7 +37,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
 		});*/
 		
-		br.com.dccom.modelo.User user = userDao.findByUserName(username);
+		br.com.dccom.modelo.User user = loginDao.autenticarUsuario(username);
 		List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
 
 		return buildUserForAuthentication(user, authorities);
@@ -64,12 +65,12 @@ public class MyUserDetailsService implements UserDetailsService {
 		return Result;
 	}
 
-	public UserDao getUserDao() {
-		return userDao;
+	public LoginDao getLoginDao() {
+		return loginDao;
 	}
 
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
+	public void setLoginDao(LoginDao loginDao) {
+		this.loginDao = loginDao;
 	}
 
 }

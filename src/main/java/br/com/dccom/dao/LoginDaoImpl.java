@@ -1,11 +1,13 @@
 package br.com.dccom.dao;
 
-import org.hibernate.Criteria;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import br.com.dccom.modelo.User;
 import br.com.dccom.modelo.Usuario;
 
 public class LoginDaoImpl implements LoginDao {
@@ -20,22 +22,19 @@ public class LoginDaoImpl implements LoginDao {
 	}
 
 	@Override
-	public Usuario autenticarUsuario(String usuario, String senha) {
+	public User autenticarUsuario(String username) {
 		Session session = sessionFactory.openSession();
-		Criteria criteria = session.createCriteria(Usuario.class);
-		
-		if(usuario != null) {
-			criteria.add(Restrictions.eq("email", usuario));
+		List<User> users = new ArrayList<User>();
+
+		users = session.createQuery("from User where username=?")
+				.setParameter(0, username).list();
+
+		if (users.size() > 0) {
+			return users.get(0);
+		} else {
+			return null;
 		}
-		
-		if(senha != null) {
-			criteria.add(Restrictions.eq("senha", senha));
-		}
-		
-		Usuario usuarioEncontrado = (Usuario) criteria.uniqueResult();
-		
-		return usuarioEncontrado;
-		
+
 	}
 
 }
