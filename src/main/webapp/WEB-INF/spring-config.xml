@@ -73,6 +73,14 @@
 	<bean id="loginDaoImpl" class="br.com.dccom.dao.LoginDaoImpl" />
 	<bean id="loginServiceImpl" class="br.com.dccom.services.LoginServiceImpl" />
 	
+	<bean id="userDao" class="br.com.dccom.dao.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="myUserDetailsService" class="br.com.dccom.services.MyUserDetailsService">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	
 	<mvc:resources mapping="/resources/**" location="/resources/mytheme/" />
 	
 	
