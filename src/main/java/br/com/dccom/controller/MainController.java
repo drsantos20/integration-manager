@@ -1,6 +1,7 @@
 package br.com.dccom.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -94,6 +95,12 @@ public class MainController {
 		model.setViewName("403");
 		return model;
 
+	}
+	
+	@RequestMapping(value = "logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:login"; 
 	}
 
 }

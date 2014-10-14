@@ -421,7 +421,7 @@
                         </li>
                     </ul>
                     <div class="pad5A button-pane button-pane-alt text-center">
-                        <a href="#" class="btn display-block font-normal btn-danger">
+                        <a href="logout" class="btn display-block font-normal btn-danger">
                             <i class="glyph-icon icon-power-off"></i>
                             Logout
                         </a>
