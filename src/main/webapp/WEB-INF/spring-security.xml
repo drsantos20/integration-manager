@@ -7,14 +7,14 @@
 
 	<!-- enable use-expressions -->
 	<http auto-config="true" use-expressions="true">
-		<intercept-url pattern="/inserirCliente**" access="hasRole('ROLE_ADMIN')" />
-		<intercept-url pattern="/list**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/inserirBeneficiario**" access="hasRole('ROLE_ADMIN')" />
+		<intercept-url pattern="/buscarBeneficiario**" access="hasRole('ROLE_ADMIN')" />
 
 		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />
 		<form-login 
 		    login-page="/login" 
-		    default-target-url="/inserirCliente"
+		    default-target-url="/inserirBeneficiario"
 			authentication-failure-url="/login?error" 
 			username-parameter="username"
 			password-parameter="password" />

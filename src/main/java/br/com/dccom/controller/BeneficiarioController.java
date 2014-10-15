@@ -25,7 +25,7 @@ public class BeneficiarioController {
 	
 	private static final Logger logger = Logger.getLogger(BeneficiarioController.class);
 
-	@RequestMapping("inserirCliente")
+	@RequestMapping("inserirBeneficiario")
 	public ModelAndView getForm(@ModelAttribute("beneficiario") Beneficiario beneficiario) {
 		
 		
@@ -54,25 +54,25 @@ public class BeneficiarioController {
 //		//logs exception
 //		logger.error("This is Error message", new Exception("Testing"));
 		
-		return new ModelAndView("views/userRegister", "model", model);
+		return new ModelAndView("views/beneficiarioRegister", "model", model);
 	}
 	
 	@RequestMapping("register")
 	public ModelAndView registerUser(@ModelAttribute Beneficiario beneficiario) {
 		dataService.insertRow(beneficiario);
-		return new ModelAndView("redirect:list");
+		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 	
-	@RequestMapping("list")
+	@RequestMapping("buscarBeneficiario")
 	public ModelAndView getListUser() {
 		List beneficiarioList = dataService.getList();
-		return new ModelAndView("views/userList","beneficiarioList",beneficiarioList);
+		return new ModelAndView("views/beneficiarioList","beneficiarioList",beneficiarioList);
 	}
 	
 	@RequestMapping("delete")
 	public ModelAndView deleteUser(@RequestParam int id) {
 		dataService.deleteRow(id);
-		return new ModelAndView("redirect:list");
+		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 	
 	@RequestMapping("edit")
@@ -98,7 +98,7 @@ public class BeneficiarioController {
 	@RequestMapping("update")
 	public ModelAndView updateUser(@ModelAttribute Beneficiario beneficiario) {
 		dataService.updateRow(beneficiario);
-		return new ModelAndView("redirect:list");
+		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 
 }
