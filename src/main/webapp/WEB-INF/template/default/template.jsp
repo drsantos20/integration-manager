@@ -29,10 +29,6 @@
 			
 	}
 	
-	.page-sidebar {
-		
-	}
-
 	.body {
 		margin:-70px 10px 0px 250px;
 		padding:50px;

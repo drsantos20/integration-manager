@@ -65,6 +65,7 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 	public int updateRow(Beneficiario beneficiario) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
+		session.saveOrUpdate(beneficiario);
 		
 		if(beneficiario!= null && !beneficiario.getTelefone().isEmpty()) {
 			for (Telefone telefones : beneficiario.getTelefone()) {
@@ -76,7 +77,6 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 			}
 		}
 		
-		session.update(beneficiario);
 		tx.commit();
 		Serializable id = session.getIdentifier(beneficiario);
 		session.close();
@@ -88,6 +88,12 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
 		Beneficiario beneficiario = (Beneficiario) session.load(Beneficiario.class, id);
+		if(beneficiario.getTelefone() != null && !beneficiario.getTelefone().isEmpty()) {
+			for (int i = 0; i < beneficiario.getTelefone().size(); i++) {
+				session.delete(beneficiario.getTelefone().get(i));
+			}
+		}
+		
 		session.delete(beneficiario);
 		tx.commit();
 		Serializable ids = session.getIdentifier(beneficiario);

@@ -1,4 +1,5 @@
 <!DOCTYPE html> 
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
    <head>
       <meta charset="UTF-8">
@@ -47,7 +48,7 @@
             <a href="#" class="tooltip-button hidden-desktop" title="Navigation Menu" id="responsive-open-menu">
             <i class="glyph-icon icon-align-justify"></i>
             </a>
-            <span>eMED-Systems <i class="opacity-80">1.0</i>
+            <div class="pad5A font-blue-alt">eMED-Systems 1.0</div>
             </span>
             <a id="collapse-sidebar" href="#" title="">
             <i class="glyph-icon icon-chevron-left"></i>
@@ -354,8 +355,8 @@
          <div id="header-right">
             <div class="user-profile dropdown">
                <a href="#" title="" class="user-ico clearfix" data-toggle="dropdown">
-               <img width="36" class="img-rounded" src="${pageContext.request.contextPath}/resources/images/dummy-images/gravatar.jpg" alt="">
-               <span>John Applebee</span>
+               <img width="36" class="img-rounded" src="${pageContext.request.contextPath}/resources/images/userSession.png" alt="">
+               <span>${username}</span>
                <i class="glyph-icon icon-chevron-down"></i>
                </a>
                <div class="dropdown-menu pad0B float-right">
@@ -363,34 +364,21 @@
                      <div class="login-box clearfix">
                         <div class="user-img">
                            <a href="#" title="" class="change-img">Change photo</a>
-                           <img src="${pageContext.request.contextPath}/resources/images/dummy-images/gravatar.jpg" alt="">
+                           <img src="${pageContext.request.contextPath}/resources/images/userSession.png" alt="">
                         </div>
                         <div class="user-info">
                            <span>
-                           Horia Simon
-                           <i>Front-end web developer</i>
+                           Administrador
                            </span>
-                           <a href="#" title="">Edit profile</a>
-                           <a href="#" title="">View notifications</a>
+                           <a href="#" title="">Editar perfil</a>
+                           <a href="#" title="">Ver Notificações</a>
                         </div>
                      </div>
                      <div class="divider"></div>
                      <ul class="reset-ul mrg5B">
                         <li>
                            <a href="#">
-                           View login page example
-                           <i class="glyph-icon float-right icon-caret-right"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           View lockscreen example
-                           <i class="glyph-icon float-right icon-caret-right"></i>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           View account details
+                           Ver Detalhes da Conta
                            <i class="glyph-icon float-right icon-caret-right"></i>
                            </a>
                         </li>
