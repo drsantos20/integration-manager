@@ -54,7 +54,8 @@
                            <span class="input-group-addon addon-inside bg-white font-primary">
                            <i class="glyph-icon icon-envelope-o"></i>
                            </span>
-                           <input class="form-control" type='text' name='username'>                                                       
+                           <input class="form-control" type='text' name='username'>  
+                           <div class="msg">${msg}</div>                                               
                         </div>
                      </div>
                      <div class="form-group">
@@ -63,7 +64,8 @@
                            <span class="input-group-addon addon-inside bg-white font-primary">
                            <i class="glyph-icon icon-unlock-alt"></i>
                            </span>
-                           <input class="form-control" type='password' name='password' />                            
+                           <input class="form-control" type='password' name='password' />    
+                           <div class="error">${error}</div>                      
                         </div>
                      </div>
                      <div class="row">

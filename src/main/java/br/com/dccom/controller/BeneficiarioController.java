@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-import org.neo4j.cypher.internal.compiler.v2_1.ast.rewriters.addUniquenessPredicates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -87,11 +87,6 @@ public class BeneficiarioController {
 		
 		List<Telefone> tipo = new ArrayList<Telefone>();
 		tipo.addAll(beneficiarioObject.getTelefone());
-		
-		
-//		Map<String, String> phones = new HashMap<String, String>(); 
-//        phones.put("id", beneficiarioObject.getTelefone().get(0).getTipo());  
-//        phones.put("id", beneficiarioObject.getTelefone().get(1).getTipo());  
 		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		model.put("tipo", tipo);

@@ -2,6 +2,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-core.js"></script>
@@ -9,10 +10,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/forms.css">
 
 
-
 <tiles:insertDefinition name="defaultTemplate">
 	<tiles:putAttribute name="body">
-		
 
 		<div class="body">
 			<div id="page-content">
@@ -28,8 +27,6 @@
                	
 				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="beneficiario" method="post" action="update">
 							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.beneficiarioObject.id}">
-
-
 							<div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Nome:
@@ -57,26 +54,20 @@
                                 <input class="form-control" type="text" id="telefone" name="telefone[${status.count-1}].numero" value="${user.numero}" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
                             </div>
                             <label for="" class="col-sm-2 control-label"> Tipo: </label>
-                            <div class="col-sm-2">
-                            
-<%--                             <form:select  path="telefone[${status.count-1}].tipo" > --%>
-<%-- 		                        <c:forEach var="type" items="${model.tipo}"> --%>
-<%-- 		                            <c:choose> --%>
-<%-- 		                                <c:when test="${model.beneficiarioObject.id==user.id}"> --%>
-<%-- 		                                    <form:option selected="selected" value="${type}" label="${type}" /> --%>
-<%-- 		                                </c:when> --%>
-<%-- 			                            </c:choose> --%>
-<%-- 		                        </c:forEach> --%>
-<%-- 		                    </form:select> --%>
-                            
-                            
-                            <form:select path="telefone[0].numero">
-							    <form:options items="${model.tipo}"/>
+                            <div class="col-sm-3">
+							<form:select path="telefone[${status.count-1}].descricao" class="form-control">
+							<c:forEach var="item" items="${model.tipo}">
+							    <c:choose>
+							        <c:when test="${user.id==item.id}">
+							            <form:option selected="true" value="${item.tipo}" class="form-control"></form:option>
+							        </c:when>
+							        <c:otherwise>
+							            <form:option value="${item.tipo}" class="form-control">
+							            </form:option>
+							        </c:otherwise>
+							    </c:choose>
+							</c:forEach>
 							</form:select>
-                            </div>
-                            <div class="col-sm-2">
-                           		<div class="btn btn-azure" title=".icon-plus-square" data-toggle="modal" data-target="#myModalEdit" onclick="add()">Editar
-                           </div>
                         </div>
                         </div>
                         </c:forEach>
@@ -160,14 +151,6 @@
 						
 						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/inputmask.js"></script>
 						<script type="text/javascript">
-// 							$(document).ready(function() {
-// 								var numItems = $('.form-group_telefone').length;
-// 	                        	for (i = 0; i < numItems; i++) {
-// 	                        		alert(i);
-// 	                        		$(".form-group_telefone:last").find('input[type="text"]').attr("name", 'telefone['+i+'].descricao');
-// 	                        		$(".form-group_telefone:first").find('input[type="hidden"]').attr("name", 'telefone['+i+'].id');
-// 	                        	}
-// 							});
 						
 						
 							$(function() {
@@ -185,27 +168,6 @@
 					</div>
 			</div>
 		</div>
-		
-<%-- 		 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/modal.js"></script> --%>
-<!--          <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> -->
-<!--             <div class="modal-dialog"> -->
-<!--                <div class="modal-content"> -->
-<!--                   <div class="modal-header"> -->
-<!--                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
-<!--                      <h4 class="modal-title">Deletar Beneficiário</h4> -->
-<!--                   </div> -->
-<!--                   <div class="modal-body"> -->
-<!--                      <p>Deseja realmente excluir o beneficiário selecionado ? </p> -->
-<!--                   </div> -->
-<!--                   <div class="modal-footer"> -->
-<!--                      <a href="$" class="btn btn-info" title="Deletar" id="testaaaa">Deletar</a> -->
-<!--                      <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button> -->
-<!--                   </div> -->
-<!--                </div> -->
-<!--             </div> -->
-<!--          </div> -->
-<!-- 		</div> -->
-
 
 	</tiles:putAttribute>
 </tiles:insertDefinition>

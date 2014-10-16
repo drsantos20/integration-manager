@@ -75,6 +75,7 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 				telefone.setNumero(telefones.getNumero());
 				telefone.setTipo(telefones.getTipo());
 				telefone.setId(telefones.getId());
+				telefone.setDescricao(telefones.getDescricao());
 				session.update(telefone);
 			}
 		}
