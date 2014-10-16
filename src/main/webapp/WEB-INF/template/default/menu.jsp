@@ -27,15 +27,14 @@
                <a href="index.html" title="Applications">
                <i class="glyph-icon icon-linecons-shop"></i>
                <span>Gerenciar</span>
-               <span class="bs-label label-success">NEW</span>
                </a>
                <ul>
-                  <li class="header text-left"><span>Usu&aacute;rios</span></li>
-                  <li><a href="inserirBeneficiario" title="Carousels"><span>Cadastrar Novo Usu&aacute;rio</span></a></li>
-                  <li><a href="buscarBeneficiario" title="Slideshows"><span>Pesquisar Usu&aacute;rios</span></a></li>
-                  <li class="header text-left"><span>Benefici&aacute;rios</span></li>
-                  <li><a href="portfolio-2col.html" title="Portfolio 2 columns"><span>Cadastrar Novo Benefici&aacute;rio</span></a></li>
-                  <li><a href="portfolio-3col.html" title="Portfolio 2 columns"><span>Pesquisar Benefici&aacute;rios</span></a></li>
+                  <li class="header text-left"><span>Usuários</span></li>
+                  <li><a href="" title="Carousels"><span>Cadastrar Novo Usuário</span></a></li>
+                  <li><a href="" title="Slideshows"><span>Buscar Usuários</span></a></li>
+                  <li class="header text-left"><span>Beneficiários</span></li>
+                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span>Cadastrar Novo Beneficiário</span></a></li>
+                  <li><a href="buscarBeneficiario" title="Portfolio 2 columns"><span>Buscar Beneficiários</span></a></li>
                   <li class="header text-left"><span>Planos</span></li>
                   <li><a href="icon-boxes.html" title="Icon boxes"><span>Cadastrar Novo Plano</span></a></li>
                   <li><a href="page-titles.html" title="Page titles"><span>Listar Planos</span></a></li>
@@ -58,22 +57,21 @@
                <a href="#" title="Extra pages">
                <i class="glyph-icon icon-linecons-params"></i>
                <span>Gerenciamento TISS</span>
-               <span class="bs-label label-success">New</span>
                </a>
                <ul>
-                  <li class="header text-left"><span>Autoriza&ccedil;&atilde;o</span></li>
-                  <li><a href="index.html" title="Dashboard example 1"><span>Solicitar Autoriza&ccedil;&atilde;o</span></a></li>
+                  <li class="header text-left"><span>Autorização</span></li>
+                  <li><a href="index.html" title="Dashboard example 1"><span>Solicitar Autorização</span></a></li>
                </ul>
             </li>
             <li class="divider"></li>
             <li>
                <a href="#" title="Charts">
                <i class="glyph-icon icon-linecons-calendar"></i>
-               <span>Relat&oacute;rios Gerenciais</span>
+               <span>Relatórios Gerenciais</span>
                </a>
                <ul>
-                  <li class="header text-left"><span>Ret&oacute;rios</span></li>
-                  <li><a href="index.html" title="Dashboard example 1"><span>Ret&oacute;rios</span></a></li>
+                  <li class="header text-left"><span>Relatórios</span></li>
+                  <li><a href="index.html" title="Dashboard example 1"><span>Relatórios</span></a></li>
                </ul>
             </li>
          </ul>

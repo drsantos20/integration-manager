@@ -1,6 +1,5 @@
 package br.com.dccom.modelo;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,7 +16,9 @@ public class Telefone {
 	@Column(name="telefone_id")
 	private int id;
 	
-	private String descricao;
+	private String numero;
+	
+	private String tipo;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "beneficiario_id", nullable = true)
@@ -31,12 +32,20 @@ public class Telefone {
 		this.id = id;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getNumero() {
+		return numero;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public Beneficiario getBeneficiario() {
@@ -46,9 +55,5 @@ public class Telefone {
 	public void setBeneficiario(Beneficiario beneficiario) {
 		this.beneficiario = beneficiario;
 	}
-//	
-//	@Override
-//	public String toString() {
-//		return this.descricao;
-//	}
+
 }

@@ -19,9 +19,9 @@
 			 <div class="container">
                             <div class="page-box">
                                 <h3 class="page-title">
-                                    Editar Clientes
+                                    Editar Beneficiários
                                     <small>
-                                        Alteração clientes.
+                                        Alteração de beneficiario.
                                     </small>
                                 </h3>
                	<c:url var="userRegistration" value="saveUser.html" />
@@ -54,13 +54,30 @@
                                 Telefone:
                             </label>
                             <div class="col-sm-3" id="testeDiv">
-                                <input class="form-control" type="text" id="telefone" name="telefone[${status.count-1}].descricao" value="${user.descricao}" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
+                                <input class="form-control" type="text" id="telefone" name="telefone[${status.count-1}].numero" value="${user.numero}" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
                             </div>
                             <label for="" class="col-sm-2 control-label"> Tipo: </label>
                             <div class="col-sm-2">
-									<form:select path="tipoTelefone" items="${model.tipo}"
-										class="form-control"></form:select>
-								</div>
+                            
+<%--                             <form:select  path="telefone[${status.count-1}].tipo" > --%>
+<%-- 		                        <c:forEach var="type" items="${model.tipo}"> --%>
+<%-- 		                            <c:choose> --%>
+<%-- 		                                <c:when test="${model.beneficiarioObject.id==user.id}"> --%>
+<%-- 		                                    <form:option selected="selected" value="${type}" label="${type}" /> --%>
+<%-- 		                                </c:when> --%>
+<%-- 			                            </c:choose> --%>
+<%-- 		                        </c:forEach> --%>
+<%-- 		                    </form:select> --%>
+                            
+                            
+                            <form:select path="telefone[0].numero">
+							    <form:options items="${model.tipo}"/>
+							</form:select>
+                            </div>
+                            <div class="col-sm-2">
+                           		<div class="btn btn-azure" title=".icon-plus-square" data-toggle="modal" data-target="#myModalEdit" onclick="add()">Editar
+                           </div>
+                        </div>
                         </div>
                         </c:forEach>
                         
@@ -168,7 +185,26 @@
 					</div>
 			</div>
 		</div>
-		</div>
+		
+<%-- 		 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/modal.js"></script> --%>
+<!--          <div class="modal fade" id="myModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> -->
+<!--             <div class="modal-dialog"> -->
+<!--                <div class="modal-content"> -->
+<!--                   <div class="modal-header"> -->
+<!--                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+<!--                      <h4 class="modal-title">Deletar Beneficiário</h4> -->
+<!--                   </div> -->
+<!--                   <div class="modal-body"> -->
+<!--                      <p>Deseja realmente excluir o beneficiário selecionado ? </p> -->
+<!--                   </div> -->
+<!--                   <div class="modal-footer"> -->
+<!--                      <a href="$" class="btn btn-info" title="Deletar" id="testaaaa">Deletar</a> -->
+<!--                      <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button> -->
+<!--                   </div> -->
+<!--                </div> -->
+<!--             </div> -->
+<!--          </div> -->
+<!-- 		</div> -->
 
 
 	</tiles:putAttribute>

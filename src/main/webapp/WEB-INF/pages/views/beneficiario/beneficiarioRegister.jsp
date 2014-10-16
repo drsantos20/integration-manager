@@ -56,15 +56,15 @@
                         <label for="" class="col-sm-2 control-label"> Telefone:
                         </label>
                         <div class="col-sm-3">
-                           <input class="form-control" type="text" id="telefone" name="telefone[0].descricao" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
+                           <input class="form-control" type="text" id="telefone" name="telefone[0].numero" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
                         </div>
                         <label for="" class="col-sm-2 control-label"> Tipo: </label>
                         <div class="col-sm-2">
-                           <form:select path="tipoTelefone" items="${model.tipo}"
+                           <form:select path="telefone[0].tipo" items="${model.tipo}" id="tipoId" name="$"
                               class="form-control"></form:select>
                         </div>
                         <div class="col-sm-2">
-                           <div class="btn btn-azure" title=".icon-plus-square" onclick="add()">Add
+                           <div class="btn btn-azure" title=".icon-plus-square" onclick="add()">Incluir
                            </div>
                         </div>
                      </div>
@@ -92,14 +92,12 @@
                      </div>
                      <div class="form-group">
                         <label for="" class="col-sm-2 control-label"> Cidade: </label>
-                        <div class="col-sm-8">
+                        <div class="col-sm-3">
                            <input class="form-control" type="text" id="cidade"
                               name="cidade">
                         </div>
-                     </div>
-                     <div class="form-group">
                         <label for="" class="col-sm-2 control-label"> Estado: </label>
-                        <div class="col-sm-8">
+                        <div class="col-sm-3">
                            <input class="form-control" type="text" id="estado"
                               name="estado">
                         </div>
@@ -143,8 +141,8 @@
                      
                      function add() {
                      	var numItems = $('.form-group_telefone').length;
-                     	alert(numItems);
-                     $('.form-group_telefone:first').clone().insertAfter('#myDiv').find('input[type="text"]').prop('name', 'telefone['+numItems+'].descricao');
+                     $('.form-group_telefone:first').clone().insertAfter('#myDiv').find('input[type="text"]').prop('name', 'telefone['+numItems+'].numero');
+                     $('#tipoId').attr( 'name','telefone['+numItems+'].tipo');
                      };
                      
                      function mask(o, f) {

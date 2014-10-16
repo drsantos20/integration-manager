@@ -1,8 +1,6 @@
 package br.com.dccom.modelo;
 import java.util.List;
-import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,12 +20,10 @@ public class Beneficiario {
 	private String nome;
 	private String cpf;
 	private String email;
-	private String password;
 	
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario")
 	private List<Telefone> telefone;
 	
-	private String tipoTelefone;
 	private String nascimento;
 	private String endereco;
 	private String cidade;
@@ -53,13 +49,6 @@ public class Beneficiario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 	public List<Telefone> getTelefone() {
 		return telefone;
 	}
@@ -107,12 +96,6 @@ public class Beneficiario {
 	}
 	public void setNacionalidade(String nacionalidade) {
 		this.nacionalidade = nacionalidade;
-	}
-	public String getTipoTelefone() {
-		return tipoTelefone;
-	}
-	public void setTipoTelefone(String tipoTelefone) {
-		this.tipoTelefone = tipoTelefone;
 	}
 	public String getCpf() {
 		return cpf;
