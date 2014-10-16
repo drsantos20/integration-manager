@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.neo4j.cypher.internal.compiler.v2_1.ast.rewriters.addUniquenessPredicates;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -58,11 +59,8 @@ public class BeneficiarioController {
 		if(logger.isDebugEnabled()){
 			logger.debug("getWelcome is executed!");
 		}
- 
-//		//logs exception
-//		logger.error("This is Error message", new Exception("Testing"));
 		
-		return new ModelAndView("views/beneficiarioRegister", "model", model);
+		return new ModelAndView("beneficiario/beneficiarioRegister", "model", model);
 	}
 	
 	@RequestMapping("register")
@@ -74,7 +72,7 @@ public class BeneficiarioController {
 	@RequestMapping("buscarBeneficiario")
 	public ModelAndView getListUser() {
 		List beneficiarioList = dataService.getList();
-		return new ModelAndView("views/beneficiarioList","beneficiarioList",beneficiarioList);
+		return new ModelAndView("beneficiario/beneficiarioList","beneficiarioList",beneficiarioList);
 	}
 	
 	@RequestMapping("delete")
@@ -83,24 +81,23 @@ public class BeneficiarioController {
 		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 	
-	@RequestMapping("edit")
+	@RequestMapping("editBeneficiario")
 	public ModelAndView editUser(@RequestParam int id,@ModelAttribute("beneficiario") Beneficiario beneficiario) {
 		Beneficiario beneficiarioObject = dataService.getRowById(id);
 		
-//		beneficiarioObject.setTelefone(new ArrayList<Telefone>());
-//		beneficiarioObject.getTelefone().add("777777777");
-//		beneficiarioObject.getTelefone().add("999999999");
-//		beneficiarioObject.getTelefone().add("555555555");
+		List<Telefone> tipo = new ArrayList<Telefone>();
+		tipo.addAll(beneficiarioObject.getTelefone());
 		
-		ArrayList<String> tipo = new ArrayList<String>();  
-		tipo.add("Residencial");  
-		tipo.add("Comercial");  
+		
+//		Map<String, String> phones = new HashMap<String, String>(); 
+//        phones.put("id", beneficiarioObject.getTelefone().get(0).getTipo());  
+//        phones.put("id", beneficiarioObject.getTelefone().get(1).getTipo());  
 		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		model.put("tipo", tipo);
 		model.put("beneficiarioObject", beneficiarioObject);
 			
-		return new ModelAndView("views/userEdit","model", model);
+		return new ModelAndView("beneficiario/beneficiarioEdit","model", model);
 	}
 	
 	@RequestMapping("update")

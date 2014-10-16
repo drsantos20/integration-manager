@@ -31,7 +31,8 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 			for (Telefone telefones : beneficiario.getTelefone()) {
 				Telefone telefone = new Telefone();
 				telefone.setBeneficiario(beneficiario);
-				telefone.setDescricao(telefones.getDescricao());
+				telefone.setNumero(telefones.getNumero());
+				telefone.setTipo(telefones.getTipo());
 				session.saveOrUpdate(telefone);
 			}
 		}
@@ -71,7 +72,8 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 			for (Telefone telefones : beneficiario.getTelefone()) {
 				Telefone telefone = new Telefone();
 				telefone.setBeneficiario(beneficiario);
-				telefone.setDescricao(telefones.getDescricao());
+				telefone.setNumero(telefones.getNumero());
+				telefone.setTipo(telefones.getTipo());
 				telefone.setId(telefones.getId());
 				session.update(telefone);
 			}

@@ -34,7 +34,7 @@
                                     <c:out value="${user.email}" />
                                  </td>
                                  <td align="center">
-                                    <a href="edit?id=${user.id}"
+                                    <a href="editBeneficiario?id=${user.id}"
                                        class="btn btn-info" title="Editar"/>
                                        Editar
                                  </td>
