@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import br.com.dccom.util.IndicadorAtendimento;
+
 @Entity
 public class Beneficiario {
 
@@ -31,6 +33,12 @@ public class Beneficiario {
 	private String cep;
 	private String sexo;
 	private String nacionalidade;
+	
+    protected String numeroCarteira;
+    protected IndicadorAtendimento atendimentoRN;
+    protected String numeroCNS;
+    protected byte[] identificadorBeneficiario;
+	
 	public int getId() {
 		return id;
 	}
@@ -102,6 +110,30 @@ public class Beneficiario {
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+	public String getNumeroCarteira() {
+		return numeroCarteira;
+	}
+	public void setNumeroCarteira(String numeroCarteira) {
+		this.numeroCarteira = numeroCarteira;
+	}
+	public IndicadorAtendimento getAtendimentoRN() {
+		return atendimentoRN;
+	}
+	public void setAtendimentoRN(IndicadorAtendimento atendimentoRN) {
+		this.atendimentoRN = atendimentoRN;
+	}
+	public String getNumeroCNS() {
+		return numeroCNS;
+	}
+	public void setNumeroCNS(String numeroCNS) {
+		this.numeroCNS = numeroCNS;
+	}
+	public byte[] getIdentificadorBeneficiario() {
+		return identificadorBeneficiario;
+	}
+	public void setIdentificadorBeneficiario(byte[] identificadorBeneficiario) {
+		this.identificadorBeneficiario = identificadorBeneficiario;
 	}
 	
 }

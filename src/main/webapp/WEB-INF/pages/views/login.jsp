@@ -45,7 +45,7 @@
       <div class="center-vertical">
          <div class="center-content">
             <form id="login-validation" class="col-md-4 center-margin" action="<c:url value='/j_spring_security_check' />" method='POST'>
-               <h3 class="text-center pad25B font-gray text-transform-upr font-size-23">E-MED SYSTEMS <span class="opacity-80"> v1.0</span></h3>
+               <h3 class="text-center pad25B font-blue-alt text-transform-upr font-size-23">E-MED SYSTEMS v1.0</h3>
                <div id="login-form" class="content-box modal-content">
                   <div class="content-box-wrapper pad20A">
                      <div class="form-group">
