@@ -63,6 +63,12 @@ public class BeneficiarioController {
 		return new ModelAndView("beneficiario/beneficiarioRegister", "model", model);
 	}
 	
+	
+	@RequestMapping("beneficiarioGerenciar")
+	public ModelAndView gerenciarBeneficiario(@ModelAttribute Beneficiario beneficiario) {
+		return new ModelAndView("beneficiario/beneficiarioGerenciar");
+	}
+	
 	@RequestMapping("register")
 	public ModelAndView registerUser(@ModelAttribute Beneficiario beneficiario) {
 		dataService.insertRow(beneficiario);

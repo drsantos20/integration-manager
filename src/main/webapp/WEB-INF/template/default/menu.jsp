@@ -20,29 +20,52 @@
             <li>
                <a href="index.html" title="Applications">
                <i class="glyph-icon icon-linecons-tv"></i>
-               <span>Dashboard</span>
+               <span>Página Principal</span>
                </a>
             </li>
             <li>
                <a href="index.html" title="Applications">
-               <i class="glyph-icon icon-linecons-shop"></i>
-               <span>Gerenciar</span>
+               <i class="glyph-icon icon-users"></i>
+               
+               <span>Usuário</span>
                </a>
                <ul>
-                  <li class="header text-left"><span>Usuários</span></li>
-                  <li><a href="" title="Carousels"><span>Cadastrar Novo Usuário</span></a></li>
-                  <li><a href="" title="Slideshows"><span>Buscar Usuários</span></a></li>
-                  <li class="header text-left"><span>Beneficiários</span></li>
-                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span>Cadastrar Novo Beneficiário</span></a></li>
-                  <li><a href="buscarBeneficiario" title="Portfolio 2 columns"><span>Buscar Beneficiários</span></a></li>
-                  <li class="header text-left"><span>Planos</span></li>
-                  <li><a href="icon-boxes.html" title="Icon boxes"><span>Cadastrar Novo Plano</span></a></li>
-                  <li><a href="page-titles.html" title="Page titles"><span>Listar Planos</span></a></li>
-                  <li class="header text-left"><span>Produtos</span></li>
-                  <li><a href="footer-1.html" title="Simple black footer"><span>Cadastrar Novo Produto</span></a></li>
-                  <li><a href="footer-2.html" title="Simple blue footer"><span>Pesquisar Produtos</span></a></li>
+                  <li><a href="beneficiarioGerenciar" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Usuário</a></li>
                </ul>
             </li>
+            <li>
+               <a href="index.html" title="Applications">
+               <i class="glyph-icon icon-user"></i>
+               
+               <span>Beneficiário</span>
+               </a>
+               <ul>
+                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Beneficiário</a></li>
+               </ul>
+            </li>
+            <li>
+               <a href="index.html" title="Applications">
+               <i class="glyph-icon icon-user-md"></i>
+               
+               <span>Contratado</span>
+               </a>
+               <ul>
+                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Contratado</a></li>
+               </ul>
+            </li>
+            
+            <li>
+               <a href="index.html" title="Applications">
+               <i class="glyph-icon icon-stethoscope"></i>
+               
+               <span>Profissional</span>
+               </a>
+               <ul>
+                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Profissional</a></li>
+               </ul>
+            </li>
+            
+            
             <li>
                <a href="#" title="Applications">
                <i class="glyph-icon icon-paper-plane"></i>
