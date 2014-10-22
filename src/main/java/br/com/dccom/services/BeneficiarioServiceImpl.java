@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.dccom.dao.BeneficiarioDao;
 import br.com.dccom.modelo.Beneficiario;
+import br.com.dccom.modelo.Telefone;
 
 public class BeneficiarioServiceImpl implements BeneficiarioService {
 	
@@ -36,5 +37,4 @@ public class BeneficiarioServiceImpl implements BeneficiarioService {
 	public int deleteRow(int id) {
 		return dataDao.deleteRow(id);
 	}
-
 }

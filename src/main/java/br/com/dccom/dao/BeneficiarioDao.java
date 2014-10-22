@@ -14,5 +14,5 @@ public interface BeneficiarioDao {
 	public int updateRow(Beneficiario beneficiario);
 
 	public int deleteRow(int id);
-
+	
 }

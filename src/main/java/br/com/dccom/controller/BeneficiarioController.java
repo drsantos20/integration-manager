@@ -2,9 +2,11 @@ package br.com.dccom.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -31,7 +33,6 @@ public class BeneficiarioController {
 
 	@RequestMapping("inserirBeneficiario")
 	public ModelAndView getForm(@ModelAttribute("beneficiario") Beneficiario beneficiario) {
-		
 		
 		ArrayList<String> tipo = new ArrayList<String>();  
 		tipo.add("Residencial");  
@@ -94,8 +95,17 @@ public class BeneficiarioController {
 		List<Telefone> tipo = new ArrayList<Telefone>();
 		tipo.addAll(beneficiarioObject.getTelefone());
 		
+		Map<String,String> country = new LinkedHashMap<String,String>();
+		country.put("Residencial", "Residencial");
+		country.put("Comercial", "Comercial");
+		
+		ArrayList<String> tipoTelefone = new ArrayList<String>();  
+		tipoTelefone.add("Residencial");  
+		tipoTelefone.add("Comercial");  
+		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		model.put("tipo", tipo);
+		model.put("countryList", country);
 		model.put("beneficiarioObject", beneficiarioObject);
 			
 		return new ModelAndView("beneficiario/beneficiarioEdit","model", model);

@@ -1,7 +1,6 @@
 package br.com.dccom.dao;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -9,7 +8,6 @@ import javax.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.mapping.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.dccom.modelo.Beneficiario;
@@ -68,8 +66,9 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(beneficiario);
 		
+		List<Telefone> beneficiarioList = session.createQuery("from Telefone t where t.beneficiario = '" + beneficiario.getId() + "'").list();
 		if(beneficiario!= null && !beneficiario.getTelefone().isEmpty()) {
-			for (Telefone telefones : beneficiario.getTelefone()) {
+			for (Telefone telefones : beneficiarioList) {
 				Telefone telefone = new Telefone();
 				telefone.setBeneficiario(beneficiario);
 				telefone.setNumero(telefones.getNumero());

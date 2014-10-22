@@ -14,5 +14,4 @@ public interface BeneficiarioService {
 	public int updateRow(Beneficiario beneficiario);
 
 	public int deleteRow(int id);
-
 }

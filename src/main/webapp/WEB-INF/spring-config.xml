@@ -29,7 +29,9 @@
                 <value>br.com.dccom.modelo.Usuario</value> 
                 <value>br.com.dccom.modelo.Telefone</value> 
                 <value>br.com.dccom.modelo.User</value> 
-                <value>br.com.dccom.modelo.UserRole</value> 
+                <value>br.com.dccom.modelo.UserRole</value>
+                <value>br.com.dccom.modelo.Contratado</value>  
+                <value>br.com.dccom.modelo.Profissional</value>  
             </list>  
         </property> 
 		<property name="hibernateProperties">
@@ -79,7 +81,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<bean id="myUserDetailsService" class="br.com.dccom.services.MyUserDetailsService">
+	<bean id="autenticarUsuarioService" class="br.com.dccom.services.AutenticarUsuarioService">
 		<property name="loginDao" ref="loginDaoImpl" />
 	</bean>
 	

@@ -21,7 +21,7 @@ public class Telefone {
 	private String tipo;
 	
 	private String descricao;
-	
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "beneficiario_id", nullable = true)
 	private Beneficiario beneficiario = new Beneficiario();

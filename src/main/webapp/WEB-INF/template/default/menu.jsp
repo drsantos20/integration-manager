@@ -30,7 +30,7 @@
                <span>Usuário</span>
                </a>
                <ul>
-                  <li><a href="beneficiarioGerenciar" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Usuário</a></li>
+                  <li><a href=""><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Usuário</a></li>
                </ul>
             </li>
             <li>
@@ -40,7 +40,7 @@
                <span>Beneficiário</span>
                </a>
                <ul>
-                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Beneficiário</a></li>
+                  <li><a href="buscarBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Beneficiário</a></li>
                </ul>
             </li>
             <li>
