@@ -47,6 +47,7 @@
                        <c:forEach items="${model.beneficiarioObject.telefone}" var="user" begin="0" end="3" varStatus="status">
                        <div class="form-group_telefone" id="myDiv">
                        <input class="form-control" type="hidden" id="telefone" name="telefone[${status.count-1}].id" required="" value="${user.id}">
+                       <input class="form-control" type="hidden" id="telefoneTipo" name="telefone[${status.count-1}].tipo" required="" value="${user.tipo}">
                             <label for="form-control" class="col-sm-2 control-label">
                                 Telefone:
                             </label>

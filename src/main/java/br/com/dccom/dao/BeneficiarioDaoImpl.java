@@ -66,15 +66,14 @@ public class BeneficiarioDaoImpl implements BeneficiarioDao {
 		Transaction tx = session.beginTransaction();
 		session.saveOrUpdate(beneficiario);
 		
-		List<Telefone> beneficiarioList = session.createQuery("from Telefone t where t.beneficiario = '" + beneficiario.getId() + "'").list();
+//		List<Telefone> beneficiarioList = session.createQuery("from Telefone t where t.beneficiario = '" + beneficiario.getId() + "'").list();
 		if(beneficiario!= null && !beneficiario.getTelefone().isEmpty()) {
-			for (Telefone telefones : beneficiarioList) {
+			for (Telefone telefones : beneficiario.getTelefone()) {
 				Telefone telefone = new Telefone();
 				telefone.setBeneficiario(beneficiario);
 				telefone.setNumero(telefones.getNumero());
-				telefone.setTipo(telefones.getTipo());
 				telefone.setId(telefones.getId());
-				telefone.setDescricao(telefones.getDescricao());
+				telefone.setDescricao(telefones.getTipo());
 				session.update(telefone);
 			}
 		}
