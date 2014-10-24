@@ -23,8 +23,6 @@ public class Telefone {
 	private String tipo;
 	
 	private String descricao;
-	
-	ArrayList<String> teste = new ArrayList<String>();  
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "beneficiario_id", nullable = true)
@@ -69,15 +67,5 @@ public class Telefone {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-
-	public ArrayList<String> getTeste() {
-		return teste;
-	}
-
-	public void setTeste(ArrayList<String> teste) {
-		this.teste = teste;
-	}
-	
-	
 
 }

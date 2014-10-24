@@ -47,7 +47,6 @@
                        <c:forEach items="${model.beneficiarioObject.telefone}" var="user" begin="0" end="3" varStatus="status">
                        <div class="form-group_telefone" id="myDiv">
                        <input class="form-control" type="hidden" id="telefone" name="telefone[${status.count-1}].id" required="" value="${user.id}">
-                       <input class="form-control" type="hidden" id="telefoneTipo" name="telefone[${status.count-1}].tipo" required="" value="${user.tipo}">
                             <label for="form-control" class="col-sm-2 control-label">
                                 Telefone:
                             </label>
@@ -56,18 +55,9 @@
                             </div>
                             <label for="" class="col-sm-2 control-label"> Tipo: </label>
                             <div class="col-sm-3">
-							<form:select path="telefone[${status.count-1}].descricao" class="form-control">
-							<c:forEach var="item" items="${model.tipo}">
-							    <c:choose>
-							        <c:when test="${user.id==item.id}">
-							            <form:option selected="true" value="${item.tipo}"  class="form-control"></form:option>
-							        </c:when>
-							        <c:otherwise>
-							            <form:option value="${item.tipo}" class="form-control">
-							            </form:option>
-							        </c:otherwise>
-							    </c:choose>
-							</c:forEach>
+							<form:select class="form-control" path="telefone[${status.count-1}].tipo" >
+							    <option value="Comercial" ${user.tipo=='Comercial' ? 'selected' : ''} class="form-control">Comercial</option>
+							    <option value="Residencial" ${user.tipo=='Residencial' ? 'selected' : ''} class="form-control">Residencial</option>
 							</form:select>
                         </div>
                         </div>
