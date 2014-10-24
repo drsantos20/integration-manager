@@ -95,17 +95,13 @@ public class BeneficiarioController {
 		List<Telefone> tipo = new ArrayList<Telefone>();
 		tipo.addAll(beneficiarioObject.getTelefone());
 		
-		Map<String,String> country = new LinkedHashMap<String,String>();
-		country.put("Residencial", "Residencial");
-		country.put("Comercial", "Comercial");
-		
 		ArrayList<String> tipoTelefone = new ArrayList<String>();  
 		tipoTelefone.add("Residencial");  
 		tipoTelefone.add("Comercial");  
 		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		model.put("tipo", tipo);
-		model.put("countryList", country);
+		model.put("tipoTelefone", tipoTelefone);
 		model.put("beneficiarioObject", beneficiarioObject);
 			
 		return new ModelAndView("beneficiario/beneficiarioEdit","model", model);
