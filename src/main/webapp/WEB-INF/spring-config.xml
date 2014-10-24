@@ -32,6 +32,7 @@
                 <value>br.com.dccom.modelo.UserRole</value>
                 <value>br.com.dccom.modelo.Contratado</value>  
                 <value>br.com.dccom.modelo.Profissional</value>  
+                <value>br.com.dccom.modelo.TipoTelefone</value> 
             </list>  
         </property> 
 		<property name="hibernateProperties">
