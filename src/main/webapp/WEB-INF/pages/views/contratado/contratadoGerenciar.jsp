@@ -19,16 +19,16 @@
             <div class="container">
                <div class="page-box">
                   <h3 class="page-title">
-                     Gerenciar Beneficiários <small> Inclusão/Edição/Busca/Exclusão </small>
+                     Gerenciar Contratados <small> Inclusão/Edição/Busca/Exclusão </small>
                   </h3>
                   <div class="content-box remove-border dashboard-buttons clearfix center-div pad150T">
-                        <a href="inserirBeneficiario" class="btn vertical-button remove-border btn-success" title="">
+                        <a href="inserirContratado" class="btn vertical-button remove-border btn-success" title="">
                             <span class="glyph-icon icon-separator-vertical">
                                 <i class="glyph-icon icon-plus-circle"></i>
                             </span>
                             <span class="button-content">Incluir</span>
                         </a>
-                        <a href="buscarBeneficiario" class="btn vertical-button remove-border btn-purple" title="">
+                        <a href="buscarContratado" class="btn vertical-button remove-border btn-purple" title="">
                             <span class="glyph-icon icon-separator-vertical">
                                 <i class="glyph-icon icon-search"></i>
                             </span>

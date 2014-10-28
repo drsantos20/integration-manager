@@ -14,15 +14,15 @@
                <div class="container">
                   <div class="page-box">
                      <h3 class="page-title">
-                        Gerenciamento de Beneficiários<small> Aqui você poderá buscar / editar e/ou excluir beneficiários </small>
+                        Gerenciamento de Contratado<small> Aqui você poderá buscar / editar e/ou excluir contratados </small>
                      </h3>
                      
                     <div class="content-box remove-border dashboard-buttons center-div clearfix pad150T">
-                        <a href="inserirBeneficiario" class="btn vertical-button remove-border btn-success" title="">
+                        <a href="inserirContratado" class="btn vertical-button remove-border btn-success" title="">
                             <span class="glyph-icon icon-separator-vertical">
                                 <i class="glyph-icon icon-plus-circle"></i>
                             </span>
-                            <span class="button-content">Incluir <br>Beneficiário</span>
+                            <span class="button-content">Incluir <br>Contratado</span>
                         </a>
                     </div>
                      
@@ -30,22 +30,22 @@
                         <thead>
                            <tr width="100%">
                               <th>Nome</th>
-                              <th>Email</th>
+                              <th>Codigo</th>
                               <th>Editar</th>
                               <th>Excluir</th>
                            </tr>
                         </thead>
                         <tbody>
-                           <c:forEach items="${beneficiarioList}" var="user">
+                           <c:forEach items="${contratadoList}" var="user">
                               <tr class="odd gradeX">
                                  <td>
-                                    <c:out value="${user.nome}" />
+                                    <c:out value="${user.nomeContratado}" />
                                  </td>
                                  <td>
-                                    <c:out value="${user.email}" />
+                                    <c:out value="${user.codigoContratado}" />
                                  </td>
                                  <td align="center">
-                                    <a href="editBeneficiario?id=${user.id}" class="btn btn-info" title="Editar"> <i class="glyph-icon icon-edit"></i></a>
+                                    <a href="editContratado?id=${user.id}" class="btn btn-info" title="Editar"> <i class="glyph-icon icon-edit"></i></a>
                                  </td>
                                  <td align="center">
                                  <button class="btn btn-warning" data-toggle="modal"
@@ -83,10 +83,10 @@
                <div class="modal-content">
                   <div class="modal-header">
                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                     <h4 class="modal-title">Deletar Beneficiário</h4>
+                     <h4 class="modal-title">Deletar Contratado</h4>
                   </div>
                   <div class="modal-body">
-                     <p>Deseja realmente excluir o beneficiário selecionado ? </p>
+                     <p>Deseja realmente excluir o contratado selecionado ? </p>
                   </div>
                   <div class="modal-footer">
                      <a href="$" class="btn btn-info" title="Deletar" id="testaaaa">Deletar</a>
