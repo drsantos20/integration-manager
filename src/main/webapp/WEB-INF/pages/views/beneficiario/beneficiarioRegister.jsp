@@ -48,8 +48,31 @@
                      </div>
                      <div class="form-group">
                         <label for="" class="col-sm-2 control-label"> Email: </label>
-                        <div class="col-sm-8">
+                        <div class="col-sm-3">
                            <input class="form-control" type="text" id="email" name="email" required="">
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="" class="col-sm-2 control-label"> Número Carteira: </label>
+                        <div class="col-sm-3">
+                           <input class="form-control" type="text" id="numeroCarteira" name="numeroCarteira" required="">
+                        </div>
+                        <label for="" class="col-sm-2 control-label"> Cartão Nacional de Saúde: </label>
+                        <div class="col-sm-3">
+                           <input class="form-control" type="text" id="numeroCNS" name="numeroCNS" required="">
+                           <br>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <label for="" class="col-sm-2 control-label"> Validade Carteira: </label>
+                        <div class="col-sm-3">
+                               <input type="text" class="bootstrap-datepicker form-control" id="validadeCarteira" name="validadeCarteira" data-date-format="dd/mm/yyyy">    
+                        </div>
+                        <label for="" class="col-sm-2 control-label"> Indicador de Atendimento RN: </label>
+                        <div class="col-sm-3">
+                           <form:select path="atendimentoRN" items="${model.indAtendimento}"
+                              class="form-control"></form:select>
+                           <br>
                         </div>
                      </div>
                      <div class="form-group_telefone" id="myDiv">
@@ -71,8 +94,7 @@
                         <label for="" class="col-sm-2 control-label"> Data de
                         Nascimento: </label>
                         <div class="col-sm-3">
-                           <!-- 									<input class="form-control" type="text" id="nascimento"	name="nascimento"> -->
-                           <input type="text" class="bootstrap-datepicker form-control" id="nascimento" name="nascimento" data-date-format="dd/mm/yy">	
+                           <input type="text" class="bootstrap-datepicker form-control" id="nascimento" name="nascimento" data-date-format="dd/mm/yy">    
                         </div>
                         <label for="" class="col-sm-2 control-label">
                         Nacionalidade: </label>
@@ -103,28 +125,28 @@
                      </div>
                      <div class="divider"></div>
                      <div class="content-box remove-border dashboard-buttons clearfix center-div">
-                     	<button class="btn vertical-button remove-border btn-primary">
-                     	   	<span class="glyph-icon icon-separator-vertical">
+                          <button class="btn vertical-button remove-border btn-primary">
+                                  <span class="glyph-icon icon-separator-vertical">
                                 <i class="glyph-icon icon-save"></i>
                             </span>
                             <span class="button-content">Salvar</span>
-                     	</button>
-                     	
+                          </button>
+                         
                      <div class="content-box remove-border dashboard-buttons clearfix float-right">
-                     	<a href="buscarBeneficiario" class="btn vertical-button remove-border btn-purple" title="">
+                          <a href="buscarBeneficiario" class="btn vertical-button remove-border btn-purple" title="">
                           <span class="glyph-icon icon-separator-vertical">
                               <i class="glyph-icon icon-remove"></i>
                           </span>
                           <span class="button-content">Cancelar</span>
-                    	</a>
+                         </a>
                     </div>
                      </div>
                   </form:form>
                   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/inputmask.js"></script>
                   <script type="text/javascript">
                      $(function() {
-                     	"use strict";
-                     	$(".input-mask").inputmask();
+                          "use strict";
+                          $(".input-mask").inputmask();
                      });
                   </script>
                   <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/datepicker.js"></script>
@@ -134,27 +156,27 @@
                          $('.bootstrap-datepicker').bsdatepicker({
                              format: 'dd-mm-yyyy'
                          });
-                         
+                        
                      $("#telefone").on("blur", function() {
                      var last = $(this).val().substr( $(this).val().indexOf("-") + 1 );
-                     
+                    
                      if( last.length == 3 ) {
                      var move = $(this).val().substr( $(this).val().indexOf("-") - 1, 1 );
                      var lastfour = move + last;
-                     
+                    
                      var first = $(this).val().substr( 0, 9 );
-                     
+                    
                      $(this).val( first + '-' + lastfour );
                      }
                      });
                      });
-                     
+                    
                      function add() {
-                     	var numItems = $('.form-group_telefone').length;
+                          var numItems = $('.form-group_telefone').length;
                      $('.form-group_telefone:first').clone().insertAfter('#myDiv').find('input[type="text"]').prop('name', 'telefone['+numItems+'].numero');
                      $('#tipoId').attr( 'name','telefone['+numItems+'].tipo');
                      };
-                     
+                    
                      function mask(o, f) {
                      setTimeout(function () {
                      var v = mtelefone(o.value);
@@ -163,7 +185,7 @@
                      }
                      }, 1);
                      }
-                     
+                    
                      function mtelefone(v) {
                      var r = v.replace(/\D/g,"");
                      r = r.replace(/^0/,"");

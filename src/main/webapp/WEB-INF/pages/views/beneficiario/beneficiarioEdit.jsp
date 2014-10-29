@@ -37,6 +37,17 @@
                             </div>
                         </div>
                         <div class="form-group">
+                        <label for="" class="col-sm-2 control-label"> Número Carteira: </label>
+                        <div class="col-sm-3">
+                           <input class="form-control" type="text" value="${model.beneficiarioObject.numeroCarteira}" id="numeroCarteira" name="numeroCarteira" required="">
+                        </div>
+                        <label for="" class="col-sm-2 control-label"> Cartão Nacional de Saúde: </label>
+                        <div class="col-sm-3">
+                           <input class="form-control" type="text" value="${model.beneficiarioObject.numeroCNS}" id="numeroCNS" name="numeroCNS" required="">
+                           <br>
+                        </div>
+                     </div>
+                        <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Email:
                             </label>
