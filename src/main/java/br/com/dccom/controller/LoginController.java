@@ -46,6 +46,18 @@ public class LoginController {
 
 	}
 	
+	@RequestMapping(value = "/index**", method = RequestMethod.GET)
+	public ModelAndView indexPage() {
+
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security + Hibernate Example");
+		model.addObject("message", "This page is for ROLE_ADMIN only!");
+		model.setViewName("index");
+
+		return model;
+
+	}
+	
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, HttpServletRequest request) {

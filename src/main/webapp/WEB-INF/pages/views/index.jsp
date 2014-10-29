@@ -32,8 +32,8 @@
 				  
 				  <c:if test="${pageContext.request.userPrincipal.name != null}">
 		
-							Bem Vindo ${pageContext.request.userPrincipal.name}  <a
-								href="javascript:formSubmit()"> logout </a> 
+							Bem Vindo : ${pageContext.request.userPrincipal.name}  <a
+								href="javascript:formSubmit()"> Logout</a>
 						
 				  </c:if>
                   </h3>

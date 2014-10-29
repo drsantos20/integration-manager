@@ -18,163 +18,36 @@
 			 <div class="container">
                             <div class="page-box">
                                 <h3 class="page-title">
-                                    Editar Beneficiários
+                                    Editar Contratado
                                     <small>
-                                        Alteração de beneficiario.
+                                        Alteração de contratado.
                                     </small>
                                 </h3>
                	<c:url var="userRegistration" value="saveUser.html" />
                	
 				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="beneficiario" method="post" action="update">
-							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.beneficiarioObject.id}">
+							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.contratadoObject.id}">
 							<div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Nome:
                                 <span class="required">*</span>
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nome" name="nome" required="" value="${model.beneficiarioObject.nome}" >
+                                <input class="form-control" type="text" id="nomeContratado" name="nomeContratado" required="" value="${model.contratadoObject.nomeContratado}" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="" class="col-sm-2 control-label">
-                                Email:
+                                Codigo do Contrato:
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="email" name="email" value="${model.beneficiarioObject.email}">
+                                <input class="form-control" type="text" id="codigoContratado" name="codigoContratado" value="${model.contratadoObject.codigoContratado}">
                             </div>
                         </div>
-                       <c:forEach items="${model.beneficiarioObject.telefone}" var="user" begin="0" end="3" varStatus="status">
-                       <div class="form-group_telefone" id="myDiv">
-                       <input class="form-control" type="hidden" id="telefone" name="telefone[${status.count-1}].id" required="" value="${user.id}">
-                            <label for="form-control" class="col-sm-2 control-label">
-                                Telefone:
-                            </label>
-                            <div class="col-sm-3" id="testeDiv">
-                                <input class="form-control" type="text" id="telefone" name="telefone[${status.count-1}].numero" value="${user.numero}" onkeypress="mask(this, mtelefone);" onblur="mask(this, mtelefone);" />
-                            </div>
-                            <label for="" class="col-sm-2 control-label"> Tipo: </label>
-                            <div class="col-sm-3">
-							<form:select path="telefone[${status.count-1}].descricao" class="form-control">
-							<c:forEach var="item" items="${model.tipo}">
-							    <c:choose>
-							        <c:when test="${user.id==item.id}">
-							            <form:option selected="true" value="${item.tipo}"  class="form-control"></form:option>
-							        </c:when>
-							        <c:otherwise>
-							            <form:option value="${item.tipo}" class="form-control">
-							            </form:option>
-							        </c:otherwise>
-							    </c:choose>
-							</c:forEach>
-							</form:select>
-                        </div>
-                        </div>
-                        </c:forEach>
-                        
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Data de Nascimento:
-                            </label>
-                            <div class="col-sm-3">
-                                <input class="form-control" type="text" id="nascimento" name="nascimento" value="${model.beneficiarioObject.nascimento}">
-                            </div>
-                             <label for="" class="col-sm-2 control-label">
-                                Nacionalidade:
-                            </label>
-                            <div class="col-sm-3">
-                            
-                        <select class="form-control" >
-                            <option>Brasileira</option>
-                            <option id="nationality">
-                        </select>
-
-                        <br>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Endereço:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="endereco" name="endereco" value="${model.beneficiarioObject.endereco}">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Cidade:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="cidade" name="cidade" value="${model.beneficiarioObject.cidade}">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Estado:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="estado" name="estado" value="${model.beneficiarioObject.estado}">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Sexo:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="sexo" name="sexo" value="${model.beneficiarioObject.sexo}">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Nacionalidade:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade" value="${model.beneficiarioObject.nacionalidade}">
-                            </div>
-                        </div>
-                        
-                     <div class="divider"></div>
-                     <div class="content-box remove-border dashboard-buttons clearfix center-div">
-                     	<button class="btn vertical-button remove-border btn-primary">
-                     	   	<span class="glyph-icon icon-separator-vertical">
-                                <i class="glyph-icon icon-save"></i>
-                            </span>
-                            <span class="button-content">Salvar</span>
-                     	</button>
-                     	
-                     	                 <div class="content-box remove-border dashboard-buttons clearfix float-right">
-                     	<a href="buscarBeneficiario" class="btn vertical-button remove-border btn-purple" title="">
-                          <span class="glyph-icon icon-separator-vertical">
-                              <i class="glyph-icon icon-remove"></i>
-                          </span>
-                          <span class="button-content">Cancelar</span>
-                    	</a>
-                    </div>
-                     </div>
                      </form:form>
-						<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/inputmask.js"></script>
-						<script type="text/javascript">
-						
-						
-							$(function() {
-								"use strict";
-								$(".input-mask").inputmask();
-							});
-							
-							
-							function myFunction() {
-							    if (new Date().getHours() < 20) {
-							        document.getElementById("demo").innerHTML = "Good day";
-							    }
-							}
-						</script>
 					</div>
 			</div>
+		</div>
 		</div>
 
 	</tiles:putAttribute>

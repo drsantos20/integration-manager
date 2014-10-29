@@ -70,6 +70,10 @@
 	<bean id="beneficiarioDaoImpl" class="br.com.dccom.dao.BeneficiarioDaoImpl" />
 	<bean id="beneficiarioServiceImpl" class="br.com.dccom.services.BeneficiarioServiceImpl" />
 	
+	<!-- contratado -->
+	<bean id="contratadoDaoImpl" class="br.com.dccom.dao.ContratadoDaoImpl" />
+	<bean id="contratadoServiceImpl" class="br.com.dccom.services.ContratadoServiceImpl" />
+	
 	<!-- plano -->
 	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />
 	<bean id="planoServiceImpl" class="br.com.dccom.services.PlanoServiceImpl" />

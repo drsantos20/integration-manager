@@ -12,10 +12,6 @@
 <div id="page-sidebar" class="rm-transition">
    <div id="page-sidebar-wrapper" >
       <div id="sidebar-menu">
-         <div id="sidebar-search">
-            <input type="text" placeholder="Autocomplete search..." class="autocomplete-input tooltip-button" data-placement="right" title="Type &apos;j&apos; to see the available tags..." name="">
-            <i class="glyph-icon icon-search"></i>
-         </div>
          <ul>
             <li>
                <a href="index.html" title="Applications">
@@ -30,7 +26,7 @@
                <span>Usuário</span>
                </a>
                <ul>
-                  <li><a href=""><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Usuário</a></li>
+               	  <li><a href="" title="Gerenciamento de usuários"><span>Gerenciar Usuário</span></a></li>
                </ul>
             </li>
             <li>
@@ -40,7 +36,8 @@
                <span>Beneficiário</span>
                </a>
                <ul>
-                  <li><a href="buscarBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Beneficiário</a></li>
+               	  <li><a href="buscarBeneficiario" title="Gerenciamento de beneficiários"><span>Gerenciar Beneficiário</span></a></li>
+<!--                   <li><a href="buscarBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Beneficiário</a></li> -->
                </ul>
             </li>
             <li>
@@ -50,7 +47,8 @@
                <span>Contratado</span>
                </a>
                <ul>
-                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Contratado</a></li>
+               	  <li><a href="buscarContratado" title="Gerenciamento de contratados"><span>Gerenciar Contratado</span></a></li>
+<!--                   <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Contratado</a></li> -->
                </ul>
             </li>
             
@@ -61,19 +59,20 @@
                <span>Profissional</span>
                </a>
                <ul>
-                  <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Profissional</a></li>
+               	  <li><a href="" title="Gerenciamento de profissionais"><span>Gerenciar Profissional</span></a></li>
+<!--                   <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Profissional</a></li> -->
                </ul>
             </li>
             
             
             <li>
                <a href="#" title="Applications">
-               <i class="glyph-icon icon-paper-plane"></i>
+               <i class="glyph-icon icon-linecons-calendar"></i>
                <span>Agenda</span>
                </a>
                <ul>
-                  <li class="header text-left"><span>Consultas</span></li>
-                  <li><a href="mailbox-inbox.html" title="Inbox"><span>Consultar Agenda</span></a></li>
+<!--                   <li class="header text-left"><span>Consultas</span></li> -->
+                  <li><a href="" title="Gerenciamento de agendas/consultas"><span>Gerenciar Agenda</span></a></li>
                </ul>
             </li>
             <li>
