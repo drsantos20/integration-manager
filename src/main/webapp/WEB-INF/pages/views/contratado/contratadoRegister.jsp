@@ -26,7 +26,7 @@
                      data-parsley-validate="" modelAttribute="contratado" method="post" action="salvarContratado">
                      <div class="form-group">
                         <label for="" class="col-sm-2 control-label"> Nome: <span
-                           class="required">*</span>
+                           class="required"></span>
                         </label>
                         <div class="col-sm-8">
                            <input class="form-control" type="text" id="nomeContratado" name="nomeContratado"
