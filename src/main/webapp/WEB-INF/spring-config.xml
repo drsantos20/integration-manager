@@ -74,6 +74,10 @@
 	<bean id="contratadoDaoImpl" class="br.com.dccom.dao.ContratadoDaoImpl" />
 	<bean id="contratadoServiceImpl" class="br.com.dccom.services.ContratadoServiceImpl" />
 	
+	<!-- contratado -->
+	<bean id="profissionalDaoImpl" class="br.com.dccom.dao.ProfissionalDaoImpl" />
+	<bean id="profissionalServiceImpl" class="br.com.dccom.services.ProfissionalServiceImpl" />
+	
 	<!-- plano -->
 	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />
 	<bean id="planoServiceImpl" class="br.com.dccom.services.PlanoServiceImpl" />

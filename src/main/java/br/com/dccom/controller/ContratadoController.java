@@ -41,7 +41,7 @@ public class ContratadoController {
 	@RequestMapping("deleteContratado")
 	public ModelAndView deleteUser(@RequestParam int id) {
 		dataService.deleteRow(id);
-		return new ModelAndView("redirect:buscarBeneficiario");
+		return new ModelAndView("redirect:buscarContratado");
 	}
 	
 	@RequestMapping("updateContratado")

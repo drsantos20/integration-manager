@@ -10,7 +10,7 @@ public class Profissional {
 	
 	@Id
 	@GeneratedValue
-	@Column(name="beneficiario_id")
+	@Column(name="profissional_id")
 	private int id;
 	
     protected String nomeProfissional;

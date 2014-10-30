@@ -59,7 +59,7 @@
                <span>Profissional</span>
                </a>
                <ul>
-               	  <li><a href="" title="Gerenciamento de profissionais"><span>Gerenciar Profissional</span></a></li>
+               	  <li><a href="buscarProfissional" title="Gerenciamento de profissionais"><span>Gerenciar Profissional</span></a></li>
 <!--                   <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Profissional</a></li> -->
                </ul>
             </li>

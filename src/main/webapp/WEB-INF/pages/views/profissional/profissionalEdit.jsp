@@ -18,33 +18,47 @@
 			 <div class="container">
                             <div class="page-box">
                                 <h3 class="page-title">
-                                    Editar Contratado
+                                    Editar Profissional
                                     <small>
-                                        Alteração de contratado.
+                                        Alteração de profissional.
                                     </small>
                                 </h3>
                	<c:url var="userRegistration" value="saveUser.html" />
                	
-				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="beneficiario" method="post" action="updateContratado">
-							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.contratadoObject.id}">
+				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="profissional" method="post" action="updateProfissional">
+							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.profissionalObject.id}">
 							<div class="form-group">
                             <label for="" class="col-sm-2 control-label">
                                 Nome:
                                 <span class="required">*</span>
                             </label>
                             <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nomeContratado" name="nomeContratado" required="" value="${model.contratadoObject.nomeContratado}" >
+                                <input class="form-control" type="text" id="nomeProfissional" name="nomeProfissional" required="" value="${model.profissionalObject.nomeProfissional}" >
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Codigo do Contrato:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="codigoContratado" name="codigoContratado" value="${model.contratadoObject.codigoContratado}">
-                            </div>
-                        </div>
-                                             <div class="divider"></div>
+	                        <label for="" class="col-sm-2 control-label"> Epecialidade: </label>
+	                        <div class="col-sm-3">
+	                           <input class="form-control" type="text" id="cbos" name="cbos" value="${model.profissionalObject.cbos}">
+	                        </div>
+	                        <label for="" class="col-sm-2 control-label"> UF Conselho: </label>
+	                        <div class="col-sm-3">
+	                           <input class="form-control" type="text" id="uf" name="uf" value="${model.profissionalObject.uf}">
+	                           <br>
+	                        </div>
+	                     </div>
+                        <div class="form-group">
+	                        <label for="" class="col-sm-2 control-label"> Conselho: </label>
+	                        <div class="col-sm-3">
+	                           <input class="form-control" type="text" id="conselhoProfissional" name="conselhoProfissional" value="${model.profissionalObject.conselhoProfissional}">
+	                        </div>
+	                        <label for="" class="col-sm-2 control-label"> Número do Conselho: </label>
+	                        <div class="col-sm-3">
+	                           <input class="form-control" type="text" id="numeroConselhoProfissional" name="numeroConselhoProfissional" value="${model.profissionalObject.numeroConselhoProfissional}">
+	                           <br>
+	                        </div>
+	                     </div>
+	                                          <div class="divider"></div>
                      <div class="content-box remove-border dashboard-buttons clearfix center-div">
                      	<button class="btn vertical-button remove-border btn-primary">
                      	   	<span class="glyph-icon icon-separator-vertical">
@@ -53,8 +67,8 @@
                             <span class="button-content">Salvar</span>
                      	</button>
                      	
-                     <div class="content-box remove-border dashboard-buttons clearfix float-right">
-                     	<a href="buscarContratado" class="btn vertical-button remove-border btn-purple" title="">
+                     	                 <div class="content-box remove-border dashboard-buttons clearfix float-right">
+                     	<a href="buscarProfissional" class="btn vertical-button remove-border btn-purple" title="">
                           <span class="glyph-icon icon-separator-vertical">
                               <i class="glyph-icon icon-remove"></i>
                           </span>
