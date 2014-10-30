@@ -20,51 +20,29 @@
                </a>
             </li>
             <li>
-               <a href="index.html" title="Applications">
+               <a href="" title="Applications">
                <i class="glyph-icon icon-users"></i>
-               
                <span>Usuário</span>
                </a>
-               <ul>
-               	  <li><a href="" title="Gerenciamento de usuários"><span>Gerenciar Usuário</span></a></li>
-               </ul>
             </li>
             <li>
-               <a href="index.html" title="Applications">
+               <a href="buscarBeneficiario" title="Applications">
                <i class="glyph-icon icon-user"></i>
-               
                <span>Beneficiário</span>
                </a>
-               <ul>
-               	  <li><a href="buscarBeneficiario" title="Gerenciamento de beneficiários"><span>Gerenciar Beneficiário</span></a></li>
-<!--                   <li><a href="buscarBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Beneficiário</a></li> -->
-               </ul>
             </li>
             <li>
-               <a href="index.html" title="Applications">
+               <a href="buscarContratado" title="Applications">
                <i class="glyph-icon icon-user-md"></i>
-               
                <span>Contratado</span>
                </a>
-               <ul>
-               	  <li><a href="buscarContratado" title="Gerenciamento de contratados"><span>Gerenciar Contratado</span></a></li>
-<!--                   <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Contratado</a></li> -->
-               </ul>
             </li>
-            
             <li>
-               <a href="index.html" title="Applications">
+               <a href="buscarProfissional" title="Applications">
                <i class="glyph-icon icon-stethoscope"></i>
-               
                <span>Profissional</span>
                </a>
-               <ul>
-               	  <li><a href="buscarProfissional" title="Gerenciamento de profissionais"><span>Gerenciar Profissional</span></a></li>
-<!--                   <li><a href="inserirBeneficiario" title="Portfolio 2 columns"><span class="glyph-icon icon-gears" title="Usuário"></span>Gerenciar Profissional</a></li> -->
-               </ul>
             </li>
-            
-            
             <li>
                <a href="#" title="Applications">
                <i class="glyph-icon icon-linecons-calendar"></i>
