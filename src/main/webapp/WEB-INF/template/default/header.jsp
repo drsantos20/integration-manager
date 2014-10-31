@@ -48,7 +48,7 @@
             <a href="#" class="tooltip-button hidden-desktop" title="Navigation Menu" id="responsive-open-menu">
             <i class="glyph-icon icon-align-justify"></i>
             </a>
-            <div class="pad5A font-blue-alt">eMED-Systems 1.0</div>
+            <div class="pad5A font-blue-alt">SGM WEB V1.0</div>
             </span>
             <a id="collapse-sidebar" href="#" title="">
             <i class="glyph-icon icon-chevron-left"></i>
@@ -57,217 +57,8 @@
          <!-- #header-logo -->
          <div id="header-left">
             <div class="dropdown">
-               <a data-toggle="dropdown" href="#" title="">
-               <span class="bs-badge badge-absolute bg-orange">5</span>
-               <i class="glyph-icon icon-bell"></i>
-               </a>
-               <div class="dropdown-menu">
-                  <div class="popover-title display-block clearfix pad10A">
-                     Notifications
-                  </div>
-                  <div class="scrollable-content scrollable-nice box-md scrollable-small">
-                     <ul class="no-border notifications-box">
-                        <li>
-                           <span class="bg-danger icon-notification glyph-icon icon-bullhorn"></span>
-                           <span class="notification-text">This is an error notification</span>
-                           <div class="notification-time">
-                              a few seconds ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-warning icon-notification glyph-icon icon-users"></span>
-                           <span class="notification-text font-blue">This is a warning notification</span>
-                           <div class="notification-time">
-                              <b>15</b> minutes ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-green icon-notification glyph-icon icon-sitemap"></span>
-                           <span class="notification-text font-green">A success message example.</span>
-                           <div class="notification-time">
-                              <b>2 hours</b> ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-azure icon-notification glyph-icon icon-random"></span>
-                           <span class="notification-text">This is an error notification</span>
-                           <div class="notification-time">
-                              a few seconds ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-warning icon-notification glyph-icon icon-ticket"></span>
-                           <span class="notification-text">This is a warning notification</span>
-                           <div class="notification-time">
-                              <b>15</b> minutes ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-blue icon-notification glyph-icon icon-user"></span>
-                           <span class="notification-text font-blue">Alternate notification styling.</span>
-                           <div class="notification-time">
-                              <b>2 hours</b> ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-purple icon-notification glyph-icon icon-user"></span>
-                           <span class="notification-text">This is an error notification</span>
-                           <div class="notification-time">
-                              a few seconds ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-warning icon-notification glyph-icon icon-user"></span>
-                           <span class="notification-text">This is a warning notification</span>
-                           <div class="notification-time">
-                              <b>15</b> minutes ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-green icon-notification glyph-icon icon-user"></span>
-                           <span class="notification-text font-green">A success message example.</span>
-                           <div class="notification-time">
-                              <b>2 hours</b> ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-purple icon-notification glyph-icon icon-user"></span>
-                           <span class="notification-text">This is an error notification</span>
-                           <div class="notification-time">
-                              a few seconds ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                        <li>
-                           <span class="bg-warning icon-notification glyph-icon icon-user"></span>
-                           <span class="notification-text">This is a warning notification</span>
-                           <div class="notification-time">
-                              <b>15</b> minutes ago
-                              <span class="glyph-icon icon-clock-o"></span>
-                           </div>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="pad10A button-pane button-pane-alt text-center">
-                     <a href="#" class="btn btn-primary" title="View all notifications">
-                     View all notifications
-                     </a>
-                  </div>
-               </div>
-            </div>
-            <div class="dropdown">
-               <a data-toggle="dropdown" href="#" title="">
-               <span class="bs-badge badge-absolute bg-red">2</span>
-               <i class="glyph-icon icon-tasks"></i>
-               </a>
-               <div class="dropdown-menu pad0A" id="progress-dropdown">
-                  <div class="scrollable-content scrollable-nice box-sm scrollable-small">
-                     <ul class="no-border progress-box progress-box-links">
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 Finishing uploading files
-                                 <b>23%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="23">
-                                 <div class="progressbar-value bg-blue-alt">
-                                    <div class="progressbar-overlay"></div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 Roadmap progress
-                                 <b>91%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="91">
-                                 <div class="progressbar-value bg-red">
-                                    <div class="progressbar-overlay"></div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 Images upload
-                                 <b>58%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="58">
-                                 <div class="progressbar-value bg-green"></div>
-                              </div>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 WordPress migration
-                                 <b>74%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="74">
-                                 <div class="progressbar-value bg-purple"></div>
-                              </div>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 Agile development procedures
-                                 <b>91%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="91">
-                                 <div class="progressbar-value bg-black">
-                                    <div class="progressbar-overlay"></div>
-                                 </div>
-                              </div>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 Systems integration
-                                 <b>58%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="58">
-                                 <div class="progressbar-value bg-azure"></div>
-                              </div>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" title="">
-                              <div class="progress-title">
-                                 Code optimizations
-                                 <b>97%</b>
-                              </div>
-                              <div class="progressbar-smaller progressbar" data-value="97">
-                                 <div class="progressbar-value bg-yellow"></div>
-                              </div>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="pad5A button-pane button-pane-alt text-center">
-                     <a href="#" class="btn display-block font-normal hover-green" title="View all notifications">
-                     View all notifications
-                     </a>
-                  </div>
-               </div>
-            </div>
-            <div class="dropdown">
                <a href="#" data-toggle="dropdown" data-placement="left" class="popover-button-header tooltip-button" title="Example menu">
-               <span class="bs-badge badge-absolute bg-green">9</span>
-               <i class="glyph-icon icon-th"></i>
+               <i class="glyph-icon icon-th font-blue-alt"></i>
                </a>
                <div class="dropdown-menu">
                   <div class="box-sm">
@@ -393,14 +184,8 @@
                </div>
             </div>
             <div id="page-nav-right">
-               <a href="#" title="" class="btn sb-open-right no-shadow updateEasyPieChart">
-               <i class="glyph-icon icon-cogs"></i>
-               Statistics
-               </a>
                <a href="#" title="" class="btn sb-open-left no-shadow updateEasyPieChart">
-               <i class="glyph-icon icon-comment"></i>
-               Chat
-               </a>
+               <i class="glyph-icon icon-comment pad5A font-blue-alt"></i>Suporte</a>
             </div>
          </div>
       </div>

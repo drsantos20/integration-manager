@@ -39,7 +39,14 @@
                         <div class="form-group">
 	                        <label for="" class="col-sm-2 control-label"> Epecialidade: </label>
 	                        <div class="col-sm-3">
-	                           <input class="form-control" type="text" id="cbos" name="cbos" value="${model.profissionalObject.cbos}">
+	                        <form:select id="cbos" path="cbos" class="form-control">
+							      <option value="0">-- Select --</option>
+							      <c:forEach items="${model.listCbos}" var="category">
+							            <option <c:if test="${category eq model.profissionalObject.cbos}">selected="selected"</c:if>    value="${category}">${category} </option>
+							        </c:forEach>
+							</form:select>
+	                        
+	                        
 	                        </div>
 	                        <label for="" class="col-sm-2 control-label"> UF Conselho: </label>
 	                        <div class="col-sm-3">

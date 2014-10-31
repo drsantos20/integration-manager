@@ -44,35 +44,26 @@
                </a>
             </li>
             <li>
-               <a href="#" title="Applications">
+               <a href="buscarProfissional" title="Applications">
                <i class="glyph-icon icon-linecons-calendar"></i>
                <span>Agenda</span>
                </a>
-               <ul>
-<!--                   <li class="header text-left"><span>Consultas</span></li> -->
-                  <li><a href="" title="Gerenciamento de agendas/consultas"><span>Gerenciar Agenda</span></a></li>
-               </ul>
             </li>
             <li>
                <a href="#" title="Extra pages">
-               <i class="glyph-icon icon-linecons-params"></i>
-               <span>Gerenciamento TISS</span>
+               <i class="glyph-icon icon-credit-card"></i>
+               <span>Faturamento</span>
                </a>
                <ul>
-                  <li class="header text-left"><span>Autorização</span></li>
-                  <li><a href="index.html" title="Dashboard example 1"><span>Solicitar Autorização</span></a></li>
+                  <li><a href="index.html" title=""><span>GUIAS SP/SADT</span></a></li>
                </ul>
             </li>
             <li class="divider"></li>
             <li>
                <a href="#" title="Charts">
-               <i class="glyph-icon icon-linecons-calendar"></i>
+               <i class="glyph-icon icon-file-text-o"></i>
                <span>Relatórios Gerenciais</span>
                </a>
-               <ul>
-                  <li class="header text-left"><span>Relatórios</span></li>
-                  <li><a href="index.html" title="Dashboard example 1"><span>Relatórios</span></a></li>
-               </ul>
             </li>
          </ul>
       </div>

@@ -36,7 +36,7 @@
                      <div class="form-group">
                         <label for="" class="col-sm-2 control-label"> Especialidade: </label>
                         <div class="col-sm-3">
-                           <input class="form-control" type="text" id="cbos" name="cbos" required="">
+                           <form:select path="cbos" items="${model.cboss}" class="form-control" />
                         </div>
                         <label for="" class="col-sm-2 control-label"> UF Conselho: </label>
                         <div class="col-sm-3">

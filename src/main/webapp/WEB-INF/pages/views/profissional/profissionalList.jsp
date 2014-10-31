@@ -19,7 +19,7 @@
                      
                     <div class="content-box remove-border dashboard-buttons center-div clearfix pad150T">
                         <a href="inserirProfissional" class="btn vertical-button remove-border btn-success" title="">
-                            <span class="glyph-icon icon-separator-vertical">
+                            <span class="glyph-icon icon-separator-vertical font-blue-alt">
                                 <i class="glyph-icon icon-plus-circle"></i>
                             </span>
                             <span class="button-content">Incluir <br>Profissional</span>
