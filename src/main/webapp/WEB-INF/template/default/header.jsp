@@ -15,6 +15,14 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-72-precomposed.png">
       <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-57-precomposed.png">
       <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/icons/favicon.png">
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-57-precomposed.png">
+      <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/icons/favicon.png">
+      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
+      <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all-demo.css">
+      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/all-demo.js"></script>
       <!-- JS Core -->
       <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
       <script type="text/javascript">
@@ -36,24 +44,15 @@
       <div id="sb-site">
       <div id="page-wrapper">
       <div id="page-header" class="clearfix">
-         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-144-precomposed.png">
-         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-114-precomposed.png">
-         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-72-precomposed.png">
-         <link rel="apple-touch-icon-precomposed" href="${pageContext.request.contextPath}/resources/images/icons/apple-touch-icon-57-precomposed.png">
-         <link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/images/icons/favicon.png">
-         <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/js-core.js"></script>
-         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/all-demo.css">
-         <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/all-demo.js"></script>
-         <div id="header-logo" class="rm-transition">
-            <a href="#" class="tooltip-button hidden-desktop" title="Navigation Menu" id="responsive-open-menu">
-            <i class="glyph-icon icon-align-justify"></i>
-            </a>
-            <div class="pad5A font-blue-alt">SGM WEB V1.0</div>
-            </span>
-            <a id="collapse-sidebar" href="#" title="">
-            <i class="glyph-icon icon-chevron-left"></i>
-            </a>
-         </div>
+<!--          <div id="header-logo" class="rm-transition"> -->
+<!--             <a href="#" class="tooltip-button hidden-desktop" title="Navigation Menu" id="responsive-open-menu"> -->
+<!--             <i class="glyph-icon icon-align-justify"></i> -->
+<!--             </a> -->
+<!--             <div class="pad5A font-blue-alt">SGM WEB V1.0</div> -->
+<!--             <a id="collapse-sidebar" href="#" title=""> -->
+<!--             <i class="glyph-icon icon-chevron-left"></i> -->
+<!--             </a> -->
+<!--          </div> -->
          <!-- #header-logo -->
          <div id="header-left">
             <div class="dropdown">
@@ -62,44 +61,6 @@
                </a>
                <div class="dropdown-menu">
                   <div class="box-sm">
-                     <div class="pad5T pad10B pad10L pad10R dashboard-buttons clearfix">
-                        <a href="#" class="btn vertical-button hover-blue-alt" title="">
-                        <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-dashboard opacity-80 font-size-20"></i>
-                        </span>
-                        Dashboard
-                        </a>
-                        <a href="#" class="btn vertical-button hover-green" title="">
-                        <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-tags opacity-80 font-size-20"></i>
-                        </span>
-                        Widgets
-                        </a>
-                        <a href="#" class="btn vertical-button hover-orange" title="">
-                        <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-fire opacity-80 font-size-20"></i>
-                        </span>
-                        Tables
-                        </a>
-                        <a href="#" class="btn vertical-button hover-orange" title="">
-                        <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-bar-chart-o opacity-80 font-size-20"></i>
-                        </span>
-                        Charts
-                        </a>
-                        <a href="#" class="btn vertical-button hover-purple" title="">
-                        <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-laptop opacity-80 font-size-20"></i>
-                        </span>
-                        Buttons
-                        </a>
-                        <a href="#" class="btn vertical-button hover-azure" title="">
-                        <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-code opacity-80 font-size-20"></i>
-                        </span>
-                        Panels
-                        </a>
-                     </div>
                      <div class="bg-gray text-transform-upr font-size-12 font-gray-dark pad10A">Dashboard menu</div>
                      <div class="pad5T pad10B pad10L pad10R dashboard-buttons clearfix">
                         <a href="#" class="btn vertical-button remove-border btn-info" title="">
@@ -188,6 +149,32 @@
                <i class="glyph-icon icon-comment pad5A font-blue-alt"></i>Suporte</a>
             </div>
          </div>
+      </div>
+      <div id="page-nav">
+
+    <ul id="page-subnav">
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="dashboard_panels.html">Panels</a>
+        </li>
+        <li>
+            <a href="tables.html">Tables</a>
+        </li>
+        <li>
+            <a href="forms.html">Forms</a>
+        </li>
+        <li>
+            <a href="charts.html">Charts</a>
+        </li>
+        <li>
+            <a href="content_boxes.html">Boxes</a>
+        </li>
+    </ul>
+
+</div>
+      </div>
       </div>
    </body>
 </html>

@@ -30,7 +30,8 @@
 	}
 	
 	.body {
-		margin:-70px 10px 0px 250px;
+/* 		margin:-70px 10px 0px 250px; voltar caso habilite o menu */
+		margin:-70px 10px 0px 50px; 
 		padding:50px;
 	}
 	
@@ -51,7 +52,7 @@
 	<div class="page">
 		<tiles:insertAttribute name="header" />
 		<div class="content">
-			<tiles:insertAttribute name="menu" />
+<%-- 			<tiles:insertAttribute name="menu" /> --%>
 			<tiles:insertAttribute name="body" />
 		</div>
 		<tiles:insertAttribute name="footer" />
