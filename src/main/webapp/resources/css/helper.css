@@ -1,0 +1,6 @@
+.parent {
+    height: 150px;
+}
+.child { 
+    vertical-align: bottom;
+}​

@@ -31,7 +31,16 @@
                  $('#loading').fadeOut( 400, "linear" );
              }, 300);
          });
+         
       </script>
+      
+      <style>
+		.centered {
+		margin-left: auto;
+	    margin-right: auto;
+	    width: 70%;
+		}
+		</style>
       <style>
          #loading {position: fixed;width: 100%;height: 100%;left: 0;top: 0;right: 0;bottom: 0;display: block;background: #fff;z-index: 10000;}
          #loading img {position: absolute;top: 50%;left: 50%;margin: -23px 0 0 -23px;}
@@ -56,48 +65,48 @@
          <!-- #header-logo -->
          <div id="header-left">
             <div class="dropdown">
-               <a href="#" data-toggle="dropdown" data-placement="left" class="popover-button-header tooltip-button" title="Example menu">
+               <a href="#" data-toggle="dropdown" data-placement="left" class="popover-button-header tooltip-button" title="Menu Atalho">
                <i class="glyph-icon icon-th font-blue-alt"></i>
                </a>
                <div class="dropdown-menu">
                   <div class="box-sm">
-                     <div class="bg-gray text-transform-upr font-size-12 font-gray-dark pad10A">Dashboard menu</div>
+                     <div class="bg-gray text-transform-upr font-size-12 font-gray-dark pad10A">menu</div>
                      <div class="pad5T pad10B pad10L pad10R dashboard-buttons clearfix">
                         <a href="#" class="btn vertical-button remove-border btn-info" title="">
                         <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-dashboard opacity-80 font-size-20"></i>
+                        <i class="glyph-icon icon-users opacity-80 font-size-20"></i>
                         </span>
-                        Dashboard
+                        Usuário
                         </a>
-                        <a href="#" class="btn vertical-button remove-border btn-danger" title="">
+                        <a href="buscarBeneficiario" class="btn vertical-button remove-border btn-danger" title="">
                         <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-tags opacity-80 font-size-20"></i>
+                        <i class="glyph-icon icon-user opacity-80 font-size-20"></i>
                         </span>
-                        Widgets
+                        Beneficiário
                         </a>
-                        <a href="#" class="btn vertical-button remove-border btn-purple" title="">
+                        <a href="buscarContratado" class="btn vertical-button remove-border btn-purple" title="">
                         <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-fire opacity-80 font-size-20"></i>
+                        <i class="glyph-icon icon-user-md opacity-80 font-size-20"></i>
                         </span>
-                        Tables
+                        Contratado
                         </a>
-                        <a href="#" class="btn vertical-button remove-border btn-azure" title="">
+                        <a href="buscarProfissional" class="btn vertical-button remove-border btn-azure" title="">
                         <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-bar-chart-o opacity-80 font-size-20"></i>
+                        <i class="glyph-icon icon-stethoscope opacity-80 font-size-20"></i>
                         </span>
-                        Charts
+                        Profissional
                         </a>
                         <a href="#" class="btn vertical-button remove-border btn-yellow" title="">
                         <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-laptop opacity-80 font-size-20"></i>
+                        <i class="glyph-icon icon-linecons-calendar opacity-80 font-size-20"></i>
                         </span>
-                        Buttons
+                        Agenda
                         </a>
                         <a href="#" class="btn vertical-button remove-border btn-warning" title="">
                         <span class="glyph-icon icon-separator-vertical pad0A medium">
-                        <i class="glyph-icon icon-code opacity-80 font-size-20"></i>
+                        <i class="glyph-icon icon-file-text-o font-size-20"></i>
                         </span>
-                        Panels
+                        Relatórios
                         </a>
                      </div>
                   </div>
@@ -150,29 +159,36 @@
             </div>
          </div>
       </div>
-      <div id="page-nav">
+      <div id="page-nav" align="right">
+      
+		<ul class="nav nav-pills centered pad10A">
+             <li class="active"><a href="#">Página Principal</a></li>
+            	
+            	<li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                     Cadastros <span class="caret"></span>
+                 </a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">Usuário</a></li>
+                     <li><a href="buscarBeneficiario">Beneficiário</a></li>
+                     <li><a href="buscarContratado">Contratado</a></li>
+                     <li><a href="buscarProfissional">Profissional</a></li>
+                     <li><a href="#">Operadora</a></li>
+                 </ul>
+             </li>
+             <li><a href="#">Consultas</a></li>
+             <li><a href="#">Relatórios Gerenciais</a></li>
+             <li class="dropdown">
+                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                     Faturamento <span class="caret"></span>
+                 </a>
+                 <ul class="dropdown-menu" role="menu">
+                     <li><a href="#">GUIAS SP/SADT</a></li>
+                 </ul>
+             </li>
+         </ul>
 
-    <ul id="page-subnav">
-        <li>
-            <a href="index.html">Home</a>
-        </li>
-        <li>
-            <a href="dashboard_panels.html">Panels</a>
-        </li>
-        <li>
-            <a href="tables.html">Tables</a>
-        </li>
-        <li>
-            <a href="forms.html">Forms</a>
-        </li>
-        <li>
-            <a href="charts.html">Charts</a>
-        </li>
-        <li>
-            <a href="content_boxes.html">Boxes</a>
-        </li>
-    </ul>
-
+    
 </div>
       </div>
       </div>
