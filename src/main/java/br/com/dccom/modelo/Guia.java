@@ -2,8 +2,10 @@ package br.com.dccom.modelo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Guia {
@@ -22,6 +24,20 @@ public class Guia {
 	
 	private String numeroGuiaPrincipal;
 
+	private String dataEmissao;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	private Operadora operadora;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	private Beneficiario beneficiario;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	private Contratado contratado;
+	
+	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	private Profissional profissional;
+	
 	public int getId() {
 		return id;
 	}
