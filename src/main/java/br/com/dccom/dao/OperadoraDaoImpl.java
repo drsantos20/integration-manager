@@ -10,48 +10,48 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import br.com.dccom.modelo.Plano;
+import br.com.dccom.modelo.Operadora;
 
-public class PlanoDaoImpl implements PlanoDao {
+public class OperadoraDaoImpl implements OperadoraDao {
 
 	@Autowired
 	SessionFactory sessionFactory;
 
 	@Override
 	@Transactional
-	public int insertRow(Plano plano) {
+	public int insertRow(Operadora operadora) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.saveOrUpdate(plano);
+		session.saveOrUpdate(operadora);
 		tx.commit();
-		Serializable id = session.getIdentifier(plano);
+		Serializable id = session.getIdentifier(operadora);
 		session.close();
 		return (Integer) id;
 	}
 
 	@Override
-	public List<Plano> getList() {
+	public List<Operadora> getList() {
 		Session session = sessionFactory.openSession();
 		@SuppressWarnings("unchecked")
-		List<Plano> planoList = session.createQuery("from Plano").list();
+		List<Operadora> operadoraList = session.createQuery("from Operadora").list();
 		session.close();
-		return planoList;
+		return operadoraList;
 	}
 
 	@Override
-	public Plano getRowById(int id) {
+	public Operadora getRowById(int id) {
 		Session session = sessionFactory.openSession();
-		Plano plano = (Plano) session.load(Plano.class, id);
-		return plano;
+		Operadora operadora = (Operadora) session.load(Operadora.class, id);
+		return operadora;
 	}
 
 	@Override
-	public int updateRow(Plano plano) {
+	public int updateRow(Operadora operadora) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		session.update(plano);
+		session.update(operadora);
 		tx.commit();
-		Serializable id = session.getIdentifier(plano);
+		Serializable id = session.getIdentifier(operadora);
 		session.close();
 		return (Integer) id;
 	}
@@ -60,10 +60,10 @@ public class PlanoDaoImpl implements PlanoDao {
 	public int deleteRow(int id) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		Plano plano = (Plano) session.load(Plano.class, id);
-		session.delete(plano);
+		Operadora operadora = (Operadora) session.load(Operadora.class, id);
+		session.delete(operadora);
 		tx.commit();
-		Serializable ids = session.getIdentifier(plano);
+		Serializable ids = session.getIdentifier(operadora);
 		session.close();
 		return (Integer) ids;
 	}

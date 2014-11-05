@@ -25,7 +25,7 @@
 		<property name="annotatedClasses">  
             <list>  
                 <value>br.com.dccom.modelo.Beneficiario</value>  
-                <value>br.com.dccom.modelo.Plano</value>  
+                <value>br.com.dccom.modelo.Operadora</value>  
                 <value>br.com.dccom.modelo.Usuario</value> 
                 <value>br.com.dccom.modelo.Telefone</value> 
                 <value>br.com.dccom.modelo.User</value> 
@@ -83,9 +83,9 @@
 	<bean id="CBOSDaoImpl" class="br.com.dccom.dao.CBOSDaoImpl" />
 	<bean id="CBOSServiceImpl" class="br.com.dccom.services.CBOSServiceImpl" />
 	
-	<!-- plano -->
-	<bean id="planoDaoImpl" class="br.com.dccom.dao.PlanoDaoImpl" />
-	<bean id="planoServiceImpl" class="br.com.dccom.services.PlanoServiceImpl" />
+	<!-- operadora -->
+	<bean id="operadoraDaoImpl" class="br.com.dccom.dao.OperadoraDaoImpl" />
+	<bean id="operadoraServiceImpl" class="br.com.dccom.services.OperadoraServiceImpl" />
 	
 	<!-- login -->
 	<bean id="loginDaoImpl" class="br.com.dccom.dao.LoginDaoImpl" />
