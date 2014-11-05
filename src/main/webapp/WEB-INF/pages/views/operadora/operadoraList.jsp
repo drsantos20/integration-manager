@@ -36,7 +36,7 @@
                            </tr>
                         </thead>
                         <tbody>
-                           <c:forEach items="${operadoraList}" var="user">
+                           <c:forEach items="${operadoraList}" var="user"> 
                               <tr class="odd gradeX">
                                  <td>
                                     <c:out value="${user.nome}" />

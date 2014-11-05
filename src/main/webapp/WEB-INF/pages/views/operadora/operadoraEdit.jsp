@@ -23,7 +23,7 @@
                                         Alteração de operadora.
                                     </small>
                                 </h3>
-               	<c:url var="userRegistration" value="saveUser.html" />
+               	<c:url var="userRegistration" value="saveUser.html" /> 
                	
 				<form:form id="demo-form" class="form-horizontal" data-parsley-validate="" modelAttribute="beneficiario" method="post" action="updateOperadora">
 							<input class="form-control" type="hidden" id="id" name="id" required="" value="${model.operadoraObject.id}">

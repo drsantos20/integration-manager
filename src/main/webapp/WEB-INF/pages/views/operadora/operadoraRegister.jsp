@@ -19,7 +19,7 @@
             <div class="container">
                <div class="page-box">
                   <h3 class="page-title">
-                     Cadastro de Operadoras <small> Inclusão de novo operadora </small>
+                     Cadastro de Operadoras <small> Inclusão de novo operadora </small> 
                   </h3>
                   <c:url var="userRegistration" value="saveUser.html" />
                   <form:form id="demo-form" class="form-horizontal"
