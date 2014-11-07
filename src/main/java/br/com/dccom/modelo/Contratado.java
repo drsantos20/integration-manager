@@ -17,6 +17,10 @@ public class Contratado {
 	
 	private String codigoContratado;
 	private String nomeContratado;
+	private String codigoPrestadorNaOperadora;
+	private String cnpjOuCpfContratado;
+	private String cnes;
+    
 	public int getId() {
 		return id;
 	}
@@ -34,5 +38,23 @@ public class Contratado {
 	}
 	public void setNomeContratado(String nomeContratado) {
 		this.nomeContratado = nomeContratado;
+	}
+	public String getCodigoPrestadorNaOperadora() {
+		return codigoPrestadorNaOperadora;
+	}
+	public void setCodigoPrestadorNaOperadora(String codigoPrestadorNaOperadora) {
+		this.codigoPrestadorNaOperadora = codigoPrestadorNaOperadora;
+	}
+	public String getCnpjOuCpfContratado() {
+		return cnpjOuCpfContratado;
+	}
+	public void setCnpjOuCpfContratado(String cnpjOuCpfContratado) {
+		this.cnpjOuCpfContratado = cnpjOuCpfContratado;
+	}
+	public String getCnes() {
+		return cnes;
+	}
+	public void setCnes(String cnes) {
+		this.cnes = cnes;
 	}
 }

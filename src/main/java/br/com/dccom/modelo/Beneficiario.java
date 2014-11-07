@@ -9,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import br.com.dccom.util.IndicadorAtendimento;
-
 @Entity
 @Table(name = "Beneficiario") 
 public class Beneficiario {
@@ -35,11 +33,11 @@ public class Beneficiario {
 	private String cep;
 	private String sexo;
 	private String nacionalidade;
-	
-    protected String numeroCarteira;
-    protected IndicadorAtendimento atendimentoRN;
-    protected String numeroCNS;
-    protected byte[] identificadorBeneficiario;
+	private String validadeCarteira;
+	private String numeroCarteira;
+	private String atendimentoRN;
+	private String numeroCNS;
+	private byte[] identificadorBeneficiario;
 	
 	public int getId() {
 		return id;
@@ -119,10 +117,16 @@ public class Beneficiario {
 	public void setNumeroCarteira(String numeroCarteira) {
 		this.numeroCarteira = numeroCarteira;
 	}
-	public IndicadorAtendimento getAtendimentoRN() {
+	public String getValidadeCarteira() {
+		return validadeCarteira;
+	}
+	public void setValidadeCarteira(String validadeCarteira) {
+		this.validadeCarteira = validadeCarteira;
+	}
+	public String getAtendimentoRN() {
 		return atendimentoRN;
 	}
-	public void setAtendimentoRN(IndicadorAtendimento atendimentoRN) {
+	public void setAtendimentoRN(String atendimentoRN) {
 		this.atendimentoRN = atendimentoRN;
 	}
 	public String getNumeroCNS() {

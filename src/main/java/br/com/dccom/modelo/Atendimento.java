@@ -20,6 +20,7 @@ public class Atendimento {
 	private String recemNascido;
 	
 	//GUIA SP-SADT
+	private String tipoAtendimento;
 	private String caraterAtendimento;
 	private String indicacaoAcidente;
 	private String motivoEncerramentoAtendimento;
@@ -31,6 +32,14 @@ public class Atendimento {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public String getTipoAtendimento() {
+		return tipoAtendimento;
+	}
+
+	public void setTipoAtendimento(String tipoAtendimento) {
+		this.tipoAtendimento = tipoAtendimento;
 	}
 
 	public String getData() {

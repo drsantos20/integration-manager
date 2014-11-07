@@ -149,7 +149,7 @@
                             <span class="button-content">Salvar</span>
                      	</button>
                      	
-                     	                 <div class="content-box remove-border dashboard-buttons clearfix float-right">
+                     	<div class="content-box remove-border dashboard-buttons clearfix float-right">
                      	<a href="buscarBeneficiario" class="btn vertical-button remove-border btn-purple" title="">
                           <span class="glyph-icon icon-separator-vertical">
                               <i class="glyph-icon icon-remove"></i>

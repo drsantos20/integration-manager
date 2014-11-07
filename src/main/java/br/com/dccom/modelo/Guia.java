@@ -10,11 +10,6 @@ import javax.persistence.OneToOne;
 @Entity
 public class Guia {
 	
-	/*
-	 * Cabeçalho da Mensagem a ser transmitida
-	 * 
-	 */
-	
 	@Id
 	@GeneratedValue
 	@Column(name="guia_id")
@@ -25,6 +20,14 @@ public class Guia {
 	private String numeroGuiaPrincipal;
 
 	private String dataEmissao;
+	
+	private String senha;
+	
+	private String dataValidadeSenha;
+	
+	private String numeroGuiaAtribuidoOperadora;
+	
+	protected String dataAutorizacao;
 	
 	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
 	private Operadora operadora;
@@ -100,6 +103,38 @@ public class Guia {
 
 	public void setProfissional(Profissional profissional) {
 		this.profissional = profissional;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public String getDataValidadeSenha() {
+		return dataValidadeSenha;
+	}
+
+	public void setDataValidadeSenha(String dataValidadeSenha) {
+		this.dataValidadeSenha = dataValidadeSenha;
+	}
+
+	public String getNumeroGuiaAtribuidoOperadora() {
+		return numeroGuiaAtribuidoOperadora;
+	}
+
+	public void setNumeroGuiaAtribuidoOperadora(String numeroGuiaAtribuidoOperadora) {
+		this.numeroGuiaAtribuidoOperadora = numeroGuiaAtribuidoOperadora;
+	}
+
+	public String getDataAutorizacao() {
+		return dataAutorizacao;
+	}
+
+	public void setDataAutorizacao(String dataAutorizacao) {
+		this.dataAutorizacao = dataAutorizacao;
 	}
 
 }

@@ -15,11 +15,15 @@ public class Profissional {
 	@Column(name="profissional_id")
 	private int id;
 	
-    protected String nomeProfissional;
-    protected String conselhoProfissional;
-    protected String numeroConselhoProfissional;
-    protected String uf;
-    protected String cbos;
+	private String nomeProfissional;
+	private String conselhoProfissional;
+	private String numeroConselhoProfissional;
+	private String uf;
+	private String cbos;
+	private String dataSolicitacao;
+	private String caraterSolicitacao;
+	private String cid;
+	private String indicacaoClinica;
     
 	public int getId() {
 		return id;
@@ -56,5 +60,29 @@ public class Profissional {
 	}
 	public void setCbos(String cbos) {
 		this.cbos = cbos;
+	}
+	public String getDataSolicitacao() {
+		return dataSolicitacao;
+	}
+	public void setDataSolicitacao(String dataSolicitacao) {
+		this.dataSolicitacao = dataSolicitacao;
+	}
+	public String getCaraterSolicitacao() {
+		return caraterSolicitacao;
+	}
+	public void setCaraterSolicitacao(String caraterSolicitacao) {
+		this.caraterSolicitacao = caraterSolicitacao;
+	}
+	public String getCid() {
+		return cid;
+	}
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+	public String getIndicacaoClinica() {
+		return indicacaoClinica;
+	}
+	public void setIndicacaoClinica(String indicacaoClinica) {
+		this.indicacaoClinica = indicacaoClinica;
 	}
 }
