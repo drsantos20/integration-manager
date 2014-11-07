@@ -62,4 +62,44 @@ public class Guia {
 		this.numeroGuiaPrincipal = numeroGuiaPrincipal;
 	}
 
+	public String getDataEmissao() {
+		return dataEmissao;
+	}
+
+	public void setDataEmissao(String dataEmissao) {
+		this.dataEmissao = dataEmissao;
+	}
+
+	public Operadora getOperadora() {
+		return operadora;
+	}
+
+	public void setOperadora(Operadora operadora) {
+		this.operadora = operadora;
+	}
+
+	public Beneficiario getBeneficiario() {
+		return beneficiario;
+	}
+
+	public void setBeneficiario(Beneficiario beneficiario) {
+		this.beneficiario = beneficiario;
+	}
+
+	public Contratado getContratado() {
+		return contratado;
+	}
+
+	public void setContratado(Contratado contratado) {
+		this.contratado = contratado;
+	}
+
+	public Profissional getProfissional() {
+		return profissional;
+	}
+
+	public void setProfissional(Profissional profissional) {
+		this.profissional = profissional;
+	}
+
 }
