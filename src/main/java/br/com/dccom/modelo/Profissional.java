@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +26,10 @@ public class Profissional {
 	private String caraterSolicitacao;
 	private String cid;
 	private String indicacaoClinica;
+	
+	@OneToOne
+	@JoinColumn(name = "guia_id", nullable = true)
+	private Guia guia;
     
 	public int getId() {
 		return id;
@@ -84,5 +90,11 @@ public class Profissional {
 	}
 	public void setIndicacaoClinica(String indicacaoClinica) {
 		this.indicacaoClinica = indicacaoClinica;
+	}
+	public Guia getGuia() {
+		return guia;
+	}
+	public void setGuia(Guia guia) {
+		this.guia = guia;
 	}
 }

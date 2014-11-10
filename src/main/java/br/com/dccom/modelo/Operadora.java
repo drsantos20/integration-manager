@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +22,10 @@ public class Operadora {
 	private String registro_ans;
 	
 	private int ativo;
+	
+	@OneToOne
+	@JoinColumn(name = "guia_id", nullable = true)
+	private Guia guia;
 
 	public int getId() {
 		return id;
@@ -51,6 +57,14 @@ public class Operadora {
 
 	public void setAtivo(int ativo) {
 		this.ativo = ativo;
+	}
+
+	public Guia getGuia() {
+		return guia;
+	}
+
+	public void setGuia(Guia guia) {
+		this.guia = guia;
 	}
 	
 }

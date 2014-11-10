@@ -12,7 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dccom.modelo.CBOS;
 import br.com.dccom.modelo.Guia;
+import br.com.dccom.modelo.TipoAtendimento;
 import br.com.dccom.services.CBOSService;
+import br.com.dccom.services.TipoAtendimentoService;
 
 @Controller
 public class GuiaController {
@@ -20,12 +22,18 @@ public class GuiaController {
 	@Autowired
 	CBOSService cbossDataService;
 	
+	@Autowired
+	TipoAtendimentoService tipoAtendimento;
+	
 	@RequestMapping("inserirGuia")
 	public ModelAndView getForm(@ModelAttribute("guia") Guia guia) {
 		
-		List<CBOS> cboss = cbossDataService.getList();
 		Map<String, Object> model = new HashMap<String, Object>();  
+		List<CBOS> cboss = cbossDataService.getList();
+		List<TipoAtendimento> tipoAtendimentos = tipoAtendimento.getList();
+		
 		model.put("cboss", cboss);
+		model.put("tipoAtendimentos", tipoAtendimentos);
 		return new ModelAndView("guia/guiaRegister", "model", model);
 	}
 

@@ -186,8 +186,8 @@
 									</div>
 
 									<div class="col span_1_of_6">
-										<label for="">Tabela:</label> <input class="pure-input-1"
-											id="atendimento.indicacaoAcidente" name="atendimento.indicacaoAcidente" type="text">
+										<label for="">Tabela:</label> 
+										<form:select path="atendimento[0].tipoAtendimento" items="${model.tipoAtendimentos}" class="form-control" />
 									</div>
 
 									<div class="col span_1_of_6">

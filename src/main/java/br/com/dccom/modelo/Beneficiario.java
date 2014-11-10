@@ -6,7 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,15 +19,9 @@ public class Beneficiario {
 	@GeneratedValue
 	@Column(name="beneficiario_id")
 	private int id;
-	
-	@Column(name="nome")
 	private String nome;
 	private String cpf;
 	private String email;
-	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario")
-	private List<Telefone> telefone;
-	
 	private String nascimento;
 	private String endereco;
 	private String cidade;
@@ -38,6 +34,13 @@ public class Beneficiario {
 	private String atendimentoRN;
 	private String numeroCNS;
 	private byte[] identificadorBeneficiario;
+	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario")
+	private List<Telefone> telefone;
+	
+	@OneToOne
+	@JoinColumn(name = "guia_id", nullable = true)
+	private Guia guia;
 	
 	public int getId() {
 		return id;
@@ -140,6 +143,12 @@ public class Beneficiario {
 	}
 	public void setIdentificadorBeneficiario(byte[] identificadorBeneficiario) {
 		this.identificadorBeneficiario = identificadorBeneficiario;
+	}
+	public Guia getGuia() {
+		return guia;
+	}
+	public void setGuia(Guia guia) {
+		this.guia = guia;
 	}
 	
 }

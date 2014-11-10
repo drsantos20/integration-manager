@@ -1,10 +1,14 @@
 package br.com.dccom.modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -14,32 +18,29 @@ public class Guia {
 	@GeneratedValue
 	@Column(name="guia_id")
 	private int id;
-	
 	private String registroANS;
-	
 	private String numeroGuiaPrincipal;
-
 	private String dataEmissao;
-	
 	private String senha;
-	
 	private String dataValidadeSenha;
-	
 	private String numeroGuiaAtribuidoOperadora;
-	
 	protected String dataAutorizacao;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	
+	@OneToOne(mappedBy="guia")
 	private Operadora operadora;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	@OneToOne(mappedBy="guia")
 	private Beneficiario beneficiario;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	@OneToOne(mappedBy="guia")
 	private Contratado contratado;
 	
-	@OneToOne(fetch = FetchType.LAZY, mappedBy = "guia")
+	@OneToOne(mappedBy="guia")
 	private Profissional profissional;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "guia")
+	private List<Atendimento> atendimento;
 	
 	public int getId() {
 		return id;
@@ -135,6 +136,14 @@ public class Guia {
 
 	public void setDataAutorizacao(String dataAutorizacao) {
 		this.dataAutorizacao = dataAutorizacao;
+	}
+
+	public List<Atendimento> getAtendimento() {
+		return atendimento;
+	}
+
+	public void setAtendimento(List<Atendimento> atendimento) {
+		this.atendimento = atendimento;
 	}
 
 }

@@ -27,6 +27,7 @@ public class Telefone {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "beneficiario_id", nullable = true)
 	private Beneficiario beneficiario = new Beneficiario();
+	//TODO verificar a io para a instancia de novo objeto
 
 	public int getId() {
 		return id;
