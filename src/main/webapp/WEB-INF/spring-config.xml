@@ -2,15 +2,19 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
-  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd 
+  http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<context:component-scan base-package="br.com.dccom" />
+	<context:component-scan base-package="br.com.dccom.controller.springdata" />
 	<context:property-placeholder location="classpath:database.properties" />
 	<mvc:annotation-driven />
 
+	<jpa:repositories base-package="br.com.dccom.repository" />
+	
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${database.driver}" />
@@ -18,39 +22,53 @@
 		<property name="username" value="${database.user}" />
 		<property name="password" value="${database.password}" />
 	</bean>
+	
+    <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+        <property name="showSql" value="true"/>
+        <property name="generateDdl" value="true"/>
+        <property name="database" value="MYSQL"/>
+    </bean>
+ 
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+        <!-- spring based scanning for entity classes-->
+        <property name="packagesToScan" value="br.com.dccom.modelo"/>
+    </bean>
+	
 
-	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
-		<property name="dataSource" ref="dataSource" />
-		<property name="annotatedClasses">  
-            <list>  
-                <value>br.com.dccom.modelo.Beneficiario</value>  
-                <value>br.com.dccom.modelo.Operadora</value>  
-                <value>br.com.dccom.modelo.Usuario</value> 
-                <value>br.com.dccom.modelo.Telefone</value> 
-                <value>br.com.dccom.modelo.User</value> 
-                <value>br.com.dccom.modelo.UserRole</value>
-                <value>br.com.dccom.modelo.Contratado</value>  
-                <value>br.com.dccom.modelo.Profissional</value>  
-                <value>br.com.dccom.modelo.CBOS</value> 
-                <value>br.com.dccom.modelo.Guia</value> 
-                <value>br.com.dccom.modelo.Atendimento</value> 
-                <value>br.com.dccom.modelo.TipoAtendimento</value> 
-            </list>  
-        </property> 
-		<property name="hibernateProperties">
-			<props>
-				<prop key="hibernate.dialect">${jdbc.dialect}</prop>
-				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
-				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
-			</props>
-		</property>
-	</bean>
+<!-- 	<bean id="sessionFactory" -->
+<!-- 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"> -->
+<!-- 		<property name="dataSource" ref="dataSource" /> -->
+<!-- 		<property name="annotatedClasses">   -->
+<!--             <list>   -->
+<!--                 <value>br.com.dccom.modelo.Beneficiario</value>   -->
+<!--                 <value>br.com.dccom.modelo.Operadora</value>   -->
+<!--                 <value>br.com.dccom.modelo.Usuario</value>  -->
+<!--                 <value>br.com.dccom.modelo.Telefone</value>  -->
+<!--                 <value>br.com.dccom.modelo.User</value>  -->
+<!--                 <value>br.com.dccom.modelo.UserRole</value> -->
+<!--                 <value>br.com.dccom.modelo.Contratado</value>   -->
+<!--                 <value>br.com.dccom.modelo.Profissional</value>   -->
+<!--                 <value>br.com.dccom.modelo.CBOS</value>  -->
+<!--                 <value>br.com.dccom.modelo.Guia</value>  -->
+<!--                 <value>br.com.dccom.modelo.Atendimento</value>  -->
+<!--                 <value>br.com.dccom.modelo.TipoAtendimento</value>  -->
+<!--             </list>   -->
+<!--         </property>  -->
+<!-- 		<property name="hibernateProperties"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="hibernate.dialect">${jdbc.dialect}</prop> -->
+<!-- 				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop> -->
+<!-- 				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
 
-	<bean id="txManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+<!-- 	<bean id="txManager" -->
+<!-- 		class="org.springframework.orm.hibernate4.HibernateTransactionManager"> -->
+<!-- 		<property name="sessionFactory" ref="sessionFactory" /> -->
+<!-- 	</bean> -->
 
 	<bean id="persistenceExceptionTranslationPostProcessor"
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
@@ -69,46 +87,46 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
-	<!-- beneficiario -->
-	<bean id="beneficiarioDaoImpl" class="br.com.dccom.dao.BeneficiarioDaoImpl" />
-	<bean id="beneficiarioServiceImpl" class="br.com.dccom.services.BeneficiarioServiceImpl" />
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
 	
-	<!-- contratado -->
-	<bean id="contratadoDaoImpl" class="br.com.dccom.dao.ContratadoDaoImpl" />
-	<bean id="contratadoServiceImpl" class="br.com.dccom.services.ContratadoServiceImpl" />
 	
-	<!-- profissional -->
-	<bean id="profissionalDaoImpl" class="br.com.dccom.dao.ProfissionalDaoImpl" />
-	<bean id="profissionalServiceImpl" class="br.com.dccom.services.ProfissionalServiceImpl" />
+	<bean id="profissionalService" class="br.com.dccom.controller.springdata.ProfissionalServiceImpl" />
+	<bean id="CBOSServiceImpl" class="br.com.dccom.controller.springdata.CBOSServiceImpl" />
+	<bean id="beneficiarioServiceImpl" class="br.com.dccom.controller.springdata.BeneficiarioServiceImpl" />
 	
-	<!-- cbos -->
-	<bean id="CBOSDaoImpl" class="br.com.dccom.dao.CBOSDaoImpl" />
-	<bean id="CBOSServiceImpl" class="br.com.dccom.services.CBOSServiceImpl" />
 	
-	<!-- tipoAtendimento -->
-	<bean id="TipoAtendimentoDaoImpl" class="br.com.dccom.dao.TipoAtendimentoDaoImpl" />
-	<bean id="TipoAtendimentoServiceImpl" class="br.com.dccom.services.TipoAtendimentoServiceImpl" />
+<!-- 	<bean id="contratadoDaoImpl" class="br.com.dccom.dao.ContratadoDaoImpl" /> -->
+<!-- 	<bean id="contratadoServiceImpl" class="br.com.dccom.services.ContratadoServiceImpl" /> -->
 	
-	<!-- operadora -->
-	<bean id="operadoraDaoImpl" class="br.com.dccom.dao.OperadoraDaoImpl" />
-	<bean id="operadoraServiceImpl" class="br.com.dccom.services.OperadoraServiceImpl" />
+<!-- 	<bean id="profissionalDaoImpl" class="br.com.dccom.dao.ProfissionalDaoImpl" /> -->
+<!-- 	<bean id="profissionalServiceImpl" class="br.com.dccom.services.ProfissionalServiceImpl" /> -->
 	
+<!-- 	<bean id="CBOSDaoImpl" class="br.com.dccom.dao.CBOSDaoImpl" /> -->
+<!-- 	<bean id="CBOSServiceImpl" class="br.com.dccom.services.CBOSServiceImpl" /> -->
+	
+<!-- 	<bean id="TipoAtendimentoDaoImpl" class="br.com.dccom.dao.TipoAtendimentoDaoImpl" /> -->
+<!-- 	<bean id="TipoAtendimentoServiceImpl" class="br.com.dccom.services.TipoAtendimentoServiceImpl" /> -->
+	
+<!-- 	<bean id="operadoraDaoImpl" class="br.com.dccom.dao.OperadoraDaoImpl" /> -->
+<!-- 	<bean id="operadoraServiceImpl" class="br.com.dccom.services.OperadoraServiceImpl" /> -->
+
 	<!-- login -->
-	<bean id="loginDaoImpl" class="br.com.dccom.dao.LoginDaoImpl" />
-	<bean id="loginServiceImpl" class="br.com.dccom.services.LoginServiceImpl" />
+<!-- 	<bean id="loginDaoImpl" class="br.com.dccom.dao.LoginDaoImpl" /> -->
+<!-- 	<bean id="loginServiceImpl" class="br.com.dccom.services.LoginServiceImpl" /> -->
 	
-	<bean id="userDao" class="br.com.dccom.dao.UserDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+	<bean id="loginServiceImpl" class="br.com.dccom.controller.springdata.LoginServiceImpl" />
 	
-	<bean id="autenticarUsuarioService" class="br.com.dccom.services.AutenticarUsuarioService">
-		<property name="loginDao" ref="loginDaoImpl" />
-	</bean>
+<!-- 	<bean id="userDao" class="br.com.dccom.dao.UserDaoImpl"> -->
+<!-- 		<property name="sessionFactory" ref="sessionFactory" /> -->
+<!-- 	</bean> -->
+	
+	<bean id="autenticarUsuarioService" class="br.com.dccom.controller.springdata.AutenticarUsuarioService"/>
+	
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 	
 	
-	<!-- Tiles configuration -->
+<!-- 	Tiles configuration -->
 
 	<bean id="tilesConfigurer"
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">

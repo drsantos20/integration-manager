@@ -1,4 +1,4 @@
-package br.com.dccom.controller;
+package br.com.dccom.controller.springdata;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

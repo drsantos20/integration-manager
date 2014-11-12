@@ -1,5 +1,6 @@
 package br.com.dccom.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,7 +38,7 @@ public class UserRole{
 		this.userRoleId = userRoleId;
 	}
  
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "username", nullable = false)
 	public User getUser() {
 		return this.user;

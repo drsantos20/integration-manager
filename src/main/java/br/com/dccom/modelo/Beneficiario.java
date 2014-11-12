@@ -1,6 +1,8 @@
 package br.com.dccom.modelo;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,15 +30,14 @@ public class Beneficiario {
 	private String estado;
 	private String cep;
 	private String sexo;
-	private String nacionalidade;
 	private String validadeCarteira;
 	private String numeroCarteira;
 	private String atendimentoRN;
 	private String numeroCNS;
 	private byte[] identificadorBeneficiario;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario")
-	private List<Telefone> telefone;
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	private List<Telefone> telefone = new ArrayList<Telefone>();
 	
 	@OneToOne
 	@JoinColumn(name = "guia_id", nullable = true)
@@ -101,12 +102,6 @@ public class Beneficiario {
 	}
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
-	}
-	public String getNacionalidade() {
-		return nacionalidade;
-	}
-	public void setNacionalidade(String nacionalidade) {
-		this.nacionalidade = nacionalidade;
 	}
 	public String getCpf() {
 		return cpf;

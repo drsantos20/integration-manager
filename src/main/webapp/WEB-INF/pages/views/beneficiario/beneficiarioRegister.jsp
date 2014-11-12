@@ -96,12 +96,6 @@
                         <div class="col-sm-3">
                            <input type="text" class="bootstrap-datepicker form-control" id="nascimento" name="nascimento" data-date-format="dd/mm/yy">    
                         </div>
-                        <label for="" class="col-sm-2 control-label">
-                        Nacionalidade: </label>
-                        <div class="col-sm-3">
-                           <form:select path="nacionalidade" items="${model.nacionalidade}"
-                              class="form-control"></form:select>
-                        </div>
                      </div>
                      <div class="form-group">
                         <label for="" class="col-sm-2 control-label"> Endereço:

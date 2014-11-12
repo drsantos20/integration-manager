@@ -1,4 +1,4 @@
-package br.com.dccom.controller;
+package br.com.dccom.controller.springdata;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -17,13 +18,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dccom.modelo.Beneficiario;
 import br.com.dccom.modelo.Telefone;
-import br.com.dccom.services.BeneficiarioService;
+import br.com.dccom.controller.springdata.BeneficiarioService;
 
 @Controller
 public class BeneficiarioController {
 	
 	@Autowired
-	BeneficiarioService dataService;
+	BeneficiarioService beneficiarioDataService;
 	
 	private static final Logger logger = Logger.getLogger(BeneficiarioController.class);
 
@@ -34,9 +35,6 @@ public class BeneficiarioController {
 		tipo.add("Residencial");  
 		tipo.add("Comercial");  
 		
-		ArrayList<String> nacionalidade = new ArrayList<String>();
-		nacionalidade.add("Brasileira");
-		
 		ArrayList<String> sexo = new ArrayList<String>();
 		sexo.add("Masculino");
 		sexo.add("Feminino");
@@ -44,10 +42,8 @@ public class BeneficiarioController {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String username = authentication.getName();
 		
-		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		model.put("tipo", tipo);
-		model.put("nacionalidade", nacionalidade);
 		model.put("sexo", sexo);
 		model.put("username", username);
 		
@@ -68,25 +64,25 @@ public class BeneficiarioController {
 	
 	@RequestMapping("register")
 	public ModelAndView registerUser(@ModelAttribute Beneficiario beneficiario) {
-		dataService.insertRow(beneficiario);
+		beneficiarioDataService.create(beneficiario);
 		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 	
 	@RequestMapping("buscarBeneficiario")
 	public ModelAndView getListUser() {
-		List beneficiarioList = dataService.getList();
+		List beneficiarioList = beneficiarioDataService.findAll();
 		return new ModelAndView("beneficiario/beneficiarioList","beneficiarioList",beneficiarioList);
 	}
 	
 	@RequestMapping("delete")
-	public ModelAndView deleteUser(@RequestParam int id) {
-		dataService.deleteRow(id);
+	public ModelAndView deleteUser(@RequestParam int id) throws NotFoundException {
+		beneficiarioDataService.delete(id);
 		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 	
 	@RequestMapping("editBeneficiario")
 	public ModelAndView editUser(@RequestParam int id,@ModelAttribute("beneficiario") Beneficiario beneficiario) {
-		Beneficiario beneficiarioObject = dataService.getRowById(id);
+		Beneficiario beneficiarioObject = beneficiarioDataService.findById(id);
 		
 		List<Telefone> tipo = new ArrayList<Telefone>();
 		tipo.addAll(beneficiarioObject.getTelefone());
@@ -96,7 +92,6 @@ public class BeneficiarioController {
 		tipoTelefone.add("Comercial");  
 		
 		Map<String, Object> model = new HashMap<String, Object>();  
-		model.put("tipo", tipo);
 		model.put("tipoTelefone", tipoTelefone);
 		model.put("beneficiarioObject", beneficiarioObject);
 			
@@ -104,8 +99,8 @@ public class BeneficiarioController {
 	}
 	
 	@RequestMapping("update")
-	public ModelAndView updateUser(@ModelAttribute Beneficiario beneficiario) {
-		dataService.updateRow(beneficiario);
+	public ModelAndView updateUser(@ModelAttribute Beneficiario beneficiario) throws NotFoundException {
+		beneficiarioDataService.update(beneficiario);
 		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 

@@ -1,5 +1,6 @@
 package br.com.dccom.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -24,8 +25,8 @@ public class Telefone {
 	
 	private String descricao;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "beneficiario_id", nullable = true)
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "beneficiario_id", nullable = false)
 	private Beneficiario beneficiario = new Beneficiario();
 	//TODO verificar a io para a instancia de novo objeto
 

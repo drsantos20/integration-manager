@@ -1,9 +1,11 @@
-package br.com.dccom.services;
+package br.com.dccom.controller.springdata;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.annotation.Resource;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -12,17 +14,18 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import br.com.dccom.dao.LoginDao;
 import br.com.dccom.modelo.UserRole;
+import br.com.dccom.repository.LoginRepository;
 
 public class AutenticarUsuarioService implements UserDetailsService {
 
-	private LoginDao loginDao;
+	@Resource
+	private LoginRepository loginRepository;
 
 	@Override
 	public UserDetails loadUserByUsername(final String username) throws UsernameNotFoundException {
 
-		br.com.dccom.modelo.User user = loginDao.autenticarUsuario(username);
+		br.com.dccom.modelo.User user = loginRepository.findByUsername(username);
 		List<GrantedAuthority> authorities = buildUserAuthority(user.getUserRole());
 
 		return buildUserForAuthentication(user, authorities);
@@ -40,14 +43,6 @@ public class AutenticarUsuarioService implements UserDetailsService {
 		}
 		List<GrantedAuthority> Result = new ArrayList<GrantedAuthority>(setAuths);
 		return Result;
-	}
-
-	public LoginDao getLoginDao() {
-		return loginDao;
-	}
-
-	public void setLoginDao(LoginDao loginDao) {
-		this.loginDao = loginDao;
 	}
 
 }

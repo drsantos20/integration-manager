@@ -131,14 +131,6 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">
-                                Nacionalidade:
-                            </label>
-                            <div class="col-sm-8">
-                                <input class="form-control" type="text" id="nacionalidade" name="nacionalidade" value="${model.beneficiarioObject.nacionalidade}">
-                            </div>
-                        </div>
                         
                      <div class="divider"></div>
                      <div class="content-box remove-border dashboard-buttons clearfix center-div">
