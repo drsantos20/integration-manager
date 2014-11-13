@@ -1,4 +1,4 @@
-package br.com.dccom.controller.springdata;
+package br.com.dccom.services;
 
 import java.util.ArrayList;
 import java.util.HashSet;

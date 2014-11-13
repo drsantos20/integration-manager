@@ -1,4 +1,4 @@
-package br.com.dccom.controller.springdata;
+package br.com.dccom.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import br.com.dccom.modelo.Beneficiario;
 import br.com.dccom.modelo.Telefone;
-import br.com.dccom.controller.springdata.BeneficiarioService;
+import br.com.dccom.services.BeneficiarioService;
 
 @Controller
 public class BeneficiarioController {

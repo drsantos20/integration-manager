@@ -18,17 +18,15 @@ public class Telefone {
 	@GeneratedValue
 	@Column(name="telefone_id")
 	private int id;
-	
 	private String numero;
-	
 	private String tipo;
-	
 	private String descricao;
 
-	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//	@JoinColumn(name = "beneficiario_id")
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "beneficiario_id", nullable = false)
-	private Beneficiario beneficiario = new Beneficiario();
-	//TODO verificar a io para a instancia de novo objeto
+	private Beneficiario beneficiario;
 
 	public int getId() {
 		return id;

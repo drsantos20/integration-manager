@@ -2,39 +2,59 @@ package br.com.dccom.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
-import br.com.dccom.dao.OperadoraDao;
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.dccom.modelo.Operadora;
+import br.com.dccom.repository.OperadoraRepository;
 
 public class OperadoraServiceImpl implements OperadoraService {
+
+	@Resource
+	private OperadoraRepository  operadoraRepository;
+
+	@Override
+	@Transactional
+	public Operadora create(Operadora operadora) {
+		Operadora createdOperadora = operadora;
+		return operadoraRepository.save(createdOperadora);
+	}
 	
-	@Autowired
-	OperadoraDao operadoraDao;
+	@Transactional
+	@Override
+    public List<Operadora> findAll() {
+        return (List<Operadora>) operadoraRepository.findAll();
+    }
+
 
 	@Override
-	public int insertRow(Operadora operadora) {
-		return operadoraDao.insertRow(operadora);
+	public Operadora delete(int id) throws NotFoundException {
+		operadoraRepository.delete(id);
+		return null;
 	}
 
 	@Override
-	public List<Operadora> getList() {
-		return operadoraDao.getList();
+	@Transactional(/*rollbackFor=ShopNotFound.class*/)
+	public Operadora update(Operadora operadora) throws NotFoundException {
+		Operadora updatedOperadora = operadoraRepository.findOne(operadora.getId());
+
+		if (updatedOperadora == null)
+			throw new NotFoundException();
+		
+		updatedOperadora.setAtivo(operadora.getAtivo());
+		updatedOperadora.setGuia(operadora.getGuia());
+		updatedOperadora.setNome(operadora.getNome());
+		updatedOperadora.setRegistro_ans(operadora.getRegistro_ans());
+		
+		operadoraRepository.save(updatedOperadora);
+		return updatedOperadora;
 	}
 
 	@Override
-	public Operadora getRowById(int id) {
-		return operadoraDao.getRowById(id);
+	public Operadora findById(int id) {
+		return operadoraRepository.findOne(id);
 	}
-
-	@Override
-	public int updateRow(Operadora operadora) {
-		return operadoraDao.updateRow(operadora);
-	}
-
-	@Override
-	public int deleteRow(int id) {
-		return operadoraDao.deleteRow(id);
-	}
-
+	
 }

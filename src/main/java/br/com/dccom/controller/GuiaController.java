@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.com.dccom.controller.springdata.CBOSService;
 import br.com.dccom.modelo.CBOS;
 import br.com.dccom.modelo.Guia;
 import br.com.dccom.modelo.TipoAtendimento;
+import br.com.dccom.services.CBOSService;
 import br.com.dccom.services.TipoAtendimentoService;
 
 @Controller
@@ -30,7 +30,7 @@ public class GuiaController {
 		
 		Map<String, Object> model = new HashMap<String, Object>();  
 		List<CBOS> cboss = cbossDataService.findAll();
-		List<TipoAtendimento> tipoAtendimentos = tipoAtendimento.getList();
+		List<TipoAtendimento> tipoAtendimentos = tipoAtendimento.findAll();
 		
 		model.put("cboss", cboss);
 		model.put("tipoAtendimentos", tipoAtendimentos);

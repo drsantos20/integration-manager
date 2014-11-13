@@ -9,7 +9,7 @@
   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd 
   http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-	<context:component-scan base-package="br.com.dccom.controller.springdata" />
+	<context:component-scan base-package="br.com.dccom.controller" />
 	<context:property-placeholder location="classpath:database.properties" />
 	<mvc:annotation-driven />
 
@@ -90,9 +90,12 @@
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
 	
 	
-	<bean id="profissionalService" class="br.com.dccom.controller.springdata.ProfissionalServiceImpl" />
-	<bean id="CBOSServiceImpl" class="br.com.dccom.controller.springdata.CBOSServiceImpl" />
-	<bean id="beneficiarioServiceImpl" class="br.com.dccom.controller.springdata.BeneficiarioServiceImpl" />
+	<bean id="profissionalService" class="br.com.dccom.services.ProfissionalServiceImpl" />
+	<bean id="CBOSServiceImpl" class="br.com.dccom.services.CBOSServiceImpl" />
+	<bean id="beneficiarioServiceImpl" class="br.com.dccom.services.BeneficiarioServiceImpl" />
+	<bean id="contratadoServiceImpl" class="br.com.dccom.services.ContratadoServiceImpl" />
+	<bean id="tipoAtendimentoServiceImpl" class="br.com.dccom.services.TipoAtendimentoServiceImpl" />
+	<bean id="operadoraServiceImpl" class="br.com.dccom.services.OperadoraServiceImpl" />
 	
 	
 <!-- 	<bean id="contratadoDaoImpl" class="br.com.dccom.dao.ContratadoDaoImpl" /> -->
@@ -114,13 +117,13 @@
 <!-- 	<bean id="loginDaoImpl" class="br.com.dccom.dao.LoginDaoImpl" /> -->
 <!-- 	<bean id="loginServiceImpl" class="br.com.dccom.services.LoginServiceImpl" /> -->
 	
-	<bean id="loginServiceImpl" class="br.com.dccom.controller.springdata.LoginServiceImpl" />
+	<bean id="loginServiceImpl" class="br.com.dccom.services.LoginServiceImpl" />
 	
 <!-- 	<bean id="userDao" class="br.com.dccom.dao.UserDaoImpl"> -->
 <!-- 		<property name="sessionFactory" ref="sessionFactory" /> -->
 <!-- 	</bean> -->
 	
-	<bean id="autenticarUsuarioService" class="br.com.dccom.controller.springdata.AutenticarUsuarioService"/>
+	<bean id="autenticarUsuarioService" class="br.com.dccom.services.AutenticarUsuarioService"/>
 	
 	
 	<mvc:resources mapping="/resources/**" location="/resources/" />

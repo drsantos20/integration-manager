@@ -2,38 +2,56 @@ package br.com.dccom.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
-import br.com.dccom.dao.TipoAtendimentoDao;
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.dccom.modelo.TipoAtendimento;
+import br.com.dccom.repository.TipoAtendimentoRepository;
 
 public class TipoAtendimentoServiceImpl implements TipoAtendimentoService {
+
+	@Resource
+	private TipoAtendimentoRepository  tipoAtendimentoRepository;
+
+	@Override
+	@Transactional
+	public TipoAtendimento create(TipoAtendimento tipoAtendimento) {
+		TipoAtendimento createdTipoAtendimento = tipoAtendimento;
+		return tipoAtendimentoRepository.save(createdTipoAtendimento);
+	}
 	
-	@Autowired
-	TipoAtendimentoDao dataDao;
+	@Transactional
+	@Override
+    public List<TipoAtendimento> findAll() {
+        return (List<TipoAtendimento>) tipoAtendimentoRepository.findAll();
+    }
+
 
 	@Override
-	public int insertRow(TipoAtendimento tipoatendimento) {
-		return dataDao.insertRow(tipoatendimento);
+	public TipoAtendimento delete(int id) throws NotFoundException {
+		tipoAtendimentoRepository.delete(id);
+		return null;
 	}
 
 	@Override
-	public List<TipoAtendimento> getList() {
-		return dataDao.getList();
+	@Transactional(/*rollbackFor=ShopNotFound.class*/)
+	public TipoAtendimento update(TipoAtendimento tipoAtendimento) throws NotFoundException {
+		TipoAtendimento updatedTipoAtendimento = tipoAtendimentoRepository.findOne(tipoAtendimento.getId());
+
+		if (updatedTipoAtendimento == null)
+			throw new NotFoundException();
+		
+		updatedTipoAtendimento.setCodigo(tipoAtendimento.getCodigo());
+		updatedTipoAtendimento.setDescricao(tipoAtendimento.getCodigo());
+		tipoAtendimentoRepository.save(updatedTipoAtendimento);
+		return updatedTipoAtendimento;
 	}
 
 	@Override
-	public TipoAtendimento getRowById(int id) {
-		return dataDao.getRowById(id);
+	public TipoAtendimento findById(int id) {
+		return tipoAtendimentoRepository.findOne(id);
 	}
-
-	@Override
-	public int updateRow(TipoAtendimento profissional) {
-		return dataDao.updateRow(profissional);
-	}
-
-	@Override
-	public int deleteRow(int id) {
-		return dataDao.deleteRow(id);
-	}
+	
 }

@@ -2,16 +2,15 @@ package br.com.dccom.services;
 
 import java.util.List;
 
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
+
 import br.com.dccom.modelo.Beneficiario;
 
 public interface BeneficiarioService {
-	public int insertRow(Beneficiario beneficiario);
-
-	public List<Beneficiario> getList();
-
-	public Beneficiario getRowById(int id);
-
-	public int updateRow(Beneficiario beneficiario);
-
-	public int deleteRow(int id);
+	
+	public Beneficiario create(Beneficiario cbos);
+	public Beneficiario delete(int id) throws NotFoundException;
+	public List<Beneficiario> findAll();
+	public Beneficiario update(Beneficiario shop) throws NotFoundException;
+	public Beneficiario findById(int id);
 }

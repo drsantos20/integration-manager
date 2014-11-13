@@ -1,24 +1,34 @@
 package br.com.dccom.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
-import br.com.dccom.dao.LoginDao;
 import br.com.dccom.modelo.User;
 import br.com.dccom.modelo.Usuario;
+import br.com.dccom.repository.LoginRepository;
 
-public class LoginServiceImpl implements LoginService  {
-
-	@Autowired
-	LoginDao loginDAO;
+public class LoginServiceImpl implements LoginService {
 	
+	@Resource
+	private LoginRepository  loginRepository;
+
 	@Override
 	public Usuario recuperarUsuario(String usuario) {
-		return loginDAO.recuperarUsuario(usuario);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public User autenticarUsuario(String usuario) {
-		return loginDAO.autenticarUsuario(usuario);
+	public User autenticarUsuario(String username) {
+		User users = null;
+
+		users = loginRepository.findByUsername(username);
+
+		if (users != null) {
+			return users;
+		} else {
+			return null;
+		}
+
 	}
 
 }

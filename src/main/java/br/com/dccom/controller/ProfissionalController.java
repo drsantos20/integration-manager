@@ -1,4 +1,4 @@
-package br.com.dccom.controller.springdata;
+package br.com.dccom.controller;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.dccom.modelo.CBOS;
 import br.com.dccom.modelo.Profissional;
 import br.com.dccom.repository.ProfissionalRepository;
+import br.com.dccom.services.CBOSService;
+import br.com.dccom.services.ProfissionalService;
 
 @Controller
 public class ProfissionalController {

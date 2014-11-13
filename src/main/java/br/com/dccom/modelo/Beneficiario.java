@@ -1,5 +1,4 @@
 package br.com.dccom.modelo;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -35,12 +34,12 @@ public class Beneficiario {
 	private String atendimentoRN;
 	private String numeroCNS;
 	private byte[] identificadorBeneficiario;
-	
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private List<Telefone> telefone = new ArrayList<Telefone>();
+	//, cascade = CascadeType.ALL
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario", cascade = CascadeType.ALL)
+	private List<Telefone> telefone;
 	
 	@OneToOne
-	@JoinColumn(name = "guia_id", nullable = true)
+	@JoinColumn(name = "guia_id")
 	private Guia guia;
 	
 	public int getId() {

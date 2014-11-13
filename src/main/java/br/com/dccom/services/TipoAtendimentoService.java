@@ -2,16 +2,15 @@ package br.com.dccom.services;
 
 import java.util.List;
 
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
+
 import br.com.dccom.modelo.TipoAtendimento;
 
 public interface TipoAtendimentoService {
-	public int insertRow(TipoAtendimento tipoatendimento);
-
-	public List<TipoAtendimento> getList();
-
-	public TipoAtendimento getRowById(int id);
-
-	public int updateRow(TipoAtendimento tipoatendimento);
 	
-	public int deleteRow(int id);
+	public TipoAtendimento create(TipoAtendimento tipoAtendimento);
+	public TipoAtendimento delete(int id) throws NotFoundException;
+	public List<TipoAtendimento> findAll();
+	public TipoAtendimento update(TipoAtendimento tipoAtendimento) throws NotFoundException;
+	public TipoAtendimento findById(int id);
 }

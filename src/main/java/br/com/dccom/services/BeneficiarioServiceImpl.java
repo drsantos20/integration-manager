@@ -2,39 +2,76 @@ package br.com.dccom.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
-import br.com.dccom.dao.BeneficiarioDao;
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.dccom.modelo.Beneficiario;
-import br.com.dccom.modelo.Telefone;
+import br.com.dccom.repository.BeneficiarioRepository;
+import br.com.dccom.repository.TelefoneRepository;
 
 public class BeneficiarioServiceImpl implements BeneficiarioService {
+
+	@Resource
+	private BeneficiarioRepository  beneficiarioRepository;
+	@Resource
+	private TelefoneRepository telefoneRepository;
+
+	@Override
+	@Transactional
+	public Beneficiario create(Beneficiario beneficiario) {
+		Beneficiario createdBeneficiario = beneficiario;
+		beneficiario.getTelefone().get(0).setBeneficiario(beneficiario);
+		return beneficiarioRepository.save(createdBeneficiario);
+	}
 	
-	@Autowired
-	BeneficiarioDao dataDao;
+	@Transactional
+	@Override
+    public List<Beneficiario> findAll() {
+        return (List<Beneficiario>) beneficiarioRepository.findAll();
+    }
+
 
 	@Override
-	public int insertRow(Beneficiario beneficiario) {
-		return dataDao.insertRow(beneficiario);
+	public Beneficiario delete(int id) throws NotFoundException {
+		beneficiarioRepository.delete(id);
+		return null;
 	}
 
 	@Override
-	public List<Beneficiario> getList() {
-		return dataDao.getList();
+	@Transactional(/*rollbackFor=ShopNotFound.class*/)
+	public Beneficiario update(Beneficiario beneficiario) throws NotFoundException {
+		Beneficiario updatedBeneficiario = beneficiarioRepository.findOne(beneficiario.getId());
+
+		if (updatedBeneficiario == null)
+			throw new NotFoundException();
+		
+		updatedBeneficiario.setAtendimentoRN(beneficiario.getAtendimentoRN());
+		updatedBeneficiario.setCep(beneficiario.getCep());
+		updatedBeneficiario.setCidade(beneficiario.getCidade());
+		updatedBeneficiario.setCpf(beneficiario.getCpf());
+		updatedBeneficiario.setEmail(beneficiario.getEmail());
+		updatedBeneficiario.setEndereco(beneficiario.getEndereco());
+		updatedBeneficiario.setEstado(beneficiario.getEstado());
+		updatedBeneficiario.setNascimento(beneficiario.getNascimento());
+		updatedBeneficiario.setNome(beneficiario.getNome());
+		updatedBeneficiario.setNumeroCarteira(beneficiario.getNumeroCarteira());
+		updatedBeneficiario.setNumeroCNS(beneficiario.getNumeroCNS());
+		updatedBeneficiario.setSexo(beneficiario.getSexo());
+		updatedBeneficiario.setValidadeCarteira(beneficiario.getValidadeCarteira());
+		
+		updatedBeneficiario.getTelefone().clear();
+		updatedBeneficiario.getTelefone().addAll(beneficiario.getTelefone());
+		
+		beneficiarioRepository.save(updatedBeneficiario);
+
+		return updatedBeneficiario;
 	}
 
 	@Override
-	public Beneficiario getRowById(int id) {
-		return dataDao.getRowById(id);
+	public Beneficiario findById(int id) {
+		return beneficiarioRepository.findOne(id);
 	}
-
-	@Override
-	public int updateRow(Beneficiario beneficiario) {
-		return dataDao.updateRow(beneficiario);
-	}
-
-	@Override
-	public int deleteRow(int id) {
-		return dataDao.deleteRow(id);
-	}
+	
 }

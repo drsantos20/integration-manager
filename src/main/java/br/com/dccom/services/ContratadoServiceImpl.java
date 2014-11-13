@@ -2,38 +2,60 @@ package br.com.dccom.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
 
-import br.com.dccom.dao.ContratadoDao;
+import org.springframework.data.persistence.ChangeSetPersister.NotFoundException;
+import org.springframework.transaction.annotation.Transactional;
+
 import br.com.dccom.modelo.Contratado;
+import br.com.dccom.repository.ContratadoRepository;
 
 public class ContratadoServiceImpl implements ContratadoService {
+
+	@Resource
+	private ContratadoRepository  contratadoRepository;
+
+	@Override
+	@Transactional
+	public Contratado create(Contratado contratado) {
+		Contratado createdContratado = contratado;
+		return contratadoRepository.save(createdContratado);
+	}
 	
-	@Autowired
-	ContratadoDao dataDao;
+	@Transactional
+	@Override
+    public List<Contratado> findAll() {
+        return (List<Contratado>) contratadoRepository.findAll();
+    }
+
 
 	@Override
-	public int insertRow(Contratado contratado) {
-		return dataDao.insertRow(contratado);
+	public Contratado delete(int id) throws NotFoundException {
+		contratadoRepository.delete(id);
+		return null;
 	}
 
 	@Override
-	public List<Contratado> getList() {
-		return dataDao.getList();
+	@Transactional(/*rollbackFor=ShopNotFound.class*/)
+	public Contratado update(Contratado contratado) throws NotFoundException {
+		Contratado updatedContratado = contratadoRepository.findOne(contratado.getId());
+
+		if (updatedContratado == null)
+			throw new NotFoundException();
+		
+		updatedContratado.setCnes(contratado.getCnes());
+		updatedContratado.setCnpjOuCpfContratado(contratado.getCnpjOuCpfContratado());
+		updatedContratado.setCodigoContratado(contratado.getCodigoContratado());
+		updatedContratado.setCodigoPrestadorNaOperadora(contratado.getCodigoPrestadorNaOperadora());
+		updatedContratado.setGuia(contratado.getGuia());
+		updatedContratado.setNomeContratado(contratado.getNomeContratado());
+		contratadoRepository.save(updatedContratado);
+		return updatedContratado;
 	}
 
 	@Override
-	public Contratado getRowById(int id) {
-		return dataDao.getRowById(id);
+	public Contratado findById(int id) {
+		return contratadoRepository.findOne(id);
 	}
-
-	@Override
-	public int updateRow(Contratado contratado) {
-		return dataDao.updateRow(contratado);
-	}
-
-	@Override
-	public int deleteRow(int id) {
-		return dataDao.deleteRow(id);
-	}
+	
 }
