@@ -8,6 +8,7 @@ import org.springframework.data.persistence.ChangeSetPersister.NotFoundException
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.dccom.modelo.Beneficiario;
+import br.com.dccom.modelo.Telefone;
 import br.com.dccom.repository.BeneficiarioRepository;
 import br.com.dccom.repository.TelefoneRepository;
 
@@ -22,7 +23,9 @@ public class BeneficiarioServiceImpl implements BeneficiarioService {
 	@Transactional
 	public Beneficiario create(Beneficiario beneficiario) {
 		Beneficiario createdBeneficiario = beneficiario;
-		beneficiario.getTelefone().get(0).setBeneficiario(beneficiario);
+		for (int i = 0; i < beneficiario.getTelefone().size(); i++) {
+			beneficiario.getTelefone().get(i).setBeneficiario(beneficiario);
+		}
 		return beneficiarioRepository.save(createdBeneficiario);
 	}
 	
@@ -34,6 +37,7 @@ public class BeneficiarioServiceImpl implements BeneficiarioService {
 
 
 	@Override
+	@Transactional
 	public Beneficiario delete(int id) throws NotFoundException {
 		beneficiarioRepository.delete(id);
 		return null;
@@ -43,6 +47,7 @@ public class BeneficiarioServiceImpl implements BeneficiarioService {
 	@Transactional(/*rollbackFor=ShopNotFound.class*/)
 	public Beneficiario update(Beneficiario beneficiario) throws NotFoundException {
 		Beneficiario updatedBeneficiario = beneficiarioRepository.findOne(beneficiario.getId());
+		List<Telefone> updatedTelefone = telefoneRepository.findByBeneficiarioId(beneficiario.getId());
 
 		if (updatedBeneficiario == null)
 			throw new NotFoundException();
@@ -61,15 +66,20 @@ public class BeneficiarioServiceImpl implements BeneficiarioService {
 		updatedBeneficiario.setSexo(beneficiario.getSexo());
 		updatedBeneficiario.setValidadeCarteira(beneficiario.getValidadeCarteira());
 		
+		updatedBeneficiario.setTelefone(updatedTelefone);
 		updatedBeneficiario.getTelefone().clear();
 		updatedBeneficiario.getTelefone().addAll(beneficiario.getTelefone());
 		
+		for (int i = 0; i < beneficiario.getTelefone().size(); i++) {
+			beneficiario.getTelefone().get(i).setBeneficiario(beneficiario);
+		}
+		
 		beneficiarioRepository.save(updatedBeneficiario);
-
 		return updatedBeneficiario;
 	}
 
 	@Override
+	@Transactional
 	public Beneficiario findById(int id) {
 		return beneficiarioRepository.findOne(id);
 	}

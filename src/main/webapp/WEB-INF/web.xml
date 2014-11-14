@@ -15,11 +15,20 @@
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<filter>
+      <filter-name>hibernateFilter</filter-name>
+      <filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+      <init-param>
+         <param-name>sessionFactoryBeanName</param-name>
+         <param-value>dataSource</param-value>         
+      </init-param>      
+   	</filter>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>

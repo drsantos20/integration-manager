@@ -35,7 +35,7 @@ public class Beneficiario {
 	private String numeroCNS;
 	private byte[] identificadorBeneficiario;
 	//, cascade = CascadeType.ALL
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "beneficiario", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "beneficiario", cascade = CascadeType.ALL)
 	private List<Telefone> telefone;
 	
 	@OneToOne

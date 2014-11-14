@@ -24,7 +24,7 @@ public class Telefone {
 
 //	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 //	@JoinColumn(name = "beneficiario_id")
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "beneficiario_id", nullable = false)
 	private Beneficiario beneficiario;
 

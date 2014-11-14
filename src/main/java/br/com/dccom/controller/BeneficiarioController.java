@@ -19,12 +19,16 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.dccom.modelo.Beneficiario;
 import br.com.dccom.modelo.Telefone;
 import br.com.dccom.services.BeneficiarioService;
+import br.com.dccom.services.TelefoneService;
 
 @Controller
 public class BeneficiarioController {
 	
 	@Autowired
 	BeneficiarioService beneficiarioDataService;
+	
+	@Autowired
+	TelefoneService telefoneDataService;
 	
 	private static final Logger logger = Logger.getLogger(BeneficiarioController.class);
 
@@ -85,7 +89,8 @@ public class BeneficiarioController {
 		Beneficiario beneficiarioObject = beneficiarioDataService.findById(id);
 		
 		List<Telefone> tipo = new ArrayList<Telefone>();
-		tipo.addAll(beneficiarioObject.getTelefone());
+		tipo.addAll(telefoneDataService.findByBeneficiarioId(beneficiarioObject.getId()));
+		beneficiarioObject.setTelefone(tipo);
 		
 		ArrayList<String> tipoTelefone = new ArrayList<String>();  
 		tipoTelefone.add("Residencial");  
