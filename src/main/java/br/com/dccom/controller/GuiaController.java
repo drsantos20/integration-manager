@@ -14,10 +14,14 @@ import br.com.dccom.modelo.CBOS;
 import br.com.dccom.modelo.Guia;
 import br.com.dccom.modelo.TipoAtendimento;
 import br.com.dccom.services.CBOSService;
+import br.com.dccom.services.GuiaService;
 import br.com.dccom.services.TipoAtendimentoService;
 
 @Controller
 public class GuiaController {
+	
+	@Autowired
+	GuiaService guiaDataService;
 	
 	@Autowired
 	CBOSService cbossDataService;
@@ -35,6 +39,12 @@ public class GuiaController {
 		model.put("cboss", cboss);
 		model.put("tipoAtendimentos", tipoAtendimentos);
 		return new ModelAndView("guia/guiaRegister", "model", model);
+	}
+	
+	@RequestMapping("registerGuia")
+	public ModelAndView registerUser(@ModelAttribute Guia guia) {
+		guiaDataService.create(guia);
+		return new ModelAndView("redirect:buscarBeneficiario");
 	}
 
 }

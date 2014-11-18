@@ -26,7 +26,7 @@
                      Cadastro de Guia <small> Inclusão de novo guia </small>
                   </h3>
                   <c:url var="userRegistration" value="saveUser.html" />
-                  <form:form class="pure-form pure-form-stacked" role="form" data-parsley-validate="" modelAttribute="guia" method="post" action="register">
+                  <form:form class="pure-form pure-form-stacked" role="form" data-parsley-validate="" modelAttribute="guia" method="post" action="registerGuia">
                      <fieldset>
                      	<div class="bg-blue-alt pad20L pad5A font-white">Dados da Operadora</div>
 
@@ -85,10 +85,12 @@
 
 									<div class="pure-u-1 pure-u-md-1-3">
 										<label for=""> Atendimento RN: </label>
-										<form:select path="beneficiario.atendimentoRN" >
-										    <option value="S">S</option>
-										    <option value="N">N</option>
-										</form:select>
+										<input id="beneficiario.atendimentoRN" name="beneficiario.atendimentoRN"
+											type="text">
+<%-- 										<form:select path="beneficiario.atendimentoRN" > --%>
+<!-- 										    <option value="S">S</option> -->
+<!-- 										    <option value="N">N</option> -->
+<%-- 										</form:select> --%>
 									</div>
 								</div>
 								<div class="bg-blue-alt pad20L pad5A font-white">Dados do Contratado Solicitante</div>
@@ -96,7 +98,7 @@
 								<div class="pure-g">
 									<div class="pure-u-1 pure-u-md-1-3">
 										<label for="">Codigo na Operadora:</label> 
-										<input id="contratado.codigoPrestadorNaOperadora" type="text" name="beneficiario.numeroCarteira">
+										<input id="contratado.codigoPrestadorNaOperadora" type="text" name="contratado.codigoPrestadorNaOperadora">
 									</div>
 
 									<div class="pure-u-1 pure-u-md-1-3">
@@ -110,7 +112,7 @@
 									</div>
 									
 									<div class="pure-u-1 pure-u-md-1-3">
-										<label for="">Codigo CNES:</label> <input id="operadora.cnes" name="operadora.cnes"
+										<label for="">Codigo CNES:</label> <input id="contratado.cnes" name="contratado.cnes"
 											type="text">
 									</div>
 									
@@ -155,6 +157,18 @@
 									</div>
 
 								</div>
+								<div class="bg-blue-alt pad20L pad5A font-white">Dados do Contratado Executante</div>
+								<div class="pure-g">
+								<div class="pure-u-1 pure-u-md-1-2">
+										<label for="">Nome do Contratado:</label> 
+										<input id="contratado.nomeContratado" type="text" name="contratado.nomeContratado">
+									</div>
+
+									<div class="pure-u-1 pure-u-md-1-2">
+										<label for="">Codigo na Operadora:</label> <input name="contratado.codigoPrestadorNaOperadora"
+											id="contratado.codigoPrestadorNaOperadora" type="text" required>
+									</div>
+								</div>
 								<div class="bg-blue-alt pad20L pad5A font-white">Dados do Atendimento</div>
 								<div class="pure-g">
 									<div class="pure-u-1 pure-u-md-1-3">
@@ -168,13 +182,13 @@
 									</div>
 
 									<div class="pure-u-1 pure-u-md-1-3">
-										<label for="">Tipo de Consulta:</label> <input name="contratado.tipoConsulta"
-											id="contratado.tipoConsulta" type="text" required>
+										<label for="">Tipo de Consulta:</label> <input name="atendimento.tipoConsulta"
+											id="atendimento.tipoConsulta" type="text" required>
 									</div>
 									
 									<div class="pure-u-1 pure-u-md-1-3">
-										<label for="">Motivo de Encerramento de Atendimento:</label> <input name="contratado.motivoEncerramentoAtendimento"
-											id="contratado.motivoEncerramentoAtendimento" type="text" required>
+										<label for="">Motivo de Encerramento de Atendimento:</label> <input name="atendimento.motivoEncerramentoAtendimento"
+											id="atendimento.motivoEncerramentoAtendimento" type="text" required>
 									</div>
 								</div>
 								<div class="bg-blue-alt pad20L pad5A font-white">Dados de Execução / Procedimentos e Exames Realizados</div>
@@ -182,7 +196,7 @@
 								<div class="section group">
 									<div class="col span_1_of_6">
 										<label for="">Data:</label> 
-										<input class="pure-input-2-3" id="atendimento.tipoAtendimento" type="text" name="atendimento.tipoAtendimento">
+										<input class="pure-input-2-3" id="atendimento.data" type="text" name="atendimento.data">
 									</div>
 
 									<div class="col span_1_of_6">
@@ -191,23 +205,23 @@
 									</div>
 
 									<div class="col span_1_of_6">
-										<label for="">Cód. Procedimento:</label> <input class="pure-input-2-3" name="contratado.tipoConsulta"
-											id="contratado.tipoConsulta" type="text" required>
+										<label for="">Cód. Procedimento:</label> <input class="pure-input-2-3" name="atendimento.codigoProcedimento"
+											id="atendimento.codigoProcedimento" type="text" required>
 									</div>
 									
 									<div class="col span_1_of_6">
-										<label for="">Desc. Procedimento:</label> <input class="pure-input-1" name="contratado.motivoEncerramentoAtendimento"
-											id="contratado.motivoEncerramentoAtendimento" type="text" required>
+										<label for="">Desc. Procedimento:</label> <input class="pure-input-1" name="atendimento.motivoEncerramentoAtendimento"
+											id="atendimento.motivoEncerramentoAtendimento" type="text" required>
 									</div>
 									
 									<div class="col span_1_of_6">
-										<label for="">Quantidade:</label> <input class="pure-input-1-3" name="contratado.tipoConsulta"
-											id="contratado.tipoConsulta" type="text" required>
+										<label for="">Quantidade:</label> <input class="pure-input-1-3" name="atendimento.quantidade"
+											id="atendimento.quantidade" type="text" required>
 									</div>
 									
 									<div class="col span_1_of_6">
-										<label for="">Valor:</label> <input class="pure-input-2-3" name="contratado.motivoEncerramentoAtendimento"
-											id="contratado.motivoEncerramentoAtendimento" type="text" required>
+										<label for="">Valor:</label> <input class="pure-input-2-3" name="atendimento.valor"
+											id="atendimento.valor" type="text" required>
 									</div>
 								</div>
 								

@@ -2,12 +2,12 @@ package br.com.dccom.modelo;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -39,7 +39,7 @@ public class Guia {
 	@OneToOne(mappedBy="guia")
 	private Profissional profissional;
 	
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "guia")
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "guia", cascade = CascadeType.ALL)
 	private List<Atendimento> atendimento;
 	
 	public int getId() {

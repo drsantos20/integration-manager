@@ -38,7 +38,7 @@ public class Beneficiario {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "beneficiario", cascade = CascadeType.ALL)
 	private List<Telefone> telefone;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "guia_id")
 	private Guia guia;
 	

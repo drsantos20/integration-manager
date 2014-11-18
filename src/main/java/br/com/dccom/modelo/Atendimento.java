@@ -27,6 +27,8 @@ public class Atendimento {
 	private String indicacaoAcidente;
 	private String motivoEncerramentoAtendimento;
 	private int tipoConsulta;
+	private String quantidade;
+	private String valor;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "guia_id", nullable = true)
@@ -121,5 +123,20 @@ public class Atendimento {
 	public void setGuia(Guia guia) {
 		this.guia = guia;
 	}
-	
+
+	public String getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(String quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
 }

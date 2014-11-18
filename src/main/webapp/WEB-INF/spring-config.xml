@@ -97,6 +97,7 @@
 	<bean id="tipoAtendimentoServiceImpl" class="br.com.dccom.services.TipoAtendimentoServiceImpl" />
 	<bean id="operadoraServiceImpl" class="br.com.dccom.services.OperadoraServiceImpl" />
 	<bean id="telefoneServiceImpl" class="br.com.dccom.services.TelefoneServiceImpl" />
+	<bean id="guiaServiceImpl" class="br.com.dccom.services.GuiaServiceImpl" />
 	
 	
 <!-- 	<bean id="contratadoDaoImpl" class="br.com.dccom.dao.ContratadoDaoImpl" /> -->

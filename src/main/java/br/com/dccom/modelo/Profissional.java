@@ -1,5 +1,6 @@
 package br.com.dccom.modelo;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Profissional {
 	private String cid;
 	private String indicacaoClinica;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "guia_id", nullable = true)
 	private Guia guia;
     
